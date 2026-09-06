@@ -1,0 +1,102 @@
+/* Main Accordion Styles */
+.vusion-product-accordion {
+  margin: 1.5rem 0;
+  border: 1px solid #e1e1e1;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.vusion-product-accordion__item {
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.vusion-product-accordion__item:last-child {
+  border-bottom: none;
+}
+
+.vusion-product-accordion__toggle {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.vusion-product-accordion__label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  /* background: #f9f9f9; */
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* .vusion-product-accordion__label:hover {
+  background: #f1f1f1;
+} */
+
+.vusion-product-accordion__label::after {
+  content: "+";
+  font-size: 1.25rem;
+  transition: transform 0.3s ease;
+}
+
+/* .vusion-product-accordion__toggle:checked + .vusion-product-accordion__label {
+   background: #f1f1f1;
+} */
+
+.vusion-product-accordion__toggle:checked + .vusion-product-accordion__label::after {
+  content: "-";
+}
+
+.vusion-product-accordion__content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s ease-out;
+  overflow: hidden;
+}
+
+.vusion-product-accordion__inner {
+  min-height: 0;
+  padding: 0 1.25rem;
+}
+
+.vusion-product-accordion__toggle:checked ~ .vusion-product-accordion__content {
+  grid-template-rows: 1fr;
+  padding-bottom: 1rem;
+}
+
+/* General Table Styles (applies to all tables) */
+.vusion-product-accordion table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0;
+}
+
+.vusion-product-accordion table tr {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.vusion-product-accordion table tr:last-child {
+  border-bottom: none;
+}
+
+.vusion-product-accordion table td {
+  padding: 12px 5px;
+  vertical-align: top;
+}
+
+/* Specific Table Styles */
+/* Specification Table (2 columns) */
+.vusion-specification-table td:first-child {
+  width: 35%;
+  font-weight: 500;
+  /* color: #555; */
+  padding-right: 15px;
+}
+
+/* Warranty & Includes Tables (single column) */
+.vusion-warranty-table td,
+.vusion-includes-table td {
+  width: 100%;
+}

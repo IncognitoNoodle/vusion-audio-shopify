@@ -1,0 +1,272 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "judge_me_reviews_preview_badge_wd4wk7": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "text_NcFqDd": {
+          "type": "text",
+          "settings": {
+            "text": "Not sure about your size? Choose Dual Size (e.g., Extra Small & Small) for more flexibility.",
+            "text_style": "body"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "dropdown",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "judge_me_reviews_preview_badge_wd4wk7",
+        "price",
+        "text_NcFqDd",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "description",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "mobile_thumbnails": "hide",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "vusion_testimonials_Qw8qwn": {
+      "type": "vusion-testimonials",
+      "blocks": {
+        "testimonial_mmjHDb": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/testimonials-profile-wade.jpg",
+            "author": "WADE",
+            "title": "DJ & Producer | @wademusik",
+            "content": "<p>For comfortable earplugs to play with, I would choose Earasers for sure! Their perfect fit and superior noise reduction make them my top pick for any performance.</p>"
+          }
+        },
+        "testimonial_BWUV86": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Joey Daniel",
+            "title": "DJ",
+            "content": "<p>As a DJ, clarity is everything. Earasers deliver crystal clear sound while keeping my ears safe - I wouldn’t use anything else.</p>"
+          }
+        },
+        "testimonial_ThrX4n": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Franky Rizardo",
+            "title": "DJ",
+            "content": "<p>I’ve found Earasers to be the most comfortable and clear-sounding ear protection I’ve used, and throughout my tours, I keep coming back to them.</p>"
+          }
+        },
+        "testimonial_aFF7BK": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Stephan Bodzin",
+            "title": "",
+            "content": "<p>This is definitely a game-changer</p>"
+          }
+        },
+        "testimonial_7TUf4K": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Rayzir",
+            "title": "",
+            "content": "<p>The best earplugs for me.<br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_mmjHDb",
+        "testimonial_BWUV86",
+        "testimonial_ThrX4n",
+        "testimonial_aFF7BK",
+        "testimonial_7TUf4K"
+      ],
+      "name": "Vusion Testimonials",
+      "settings": {
+        "color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "heading": "What are DJ's saying?",
+        "heading_size": "h1",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "multirow_acTGDy": {
+      "type": "multirow",
+      "blocks": {
+        "row_qpnzEf": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/wade.jpg",
+            "caption": "",
+            "heading": "WADE",
+            "text": "<p>For comfortable earplugs to play with, I would choose Earasers for sure! Their perfect fit and superior noise reduction make them my top pick for any performance.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "row_jWYtpx": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/joey-daniel-earasers_11zon.jpg",
+            "caption": "",
+            "heading": "Joey Daniel",
+            "text": "<p>As a DJ, clarity is everything. Earasers deliver crystal clear sound while keeping my ears safe - I wouldn’t use anything else.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "row_EcdcEY": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/franky-rizardo-earasers_11zon.jpg",
+            "caption": "",
+            "heading": "Franky Rizardo",
+            "text": "<p>I’ve found Earasers to be the most comfortable and clear-sounding ear protection I’ve used, and throughout my tours, I keep coming back to them.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "row_PcP4c8": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/stephan-bodzin.webp",
+            "caption": "",
+            "heading": "Stephan Bodzin",
+            "text": "<p>This is definitely a game-changer</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_qpnzEf",
+        "row_jWYtpx",
+        "row_EcdcEY",
+        "row_PcP4c8"
+      ],
+      "settings": {
+        "image_height": "medium",
+        "desktop_image_width": "medium",
+        "image_layout": "alternate-left",
+        "heading_size": "h1",
+        "text_style": "body",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "row_color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "17453208777f32e50c": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_6Y8TTg": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_6Y8TTg"
+      ],
+      "custom_css": [],
+      "settings": {
+        "include_margins": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "related-products",
+    "vusion_testimonials_Qw8qwn",
+    "multirow_acTGDy",
+    "17453208777f32e50c"
+  ]
+}

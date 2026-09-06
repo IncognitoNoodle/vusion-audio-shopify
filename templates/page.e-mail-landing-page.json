@@ -1,0 +1,248 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_NEEHRk": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_BcxNGK": {
+          "type": "heading",
+          "settings": {
+            "heading": "Stores",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_BcxNGK"
+      ],
+      "disabled": true,
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "full_width": true,
+        "padding_top": 72,
+        "padding_bottom": 36
+      }
+    },
+    "1745993692b295ba5e": {
+      "type": "apps",
+      "settings": {
+        "include_margins": false
+      }
+    },
+    "image_with_text_b4g66p": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_n9xxJ8": {
+          "type": "heading",
+          "settings": {
+            "heading": "Hello there!",
+            "heading_size": "h1"
+          }
+        },
+        "text_8hLhjD": {
+          "type": "text",
+          "settings": {
+            "text": "<p>You chose to learn more about Vusion Audio, awesome! Please leave your email down below and we'll send over some more info. (Don't worry, we won't spam you)</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_n9xxJ8",
+        "text_8hLhjD"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/job-jacob.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-4",
+        "color_scheme": "scheme-4",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "vusion_email_signup_banner_d93rLz": {
+      "type": "vusion-email-signup-banner",
+      "blocks": {
+        "heading_qAmHqp": {
+          "type": "heading",
+          "settings": {
+            "heading": "Email address:",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph_Jb8gpr": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Be the first to know more about Vusion Audio</p>",
+            "text_style": "body"
+          }
+        },
+        "email_form_pNQdkn": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_qAmHqp",
+        "paragraph_Jb8gpr",
+        "email_form_pNQdkn"
+      ],
+      "name": "t:sections.email-signup-banner.presets.name",
+      "settings": {
+        "image_overlay_opacity": 100,
+        "show_background_image": true,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    },
+    "rich_text_6fiAT4": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_7Rqj3K": {
+          "type": "heading",
+          "settings": {
+            "heading": "What is Vusion Audio?",
+            "heading_size": "h1"
+          }
+        },
+        "text_PxJq3C": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Vusion Audio </strong>fuses cutting-edge tech with the passion of musicians, DJs, and audio pros. Our high-precision, customizable IEMs deliver pure sound and all-day comfort, so artists can feel every note. More than a brand, Vusion is a movement pushing the boundaries of sound.</p>"
+          }
+        },
+        "button_3XLiKn": {
+          "type": "button",
+          "settings": {
+            "button_label": "About us",
+            "button_link": "shopify://pages/about",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_7Rqj3K",
+        "text_PxJq3C",
+        "button_3XLiKn"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-be880999-e5d7-48d8-8a58-cb50a25578e4",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "vusion_scrolling_marquee_text_kAPiD8": {
+      "type": "vusion-scrolling-marquee-text",
+      "name": "Scrolling Marquee Text",
+      "settings": {
+        "text_one": "Pure Sound.",
+        "text_two": "No Distraction.",
+        "color_scheme": "scheme-693e9e65-aab3-4e0c-9c08-27e45671ed2b"
+      }
+    },
+    "vusion_testimonials_UwNwfw": {
+      "type": "vusion-testimonials",
+      "blocks": {
+        "testimonial_GGVWrx": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Johnny Kelvin",
+            "title": "Vocalist DJ | Voted Billboard Best producer #8 in 2022",
+            "title_link": "https://example.com/johnnykelvin",
+            "content": "<p>\"With the Z22 In-Ear Monitors, it's like stepping right into the heart of the music. The clarity and depth are unmatched, giving you a full-range sound experience that keeps every detail intact.\"</p>"
+          }
+        },
+        "testimonial_34KA3g": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Wade",
+            "title": "DJ & Producer | @wademusik",
+            "title_link": "https://instagram.com/wademusik",
+            "content": "<p>\"For comfortable in-ears to play with, I would choose Vusion audio for sure! Their perfect fit and superior sound quality make them my top pick for any performance.\"</p>"
+          }
+        },
+        "testimonial_gnQFnk": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Sarah Johnson",
+            "title": "Music Producer | @sarahbeats",
+            "title_link": "https://instagram.com/sarahbeats",
+            "content": "<p>\"The sound isolation is incredible - I can focus on my mix without any external noise interference. Best investment I've made for my performances.\"</p>"
+          }
+        },
+        "testimonial_jxAeJ8": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Mike Chen",
+            "title": "Live Sound Engineer | @mikechenaudio",
+            "title_link": "https://instagram.com/mikechenaudio",
+            "content": "<p>\"These in-ears provide the perfect balance between clarity and warmth. The custom fit makes them comfortable for hours of use during long sets.\"</p>"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_GGVWrx",
+        "testimonial_34KA3g",
+        "testimonial_gnQFnk",
+        "testimonial_jxAeJ8"
+      ],
+      "name": "Vusion Testimonials",
+      "settings": {
+        "color_scheme": "scheme-693e9e65-aab3-4e0c-9c08-27e45671ed2b",
+        "heading": "What are DJ's saying?",
+        "heading_size": "h1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_NEEHRk",
+    "1745993692b295ba5e",
+    "image_with_text_b4g66p",
+    "vusion_email_signup_banner_d93rLz",
+    "rich_text_6fiAT4",
+    "vusion_scrolling_marquee_text_kAPiD8",
+    "vusion_testimonials_UwNwfw"
+  ]
+}

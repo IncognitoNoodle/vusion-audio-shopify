@@ -1,0 +1,289 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_banner_KdR7By": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_j738xq": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our Story",
+            "heading_size": "h1"
+          }
+        },
+        "text_tQKMV9": {
+          "type": "text",
+          "settings": {
+            "text": "How two music innovators came together to protect artists' hearing.",
+            "text_style": "subtitle"
+          }
+        }
+      },
+      "block_order": [
+        "heading_j738xq",
+        "text_tQKMV9"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/crowd-dancing.jpg",
+        "image_overlay_opacity": 50,
+        "image_height": "large",
+        "image_behavior": "none",
+        "desktop_content_position": "bottom-left",
+        "desktop_content_alignment": "left",
+        "show_text_box": false,
+        "color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    },
+    "multicolumn_6BAqYn": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_HfybGh": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/johnny-profile.png",
+            "title": "JOHNNY KELVIN",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_hzRjhD": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/mink-profile.png",
+            "title": "MINK PETERSON",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_HfybGh",
+        "column_hzRjhD"
+      ],
+      "settings": {
+        "title": "The Visionaries of VUSION",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 2,
+        "column_alignment": "center",
+        "background_style": "none",
+        "color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 100,
+        "padding_bottom": 0
+      }
+    },
+    "multicolumn_Qd4B7X": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_Lr9NmP": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "<p>Johnny Kelvin, a Billboard-ranked producer, DJ, and touring artist, realized a harsh truth: years of loud music had damaged his hearing, a reality shared by many musicians. Determined to find a solution, he met Mink, a DJ and the force behind Earasers Europe, a leading brand in musician hearing protection.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_g9HXwe": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "<p>United by a shared mission, they founded Vusion<strong>, </strong>a brand dedicated to revolutionizing in-ear audio while safeguarding artists' hearing.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_Lr9NmP",
+        "column_g9HXwe"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 1,
+        "column_alignment": "left",
+        "background_style": "none",
+        "color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 72
+      }
+    },
+    "video_CaQkwR": {
+      "type": "video",
+      "settings": {
+        "heading": "Why we built Vusion Audio",
+        "heading_size": "h1",
+        "enable_video_looping": false,
+        "video": "shopify://files/videos/johnny-kelvin-about-vusion.mp4",
+        "video_url": "",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "padding_top": 0,
+        "padding_bottom": 72
+      }
+    },
+    "vusion_scrolling_marquee_text_Nwy3Wc": {
+      "type": "vusion-scrolling-marquee-text",
+      "settings": {
+        "text_one": "VUSION X",
+        "text_two": "INEARZ X",
+        "color_scheme": "scheme-be880999-e5d7-48d8-8a58-cb50a25578e4"
+      }
+    },
+    "image_with_text_WcqNK3": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_mTPVir": {
+          "type": "heading",
+          "settings": {
+            "heading": "50 Years of Audio Innovation",
+            "heading_size": "h1"
+          }
+        },
+        "text_mMPArC": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our collaboration with Inearz (backed by Persona Medical) merges cutting-edge technology with artist-driven design. With half a century of expertise in hearing protection and enhancement, we deliver:</p><ul><li>Premium in-ear monitors for crystal-clear sound</li><li>Advanced hearing protection to prevent long-term damage</li><li>Custom-tailored solutions for DJs and performers</li></ul>",
+            "text_style": "subtitle"
+          }
+        },
+        "button_zb9JYA": {
+          "type": "button",
+          "settings": {
+            "button_label": "Discover INEARZ",
+            "button_link": "https://inearz.com/",
+            "button_style_secondary": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_mTPVir",
+        "text_mMPArC",
+        "button_zb9JYA"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/inearz-audio-case.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "color_scheme": "scheme-be880999-e5d7-48d8-8a58-cb50a25578e4",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "rich_text_XGfjrf": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_dXq9rK": {
+          "type": "heading",
+          "settings": {
+            "heading": "SOUND SHOULD EMPOWER",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_dXq9rK"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-be880999-e5d7-48d8-8a58-cb50a25578e4",
+        "full_width": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_banner_7qzAYy": {
+      "type": "image-banner",
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/job-jacob.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "image_behavior": "none",
+        "desktop_content_position": "top-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    },
+    "rich_text_TPNqeW": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_YCMXaC": {
+          "type": "heading",
+          "settings": {
+            "heading": "NOT ENDAGER",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_YCMXaC"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-be880999-e5d7-48d8-8a58-cb50a25578e4",
+        "full_width": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_banner_KdR7By",
+    "multicolumn_6BAqYn",
+    "multicolumn_Qd4B7X",
+    "video_CaQkwR",
+    "vusion_scrolling_marquee_text_Nwy3Wc",
+    "image_with_text_WcqNK3",
+    "rich_text_XGfjrf",
+    "image_banner_7qzAYy",
+    "rich_text_TPNqeW"
+  ]
+}

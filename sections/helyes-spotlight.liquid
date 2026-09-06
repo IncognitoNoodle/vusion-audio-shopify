@@ -1,0 +1,181 @@
+{% comment %} <section style="
+  background: #0a0a0a;
+  padding: 100px 24px;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(204,0,0,0.3);
+  border-bottom: 1px solid rgba(204,0,0,0.3);
+">
+  <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+
+    <div style="position: relative;">
+      {% if section.settings.product_image %}
+        <img
+            src="{{ section.settings.product_image | image_url: width: 800 }}"
+            alt="HELYES IEM"
+            width="800"
+            height="800"
+            style="width: 100%; border-radius: 8px;"
+        >
+      {% endif %}
+      <div style="
+        position: absolute;
+        top: -20px;
+        left: -20px;
+        background: #CC0000;
+        color: white;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        padding: 8px 16px;
+        border-radius: 4px;
+      ">Flagship</div>
+    </div>
+
+    <div>
+      <div style="
+        color: #CC0000;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+      ">{{ section.settings.label }}</div>
+
+      <h2 style="
+        color: #ffffff;
+        font-size: clamp(36px, 5vw, 64px);
+        font-weight: 800;
+        line-height: 1.0;
+        letter-spacing: -0.02em;
+        margin: 0 0 24px 0;
+        text-transform: uppercase;
+      ">{{ section.settings.title }}</h2>
+
+      <p style="
+        color: rgba(255,255,255,0.6);
+        font-size: 16px;
+        line-height: 1.7;
+        margin: 0 0 40px 0;
+        max-width: 480px;
+      ">{{ section.settings.description }}</p>
+
+      <div style="
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 40px;
+      ">
+        {% for block in section.blocks %}
+          <div {{ block.shopify_attributes }} style="
+            border: 0.5px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            padding: 16px;
+          ">
+            <div style="color: #CC0000; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px;">
+              {{ block.settings.spec_label }}
+            </div>
+            <div style="color: #ffffff; font-size: 15px; font-weight: 600;">
+              {{ block.settings.spec_value }}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 24px; flex-wrap: wrap;">
+        <div style="color: #ffffff; font-size: 32px; font-weight: 700;">
+          {{ section.settings.price }}
+        </div>
+        <a href="{{ section.settings.button_url }}" style="
+          background: #CC0000;
+          color: #ffffff;
+          font-size: 13px;
+          font-weight: 700;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          padding: 16px 32px;
+          border-radius: 4px;
+          text-decoration: none;
+          transition: background 0.2s ease;
+        ">{{ section.settings.button_label }}</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "HELYES Spotlight",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label boven titel",
+      "default": "Ultimate Flagship IEM"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Productnaam",
+      "default": "HELYES Active Ambient"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Omschrijving",
+      "default": "The most advanced in-ear monitor we have ever built. Active ambient microphone technology lets you hear the room without removing your IEMs."
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product afbeelding"
+    },
+    {
+      "type": "text",
+      "id": "price",
+      "label": "Prijs",
+      "default": "€1.999"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Knop tekst",
+      "default": "Discover HELYES"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Knop link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "spec",
+      "name": "Specificatie",
+      "settings": [
+        {
+          "type": "text",
+          "id": "spec_label",
+          "label": "Label",
+          "default": "Drivers"
+        },
+        {
+          "type": "text",
+          "id": "spec_value",
+          "label": "Waarde",
+          "default": "6 BA + 1 DD"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "HELYES Spotlight",
+      "category": "Product"
+    }
+  ]
+}
+{% endschema %} {% endcomment %}

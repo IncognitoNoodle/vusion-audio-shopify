@@ -1,0 +1,157 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "vusion_faqs_nJCVkw": {
+      "type": "vusion-faqs",
+      "blocks": {
+        "faq_Nh3UdX": {
+          "type": "faq",
+          "settings": {
+            "question": "Q: What is Vusion Audio and what products do you provide?",
+            "answer": "<p>Vusion Audio, powered by Inearz, specializes in premium in-ear monitoring solutions for DJs and musicians. We offer custom in-ear monitors (IEMs), professional earplugs, and other audio enhancement products backed by 50 years of innovation from our parent company Persona Medical.</p>"
+          }
+        },
+        "faq_YzJhDc": {
+          "type": "faq",
+          "settings": {
+            "question": "Q: How do I purchase your products?",
+            "answer": "<p>You can purchase directly through our website www.vusionaudio.com. Simply add products to your cart and complete checkout using our secure payment system.</p>"
+          }
+        },
+        "faq_WznwL4": {
+          "type": "faq",
+          "settings": {
+            "question": "Q: What payment methods do you accept?",
+            "answer": "<p>We accept all major credit cards and PayPal. All payments are processed securely through our payment partners - we never store your credit card information.</p>"
+          }
+        },
+        "faq_cdkDJC": {
+          "type": "faq",
+          "settings": {
+            "question": "Q: What is your return policy?",
+            "answer": "<p>We offer a 31-day return policy for unused products in original packaging. <strong>Custom-made IEMs are non-refundable</strong> due to their personalized nature. Refunds are processed after product inspection.</p>"
+          }
+        },
+        "faq_ALeinA": {
+          "type": "faq",
+          "settings": {
+            "question": "Q: How long does shipping take?",
+            "answer": "<p>Standard shipping times vary by location. Custom IEMs require additional production time. You'll receive tracking information once your order ships. Note: We're not responsible for delays caused by shipping carriers.</p>"
+          }
+        },
+        "faq_g87PQU": {
+          "type": "faq",
+          "settings": {
+            "question": "Q: What makes Vusion IEMs different?",
+            "answer": "<p>Our IEMs combine Vusion's market expertise with Inearz's 50-year legacy in hearing technology. Developed specifically for DJs, they offer unparalleled sound clarity, noise isolation, and comfort for extended performances while protecting your hearing health.</p>"
+          }
+        },
+        "faq_YRjCif": {
+          "type": "faq",
+          "settings": {
+            "question": "Q: Are your products suitable for professional use?",
+            "answer": "<p>Absolutely. Our products are designed by and for professional musicians and DJs. The technology comes from Persona Medical, a leader in professional hearing protection and enhancement for over 50 years.</p>"
+          }
+        },
+        "faq_MzFz8i": {
+          "type": "faq",
+          "settings": {
+            "question": "Q: How do I care for my custom IEMs?",
+            "answer": "<p>Store them in the provided case when not in use. Clean with a dry, soft cloth. Avoid extreme temperatures and moisture. For deep cleaning, use alcohol wipes (70% isopropyl alcohol). Never submerge in water.</p>"
+          }
+        },
+        "faq_FgnKdT": {
+          "type": "faq",
+          "settings": {
+            "question": "Q: What's your warranty policy?",
+            "answer": "<p>We offer a 1-year warranty against manufacturing defects. This covers repairs or replacements for issues not caused by misuse. Normal wear and tear or damage from accidents isn't covered.</p>"
+          }
+        },
+        "faq_td6RCK": {
+          "type": "faq",
+          "settings": {
+            "question": "Q: How do I contact customer support?",
+            "answer": "<p>Email us at <a href=\"mailto:info@vusionaudio.com\">info@vusionaudio.com</a> or visit our contact page. Our Amsterdam office address is Marco Polostraat 78H, 1057WT.</p>"
+          }
+        },
+        "faq_VT7JEr": {
+          "type": "faq",
+          "settings": {
+            "question": "Q: What's your privacy policy?",
+            "answer": "<p>We collect only necessary data to process orders and improve service. We never sell your information. You can request data access or deletion by emailing <a href=\"mailto:info@vusionaudio.com\">info@vusionaudio.com</a>. Full details are in our <a href=\"/pages/privacy-policy\">Privacy Policy</a>.</p>"
+          }
+        },
+        "faq_eQRgJV": {
+          "type": "faq",
+          "settings": {
+            "question": "Q: Can I cancel my order?",
+            "answer": "<p>You may cancel standard product orders before shipping. Custom IEMs cannot be canceled once production begins (typically within 24 hours). Contact us immediately at <a href=\"mailto:info@vusionaudio.com\">info@vusionaudio.com</a> to request cancellation.</p>"
+          }
+        },
+        "faq_GqEctA": {
+          "type": "faq",
+          "settings": {
+            "question": "Q: Do you offer international shipping?",
+            "answer": "<p>Yes, we ship worldwide. International customers are responsible for any customs duties or taxes. Shipping times vary by destination.</p>"
+          }
+        },
+        "faq_QkFU6G": {
+          "type": "faq",
+          "settings": {
+            "question": "Q: How do I get fitted for custom IEMs?",
+            "answer": "<p>We provide detailed instructions with your order. You'll need professional ear impressions done by an audiologist. We can recommend providers in your area if needed.</p>"
+          }
+        },
+        "faq_BETij3": {
+          "type": "faq",
+          "settings": {
+            "question": "Q: What's your repair policy?",
+            "answer": "<p>We offer repair services for damaged IEMs. Costs vary based on damage. Email <a href=\"mailto:support@vusionaudio.com\">support@vusionaudio.com</a> with details and photos for a repair estimate.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_Nh3UdX",
+        "faq_YzJhDc",
+        "faq_WznwL4",
+        "faq_cdkDJC",
+        "faq_ALeinA",
+        "faq_g87PQU",
+        "faq_YRjCif",
+        "faq_MzFz8i",
+        "faq_FgnKdT",
+        "faq_td6RCK",
+        "faq_VT7JEr",
+        "faq_eQRgJV",
+        "faq_GqEctA",
+        "faq_QkFU6G",
+        "faq_BETij3"
+      ],
+      "settings": {
+        "heading": "Frequently Asked Questions",
+        "color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "main",
+    "vusion_faqs_nJCVkw"
+  ]
+}

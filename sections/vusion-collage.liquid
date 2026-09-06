@@ -1,0 +1,298 @@
+{% schema %}
+{
+  "name": "Vusion Collage",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "We believe that sound is more than just an experience",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        { "value": "h2", "label": "Small" },
+        { "value": "h1", "label": "Medium" },
+        { "value": "h0", "label": "Large" }
+      ],
+      "default": "h1",
+      "label": "Heading size"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "default": "Our Story",
+      "label": "Button label"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button color",
+      "default": "#F32929"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "default": "<p><strong>Vusion Audio</strong> bridges cutting-edge technology with the passion of musicians, DJs, and audio professionals...</p>",
+      "label": "Text"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 40
+    }
+  ],
+  "presets": [
+    { "name": "Collage with Rich Text", "category": "Text" }
+  ]
+}
+{% endschema %}
+
+<div class="color-{{ section.settings.color_scheme }} vusion-collage">
+  <div class="vusion-collage__rich-text page-width section-{{ section.id }}-padding">
+    <div class="vusion-collage__small vusion-collage__with-richtext grid">
+      <div class="vusion-collage__title-wrapper flex flex-col text-left md:flex-row md:justify-between md:items-end">
+        <div class="vusion-collage__grid gap-4">
+          <h2 class="vusion-collage__title {{ section.settings.heading_size }}">
+            {{ section.settings.heading }}
+          </h2>
+        </div>
+        {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+          <div class="vusion-collage__button-wrapper">
+            <a href="{{ section.settings.button_link }}" class="vusion-collage__button-link">
+              <button
+                class="vusion-collage__animated-button"
+                style="--button-color: {{ section.settings.button_color }}"
+              >
+                <svg viewBox="0 0 24 24" class="vusion-collage__arr-2" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+                </svg>
+                <span class="vusion-collage__text">{{ section.settings.button_label }}</span>
+                <span class="vusion-collage__circle"></span>
+                <svg viewBox="0 0 24 24" class="vusion-collage__arr-1" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+                </svg>
+              </button>
+            </a>
+          </div>
+        {% endif %}
+      </div>
+      <div class="vusion-collage__rich-text md:text-left text-left">
+        <div class="vusion-collage__rte">
+          {{ section.settings.text }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{%- style -%}
+  /* Section padding */
+  .vusion-collage .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .vusion-collage .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  /* Collage grid */
+  .vusion-collage__small {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .vusion-collage__small {
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+  }
+
+  /* Title wrapper */
+  .vusion-collage__title-wrapper {
+    margin-bottom: 2rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .vusion-collage__title-wrapper {
+      margin-bottom: 0;
+    }
+  }
+
+  /* Title */
+  .vusion-collage__title {
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  /* Heading sizes */
+  .vusion-collage .h0, .vusion-collage .h1, .vusion-collage .h2 {
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .vusion-collage .h0 {
+    font-size: 3rem;
+  }
+
+  .vusion-collage .h1 {
+    font-size: 2rem;
+  }
+
+  .vusion-collage .h2 {
+    font-size: 1.5rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .vusion-collage .h0 {
+      font-size: 4rem;
+    }
+
+    .vusion-collage .h1 {
+      font-size: 2.5rem;
+    }
+
+    .vusion-collage .h2 {
+      font-size: 2rem;
+    }
+  }
+
+  /* Button wrapper */
+  .vusion-collage__button-wrapper {
+    margin-top: 2rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .vusion-collage__button-wrapper {
+      margin-top: 2rem;
+    }
+  }
+
+  /* Animated button */
+  .vusion-collage__button-link {
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  .vusion-collage__animated-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 16px 36px;
+    border: 4px solid transparent;
+    font-size: 16px;
+    background-color: inherit;
+    border-radius: 100px;
+    font-weight: 600;
+    color: var(--button-color, #F32929);
+    box-shadow: 0 0 0 2px var(--button-color, #F32929);
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    text-decoration: none;
+  }
+
+  .vusion-collage__animated-button svg {
+    position: absolute;
+    width: 24px;
+    fill: var(--button-color, #F32929);
+    z-index: 2;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .vusion-collage__animated-button .vusion-collage__arr-1 {
+    right: 16px;
+  }
+
+  .vusion-collage__animated-button .vusion-collage__arr-2 {
+    left: -25%;
+  }
+
+  .vusion-collage__animated-button .vusion-collage__circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: var(--button-color, #F32929);
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .vusion-collage__animated-button .vusion-collage__text {
+    position: relative;
+    z-index: 1;
+    transform: translateX(-12px);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .vusion-collage__animated-button:hover {
+    box-shadow: 0 0 0 12px transparent;
+    color: #212121;
+    border-radius: 12px;
+  }
+
+  .vusion-collage__animated-button:hover .vusion-collage__arr-1 {
+    right: -25%;
+  }
+
+  .vusion-collage__animated-button:hover .vusion-collage__arr-2 {
+    left: 16px;
+  }
+
+  .vusion-collage__animated-button:hover .vusion-collage__text {
+    transform: translateX(12px);
+  }
+
+  .vusion-collage__animated-button:hover svg {
+    fill: #212121;
+  }
+
+  .vusion-collage__animated-button:active {
+    scale: 0.95;
+    box-shadow: 0 0 0 4px var(--button-color, #F32929);
+  }
+
+  .vusion-collage__animated-button:hover .vusion-collage__circle {
+    width: 220px;
+    height: 220px;
+    opacity: 1;
+  }
+{%- endstyle -%}

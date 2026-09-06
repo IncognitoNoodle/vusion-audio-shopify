@@ -1,0 +1,103 @@
+{%- if template.name == 'product' -%}
+  {%- comment -%} Get the first available collection for this product {%- endcomment -%}
+  {%- assign product_collection = product.collections.first -%}
+  {%- unless product_collection -%}
+    {%- assign product_collection = collections.all -%}
+  {%- endunless -%}
+
+  {%- comment -%} Get proper URLs {%- endcomment -%}
+  {%- assign home_url = routes.root_url -%}
+  {%- assign collection_url = product_collection.url -%}
+  {%- assign product_url = product.url -%}
+
+  <div class="vusion-breadcrumb-wrapper">
+    <nav class="vusion-breadcrumb" role="navigation" aria-label="Breadcrumbs">
+      <ol class="vusion-breadcrumb__list">
+        <li class="vusion-breadcrumb__item">
+          <a href="{{ home_url }}" class="vusion-breadcrumb__link">Home</a>
+        </li>
+        <li class="vusion-breadcrumb__item">
+          <a href="{{ collection_url }}" class="vusion-breadcrumb__link">{{ product_collection.title }}</a>
+        </li>
+        <li class="vusion-breadcrumb__item">
+          <span class="vusion-breadcrumb__current" aria-current="page">{{ product.title }}</span>
+        </li>
+      </ol>
+    </nav>
+  </div>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "{{ shop.url }}{{ home_url }}"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "{{ product_collection.title | escape }}",
+          "item": "{{ shop.url }}{{ collection_url }}"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "{{ product.title | escape }}",
+          "item": "{{ shop.url }}{{ product_url }}"
+        }
+      ]
+    }
+  </script>
+
+  <style>
+    .vusion-breadcrumb-wrapper {
+      margin: 0 0;
+      max-width: var(--page-width);
+      padding: 1rem 3.5rem;
+      background-color: #0A0A0A; /* Dark background */
+    }
+
+    .vusion-breadcrumb__list {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      list-style: none;
+      padding: 1.2rem 0;
+      margin: 0;
+      font-size: 1.3rem;
+      line-height: 1.5;
+      color: #FFFFFF; /* White text */
+    }
+
+    .vusion-breadcrumb__item {
+      display: flex;
+      align-items: center;
+    }
+
+    .vusion-breadcrumb__item:not(:last-child)::after {
+      content: "/";
+      margin: 0 0.8rem;
+      color: rgba(255, 255, 255, 0.5); /* White with 50% opacity */
+    }
+
+    .vusion-breadcrumb__link {
+      color: rgba(255, 255, 255, 0.75); /* White with 75% opacity */
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .vusion-breadcrumb__link:hover {
+      color: #FFFFFF; /* Pure white on hover */
+      text-decoration: underline;
+    }
+
+    .vusion-breadcrumb__current {
+      color: #FFFFFF; /* Pure white */
+      font-weight: 500;
+    }
+  </style>
+{%- endif -%}

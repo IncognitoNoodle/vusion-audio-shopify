@@ -1,0 +1,140 @@
+<section class="vusion-reviews" style="
+  background: #0a0a0a;
+  padding: 80px 24px;
+  font-family: inherit;
+">
+  <div style="max-width: 1200px; margin: 0 auto;">
+
+    {% if section.settings.title != blank %}
+      <h2 style="
+        color: #ffffff;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 48px;
+        opacity: 0.5;
+      ">{{ section.settings.title }}</h2>
+    {% endif %}
+
+    <div style="
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    ">
+      {% for block in section.blocks %}
+        <div {{ block.shopify_attributes }} style="
+          background: #141414;
+          border: 0.5px solid rgba(255,255,255,0.08);
+          border-radius: 12px;
+          padding: 28px;
+        ">
+          {% if block.settings.stars %}
+            <div style="color: #6C8EF5; font-size: 14px; margin-bottom: 16px; letter-spacing: 2px;">★★★★★</div>
+          {% endif %}
+
+          <p style="
+            color: rgba(255,255,255,0.85);
+            font-size: 14px;
+            line-height: 1.7;
+            margin: 0 0 20px 0;
+          ">"{{ block.settings.review_text }}"</p>
+
+          <div style="display: flex; align-items: center; gap: 12px;">
+            {% if block.settings.avatar != blank %}
+              <img
+                src="{{ block.settings.avatar | img_url: '60x60', crop: 'center' }}"
+                alt="{{ block.settings.author_name }}"
+                style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover;"
+              >
+            {% else %}
+              <div style="
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                background: #6C8EF5;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 13px;
+                font-weight: 600;
+                flex-shrink: 0;
+              ">{{ block.settings.author_name | slice: 0 | upcase }}</div>
+            {% endif %}
+
+            <div>
+              <div style="color: #ffffff; font-size: 13px; font-weight: 600;">
+                {{ block.settings.author_name }}
+              </div>
+              {% if block.settings.author_role != blank %}
+                <div style="color: rgba(255,255,255,0.4); font-size: 12px;">
+                  {{ block.settings.author_role }}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Homepage Reviews",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Sectie titel",
+      "default": "What artists say"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "review_text",
+          "label": "Review tekst"
+        },
+        {
+          "type": "text",
+          "id": "author_name",
+          "label": "Naam",
+          "default": "WADE"
+        },
+        {
+          "type": "text",
+          "id": "author_role",
+          "label": "Rol / titel",
+          "default": "DJ & Producer"
+        },
+        {
+          "type": "image_picker",
+          "id": "avatar",
+          "label": "Profielfoto (optioneel)"
+        },
+        {
+          "type": "checkbox",
+          "id": "stars",
+          "label": "Sterren tonen",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Homepage Reviews",
+      "category": "Social proof"
+    }
+  ]
+}
+{% endschema %}

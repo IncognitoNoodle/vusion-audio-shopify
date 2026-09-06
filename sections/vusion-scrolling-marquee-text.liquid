@@ -1,0 +1,120 @@
+{% schema %}
+{
+  "name": "Vusion Marquee",
+  "class": "scrolling-text-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text_one",
+      "label": "First Text",
+      "default": "Pure Sound."
+    },
+    {
+      "type": "text",
+      "id": "text_two",
+      "label": "Second Text",
+      "default": "No Distraction."
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Scrolling Marquee Text"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="section color-{{ section.settings.color_scheme }} vusion-marquee">
+  <div class="vusion-marquee__wrapper">
+    <div class="vusion-marquee__scrolling-text">
+      <div class="vusion-marquee__marquee">
+        <span class="vusion-marquee__item">{{ section.settings.text_one }}</span>
+        <span class="vusion-marquee__item">{{ section.settings.text_two }}</span>
+      </div>
+      <div class="vusion-marquee__marquee" aria-hidden="true">
+        <span class="vusion-marquee__item">{{ section.settings.text_one }}</span>
+        <span class="vusion-marquee__item">{{ section.settings.text_two }}</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+{%- style -%}
+  /* Marquee wrapper */
+  .vusion-marquee__wrapper {
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* Scrolling text container */
+  .vusion-marquee__scrolling-text {
+    display: flex;
+    width: max-content;
+    animation: vusion-marquee-scroll 20s linear infinite;
+  }
+
+  /* Marquee item */
+  .vusion-marquee__item {
+    font-size: 160px;
+    font-weight: bold;
+    padding: 0 40px;
+  }
+{%- endstyle -%}
+
+{% javascript %}
+document.addEventListener('DOMContentLoaded', function() {
+  const marquee = document.querySelector('.vusion-marquee__scrolling-text');
+  let scrollTimeout;
+  let animationId;
+  let currentPosition = 0;
+  
+  // Speed control
+  const baseSpeed = 2.0; // Faster default right-to-left speed
+  const scrollSpeed = 5.0; // Even faster speed when scrolling
+  let currentSpeed = baseSpeed;
+  
+  function animate() {
+    // Always move right-to-left (negative translation)
+    currentPosition -= currentSpeed;
+    
+    // Wrap around when reaching half width
+    const marqueeWidth = marquee.scrollWidth / 2;
+    if (-currentPosition >= marqueeWidth) {
+      currentPosition = 0;
+    }
+    
+    marquee.style.transform = `translateX(${currentPosition}px)`;
+    animationId = requestAnimationFrame(animate);
+  }
+  
+  // Start animation
+  animate();
+  
+  window.addEventListener('scroll', function() {
+    // Speed up when scrolling (any direction)
+    currentSpeed = scrollSpeed;
+    
+    // Clear timeout if exists
+    clearTimeout(scrollTimeout);
+    
+    // Return to normal speed after scrolling stops
+    scrollTimeout = setTimeout(() => {
+      currentSpeed = baseSpeed;
+    }, 100);
+  });
+  
+  // Clean up
+  window.addEventListener('beforeunload', function() {
+    cancelAnimationFrame(animationId);
+  });
+});
+{% endjavascript %}

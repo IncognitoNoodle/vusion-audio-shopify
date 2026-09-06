@@ -1,0 +1,193 @@
+{% schema %}
+{
+  "name": "Vusion Marquee 2",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 36
+    },
+    {
+      "type": "color",
+      "id": "marquee_background_color",
+      "label": "Marquee Background Color",
+      "default": "#f3bb0b"
+    },
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Text 1",
+      "default": "You have brains in your head"
+    },
+    {
+      "type": "text",
+      "id": "text_2",
+      "label": "Text 2",
+      "default": "You have feet in your shoes"
+    },
+    {
+      "type": "text",
+      "id": "text_3",
+      "label": "Text 3",
+      "default": "You can steer yourself"
+    },
+    {
+      "type": "text",
+      "id": "text_4",
+      "label": "Text 4",
+      "default": "Any direction you choose"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Marquee",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .vusion-marquee-2 {
+    --marquee--colour: {{ section.settings.marquee_background_color }};
+    --marquee--repeat-count: 6;
+    --marquee--base-duration: 1s;
+    --marquee--repeat-size: calc(100% / var(--marquee--repeat-count));
+    --marquee--double-size: calc(var(--marquee--repeat-size) * 2);
+    --marquee--duration: calc(var(--marquee--base-duration) * var(--char-count, 20));
+    overflow: hidden;
+    width: 110%;
+    margin-left: -5%;
+    mix-blend-mode: screen;
+    transform: rotate(-5deg);
+    background: var(--marquee--colour);
+    color: var(--color-base-solid-button-labels);
+  }
+  .vusion-marquee-2:nth-child(even) {
+    --marquee--direction: -1;
+    transform: rotate(5deg);
+    background: var(--color-base-solid-button-labels);
+    color: var(--marquee--colour);
+  }
+  .vusion-marquee-2 p {
+    transform: translateY(0.07em);
+    font-weight: bold;
+    margin: 0;
+    display: flex;
+    gap: 0.5em;
+    line-height: 1.1;
+    font-size: clamp(2.5rem, 12vw, 5rem);
+  }
+  .vusion-marquee-2 p::after {
+    content: "*";
+    transform: translateY(0.175em);
+  }
+  .vusion-marquee-2 p::before {
+    content: "";
+  }
+  .vusion-marquee-2--inner {
+    width: max-content;
+    display: flex;
+    text-transform: uppercase;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .vusion-marquee-2--inner {
+      animation: vusion-marquee-2-animation var(--marquee--duration) infinite linear, vusion-marquee-2-reduce-animation var(--marquee--duration) infinite linear paused;
+      animation-composition: add;
+    }
+    .vusion-marquee-2--inner:hover {
+      animation-play-state: running;
+    }
+  }
+  @keyframes vusion-marquee-2-animation {
+    from {
+      transform: translateX(calc((-1 * var(--marquee--double-size)) - (var(--marquee--double-size) * var(--marquee--direction, 1))));
+    }
+    to {
+      transform: translateX(calc(var(--marquee--double-size) * -1));
+    }
+  }
+  @keyframes vusion-marquee-2-reduce-animation {
+    from {
+      transform: translateX(calc(var(--marquee--repeat-size) * var(--marquee--direction, 1)));
+    }
+    to {
+      transform: translateX(calc(var(--marquee--double-size) * -1));
+    }
+  }
+  .vusion-marquee-2s {
+    align-content: center;
+    display: grid;
+    gap: 5vw;
+    overflow: hidden;
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+</style>
+
+<div class="vusion-marquee-2s color-{{ section.settings.color_scheme }}">
+  <section class="vusion-marquee-2" style="--char-count: {{ section.settings.text_1 | size }}">
+    <div class="vusion-marquee-2--inner">
+      <p>{{ section.settings.text_1 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_1 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_1 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_1 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_1 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_1 }}</p>
+    </div>
+  </section>
+
+  <div class="vusion-marquee-2" style="--char-count: {{ section.settings.text_2 | size }}">
+    <div class="vusion-marquee-2--inner">
+      <p>{{ section.settings.text_2 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_2 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_2 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_2 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_2 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_2 }}</p>
+    </div>
+  </div>
+
+  <section class="vusion-marquee-2" style="--char-count: {{ section.settings.text_3 | size }}">
+    <div class="vusion-marquee-2--inner">
+      <p>{{ section.settings.text_3 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_3 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_3 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_3 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_3 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_3 }}</p>
+    </div>
+  </section>
+
+  <section class="vusion-marquee-2" style="--char-count: {{ section.settings.text_4 | size }}">
+    <div class="vusion-marquee-2--inner">
+      <p>{{ section.settings.text_4 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_4 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_4 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_4 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_4 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_4 }}</p>
+    </div>
+  </section>
+</div>

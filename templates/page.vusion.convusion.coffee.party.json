@@ -1,0 +1,707 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rich_text_JhEjCz": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_wLDcEh": {
+          "type": "heading",
+          "settings": {
+            "heading": "Convusion @ ADE 2025",
+            "heading_size": "h1"
+          }
+        },
+        "text_Xqxbiw": {
+          "type": "text",
+          "settings": {
+            "text": "<p>On 22, 23 & 24 October Convusion takes places in the heart of Amsterdam, during the Amsterdam Dance Event, we're organizing 3 morning raves. </p>"
+          }
+        },
+        "button_48iX4f": {
+          "type": "button",
+          "settings": {
+            "button_label": "Tickets",
+            "button_link": "https://eventix.shop/3snq266q",
+            "button_style_secondary": true,
+            "button_label_2": "ADE Website",
+            "button_link_2": "https://www.amsterdam-dance-event.nl/en/program/2025/convusion/2740209/",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_wLDcEh",
+        "text_Xqxbiw",
+        "button_48iX4f"
+      ],
+      "disabled": true,
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-a32f3483-72a1-4d5a-88ba-7ec9fca574cd",
+        "full_width": true,
+        "padding_top": 100,
+        "padding_bottom": 96
+      }
+    },
+    "image_banner_V4xKyy": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_ygUfgM": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "",
+            "heading_size": "h1"
+          }
+        },
+        "text_K8GzXf": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "",
+            "text_style": "body"
+          }
+        },
+        "buttons_wiPGaq": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_ygUfgM",
+        "text_K8GzXf",
+        "buttons_wiPGaq"
+      ],
+      "disabled": true,
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Rokin_75_Coffeebar.webp",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": true,
+        "color_scheme": "",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    },
+    "rich_text_gJz4ih": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_AYH3rt": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Convusion Coffee Party",
+            "heading_size": "h1"
+          }
+        },
+        "text_8FineB": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Start Your Day Differently!</p>"
+          }
+        },
+        "button_FRtPXj": {
+          "type": "button",
+          "settings": {
+            "button_label": "Convusion Instagram",
+            "button_link": "https://www.instagram.com/convusioncoffee/",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_AYH3rt",
+        "text_8FineB",
+        "button_FRtPXj"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-8f153439-bf13-43e1-a572-21d7c32367c4",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "image_with_text_phfmBn": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_LfjzUq": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Convusion ADE Edition",
+            "heading_size": "h2"
+          }
+        },
+        "text_gh3UrK": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Convusion Morning Rave is a coffee-fueled party that kicks off your day with music, movement, and community. No alcohol, no late nights, just sunrise beats, fresh brews, and a community that chooses to start their day differently. It’s the space to recharge, connect, and dance yourself awake while Amsterdam comes alive. </p>",
+            "text_style": "body"
+          }
+        },
+        "button_xj9jdr": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_LfjzUq",
+        "text_gh3UrK",
+        "button_xj9jdr"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Convusion_1080x1350px_V9_ASA.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-8f153439-bf13-43e1-a572-21d7c32367c4",
+        "color_scheme": "scheme-8f153439-bf13-43e1-a572-21d7c32367c4",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "video_dDNKQP": {
+      "type": "video",
+      "name": "t:sections.video.presets.name",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "enable_video_looping": true,
+        "video": "shopify://files/videos/OFFICIAL AFTERMOVIE CONVUSION.mov",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "scheme-8f153439-bf13-43e1-a572-21d7c32367c4",
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "image_with_text_XkLUYz": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_BFfiha": {
+          "type": "heading",
+          "settings": {
+            "heading": "Alcohol Free Partying",
+            "heading_size": "h2"
+          }
+        },
+        "text_NXp99t": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Thanks to our partners, we can offer everybody FREE breakfast, coffee, drinks, music & good vibes. Enjoy Badeta Coffee, De Nieuwe Melkboer’s Dutch-made yoghurt from Dutch soil, Minor Figures’ oatmilk, Holi-Foods granola, Marie-Stella-Maris water, and ASA Matcha.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_6tUd9E": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_BFfiha",
+        "text_NXp99t",
+        "button_6tUd9E"
+      ],
+      "disabled": true,
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Sponsors.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-8f153439-bf13-43e1-a572-21d7c32367c4",
+        "color_scheme": "scheme-8f153439-bf13-43e1-a572-21d7c32367c4",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_banner_6UPJRt": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_z3QWJz": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "heading_size": "h1"
+          }
+        },
+        "text_x8HTL9": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_style": "body"
+          }
+        },
+        "buttons_9JVhLM": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_z3QWJz",
+        "text_x8HTL9",
+        "buttons_9JVhLM"
+      ],
+      "disabled": true,
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/5.png",
+        "image_2": "shopify://shop_images/6.png",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "image_behavior": "zoom-in",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "",
+        "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "video_K78qiT": {
+      "type": "video",
+      "disabled": true,
+      "name": "t:sections.video.presets.name",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "enable_video_looping": true,
+        "video": "shopify://files/videos/copy_2726C5F1-B1DC-4F22-AB41-13F7817302CA.mov",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "scheme-a32f3483-72a1-4d5a-88ba-7ec9fca574cd",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "multicolumn_PfaaBG": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_WAmVwL": {
+          "type": "column",
+          "settings": {
+            "title": "Wednesday 22 October Ticket",
+            "text": "<p>Buy Your ticket for Wednesday October 22 here: </p>",
+            "link_label": "WEDNESDAY TICKET",
+            "link": "https://eventix.shop/3snq266q"
+          }
+        },
+        "column_B3NRY9": {
+          "type": "column",
+          "settings": {
+            "title": "Thursday 23 October Ticket",
+            "text": "<p>Buy Your Ticket for Thursday October 23 here:</p>",
+            "link_label": "THURSDAY TICKET",
+            "link": "https://eventix.shop/3snq266q"
+          }
+        },
+        "column_gcGWMX": {
+          "type": "column",
+          "settings": {
+            "title": "Friday 24 October (Woman's Only Special) Ticket",
+            "text": "<p>Buy Your Ticket for Friday October 24 here: </p>",
+            "link_label": "FRIDAY TICKET",
+            "link": "https://eventix.shop/3snq266q"
+          }
+        }
+      },
+      "block_order": [
+        "column_WAmVwL",
+        "column_B3NRY9",
+        "column_gcGWMX"
+      ],
+      "disabled": true,
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "Ticketshop",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "Tickets",
+        "button_link": "https://eventix.shop/3snq266q",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "scheme-be880999-e5d7-48d8-8a58-cb50a25578e4",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_tkMY7n": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_HyWtKb": {
+          "type": "heading",
+          "settings": {
+            "heading": "Join us @ADE",
+            "heading_size": "h1"
+          }
+        },
+        "text_Y6yEkV": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Come experience mornings like never before. Powered by coffee, community, and music. </p><p>Opening at 9am, we're doing a 2-hour rave from 10am - 12pm. With your ticket you get a free drink on the house! </p>",
+            "text_style": "body"
+          }
+        },
+        "button_4KUcYK": {
+          "type": "button",
+          "settings": {
+            "button_label": "Ticketlink",
+            "button_link": "https://eventix.shop/3snq266q",
+            "button_style_secondary": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_HyWtKb",
+        "text_Y6yEkV",
+        "button_4KUcYK"
+      ],
+      "disabled": true,
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/mmm.png",
+        "height": "small",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-8f153439-bf13-43e1-a572-21d7c32367c4",
+        "color_scheme": "scheme-8f153439-bf13-43e1-a572-21d7c32367c4",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_hqPnBR": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_QMTrMV": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our First Convusion Edition",
+            "heading_size": "h2"
+          }
+        },
+        "text_9ypjpm": {
+          "type": "text",
+          "settings": {
+            "text": "<p>What A Morning that was, see the hightlights here:</p>"
+          }
+        },
+        "button_g3ypGx": {
+          "type": "button",
+          "settings": {
+            "button_label": "Instagram",
+            "button_link": "https://www.instagram.com/p/DNiOPLGo90V/",
+            "button_style_secondary": true,
+            "button_label_2": "TikTok",
+            "button_link_2": "https://www.instagram.com/p/DNiNqKpIWy1/",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_QMTrMV",
+        "text_9ypjpm",
+        "button_g3ypGx"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-8f153439-bf13-43e1-a572-21d7c32367c4",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "vusion_video_v2_EcQQwn": {
+      "type": "vusion-video-v2",
+      "name": "Vusion Video v2",
+      "settings": {
+        "video": "shopify://files/videos/Mink v2.mp4",
+        "video_url": "",
+        "description": "",
+        "enable_video_looping": true,
+        "autoplay_background": true,
+        "color_scheme": "scheme-3131dd14-872d-46eb-a27a-7cfb4fbb0c66",
+        "padding_top": 12,
+        "padding_bottom": 0,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 24
+      }
+    },
+    "rich_text_A8DXme": {
+      "type": "rich-text",
+      "blocks": {
+        "text_hV3giV": {
+          "type": "text",
+          "settings": {
+            "text": "<p>In a world where connection matters<br/>more than ever, something special is taking shape. ConVusion Coffee Party isn’t just<br/>an event — it’s an experience. A moment where music, improvisation, and people<br/>fuse into something unforgettable.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_hV3giV"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "full_width": true,
+        "padding_top": 72,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_JP4TND": {
+      "type": "rich-text",
+      "blocks": {
+        "text_jQ7xqE": {
+          "type": "text",
+          "settings": {
+            "text": "<p>ConVusion Coffee Party is a creative<br/>pop-up concept blending live DJ sets with spontaneous musical collaboration.<br/>Beats are born in the moment, the energy is raw and electric, and strangers<br/>become part of one shared rhythm.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_jQ7xqE"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "full_width": true,
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_xEEnm3": {
+      "type": "rich-text",
+      "blocks": {
+        "text_nF9JMw": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Whether in a café, gallery, or<br/>unexpected hidden space — Vusion transforms any location into a pulse of sound,<br/>soul, and community.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_nF9JMw"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "full_width": true,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "vusion_scrolling_marquee_text_EyLkpL": {
+      "type": "vusion-scrolling-marquee-text",
+      "name": "Scrolling Marquee Text",
+      "settings": {
+        "text_one": "CONVUSION",
+        "text_two": "COFFEE PARTY",
+        "color_scheme": "scheme-8f153439-bf13-43e1-a572-21d7c32367c4"
+      }
+    },
+    "multirow_HdqpaV": {
+      "type": "multirow",
+      "blocks": {
+        "row_Tdwwma": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/vusion-coffee-day-party.png",
+            "caption": "",
+            "heading": "Music Meets Morning Brew",
+            "text": "<p>Join us for a laid-back morning of beats, creativity, and great coffee in Amsterdam. DJs, artists, and music lovers unite for a fresh kind of launch—come vibe with us.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "row_XcCDc8": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/two-girls-sharing-coffee.jpg",
+            "caption": "",
+            "heading": "Sip, Scan & Sync into Sound",
+            "text": "<p>Savor specialty coffee, vibe to live DJs, and explore cutting-edge in-ear tech. Scan QR codes for exclusive deals—your gateway to the Vusion experience.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "row_nAB6r9": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/coffee-cup-disk.png",
+            "caption": "",
+            "heading": "Be Seen, Be Heard, Be Inspired",
+            "text": "<p>As the beats flow, we'll capture the energy—you, the music, the moment. Come for the coffee, stay for the creativity; this is where Amsterdam's soundscape comes alive.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_Tdwwma",
+        "row_XcCDc8",
+        "row_nAB6r9"
+      ],
+      "disabled": true,
+      "name": "t:sections.multirow.presets.name",
+      "settings": {
+        "image_height": "adapt",
+        "desktop_image_width": "medium",
+        "image_layout": "alternate-left",
+        "heading_size": "h1",
+        "text_style": "body",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "row_color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "padding_top": 12,
+        "padding_bottom": 72
+      }
+    },
+    "vusion_scrolling_marquee_with_qr_AhQFnR": {
+      "type": "vusion-scrolling-marquee-with-qr",
+      "disabled": true,
+      "name": "Vusion Marquee QR",
+      "settings": {
+        "color_scheme": "scheme-7c0082d0-d240-4b53-9d2c-cfcfb777e0ef",
+        "padding_top": 100,
+        "padding_bottom": 60,
+        "marquee_background_color": "#f32929",
+        "header_text": "",
+        "qr_code": "shopify://shop_images/qrcode_shop.weeztix.com.png",
+        "qr_code_back": "shopify://shop_images/favicon_12f29f1b-ebd4-4a5e-b37c-231fbff9107f.png",
+        "text_1": "Awaken the Frequency",
+        "text_2": "Live Loud. Feel Light",
+        "text_3": "Taste the Beat, Hear the Brew",
+        "text_4": "Morning Vibes. Vusion Highs"
+      }
+    },
+    "rich_text_pKFtKW": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_LPBEey": {
+          "type": "heading",
+          "settings": {
+            "heading": "SCAN TO JOIN THE MOVEMENT",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_LPBEey"
+      ],
+      "disabled": true,
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-8f153439-bf13-43e1-a572-21d7c32367c4",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 8
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_JhEjCz",
+    "image_banner_V4xKyy",
+    "rich_text_gJz4ih",
+    "image_with_text_phfmBn",
+    "video_dDNKQP",
+    "image_with_text_XkLUYz",
+    "image_banner_6UPJRt",
+    "video_K78qiT",
+    "multicolumn_PfaaBG",
+    "image_with_text_tkMY7n",
+    "rich_text_hqPnBR",
+    "vusion_video_v2_EcQQwn",
+    "rich_text_A8DXme",
+    "rich_text_JP4TND",
+    "rich_text_xEEnm3",
+    "vusion_scrolling_marquee_text_EyLkpL",
+    "multirow_HdqpaV",
+    "vusion_scrolling_marquee_with_qr_AhQFnR",
+    "rich_text_pKFtKW"
+  ]
+}

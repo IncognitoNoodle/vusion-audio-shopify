@@ -1,0 +1,307 @@
+{% schema %}
+{
+  "name": "Vusion Marquee 2",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 36
+    },
+    {
+      "type": "color",
+      "id": "marquee_background_color",
+      "label": "Marquee Background Color",
+      "default": "#f3bb0b"
+    },
+    {
+      "type": "text",
+      "id": "header_text",
+      "label": "Header Text",
+      "default": "SCAN TO JOIN"
+    },
+    {
+      "type": "image_picker",
+      "id": "qr_code",
+      "label": "QR Code Image (Front)"
+    },
+    {
+      "type": "image_picker",
+      "id": "qr_code_back",
+      "label": "QR Code Back Image"
+    },
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Text 1",
+      "default": "You have brains in your head"
+    },
+    {
+      "type": "text",
+      "id": "text_2",
+      "label": "Text 2",
+      "default": "You have feet in your shoes"
+    },
+    {
+      "type": "text",
+      "id": "text_3",
+      "label": "Text 3",
+      "default": "You can steer yourself"
+    },
+    {
+      "type": "text",
+      "id": "text_4",
+      "label": "Text 4",
+      "default": "Any direction you choose"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Marquee",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .vusion-marquee-2 {
+    --marquee--colour: {{ section.settings.marquee_background_color }};
+    --marquee--repeat-count: 6;
+    --marquee--base-duration: 1s;
+    --marquee--repeat-size: calc(100% / var(--marquee--repeat-count));
+    --marquee--double-size: calc(var(--marquee--repeat-size) * 2);
+    --marquee--duration: calc(var(--marquee--base-duration) * var(--char-count, 20));
+    overflow: hidden;
+    width: 110%;
+    margin-left: -5%;
+    mix-blend-mode: screen;
+    transform: rotate(-5deg);
+    background: var(--marquee--colour);
+    color: var(--color-base-solid-button-labels);
+    position: relative;
+  }
+  .vusion-marquee-2:nth-child(even) {
+    --marquee--direction: -1;
+    transform: rotate(5deg);
+    background: var(--color-base-solid-button-labels);
+    color: var(--marquee--colour);
+  }
+  .vusion-marquee-2 p {
+    transform: translateY(0.07em);
+    font-weight: bold;
+    margin: 0;
+    display: flex;
+    gap: 0.5em;
+    line-height: 1.1;
+    font-size: clamp(2.5rem, 12vw, 5rem);
+  }
+  .vusion-marquee-2 p::after {
+    content: "*";
+    transform: translateY(0.175em);
+  }
+  .vusion-marquee-2 p::before {
+    content: "";
+  }
+  .vusion-marquee-2--inner {
+    width: max-content;
+    display: flex;
+    text-transform: uppercase;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .vusion-marquee-2--inner {
+      animation: vusion-marquee-2-animation var(--marquee--duration) infinite linear, vusion-marquee-2-reduce-animation var(--marquee--duration) infinite linear paused;
+      animation-composition: add;
+    }
+    .vusion-marquee-2--inner:hover {
+      animation-play-state: running;
+    }
+  }
+  @keyframes vusion-marquee-2-animation {
+    from {
+      transform: translateX(calc((-1 * var(--marquee--double-size)) - (var(--marquee--double-size) * var(--marquee--direction, 1))));
+    }
+    to {
+      transform: translateX(calc(var(--marquee--double-size) * -1));
+    }
+  }
+  @keyframes vusion-marquee-2-reduce-animation {
+    from {
+      transform: translateX(calc(var(--marquee--repeat-size) * var(--marquee--direction, 1)));
+    }
+    to {
+      transform: translateX(calc(var(--marquee--double-size) * -1));
+    }
+  }
+  .vusion-marquee-2s {
+    align-content: center;
+    display: grid;
+    gap: 5vw;
+    overflow: hidden;
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    position: relative;
+  }
+
+  /* QR Flip Card Styles */
+  .vusion-flip-card-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    text-align: center;
+  }
+
+  .vusion-flip-card {
+    background-color: transparent;
+    width: 450px;
+    max-width: 80vw;
+    height: 450px;
+    max-height: 80vw;
+    perspective: 1000px;
+  }
+
+  .vusion-flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transition-timing-function: cubic-bezier(0.61, 0.98, 0.48, 1.01);
+    transform-style: preserve-3d;
+  }
+
+  .vusion-flip-card:hover .vusion-flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .vusion-flip-card-front,
+  .vusion-flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
+  .vusion-flip-card-front {
+    background-color: #fff;
+  }
+
+  .vusion-flip-card-back {
+    background-color: #000;
+    transform: rotateY(180deg);
+  }
+
+  .vusion-flip-card-image {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+  }
+
+  .marquee-header {
+    text-align: center;
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: white;
+  }
+</style>
+
+<div class="vusion-marquee-2s color-{{ section.settings.color_scheme }}">
+  {% if section.settings.header_text != blank %}
+    <h2 class="marquee-header">{{ section.settings.header_text }}</h2>
+  {% endif %}
+
+  <div class="vusion-flip-card-container">
+    <div class="vusion-flip-card">
+      <div class="vusion-flip-card-inner">
+        <div class="vusion-flip-card-front">
+          {% if section.settings.qr_code != blank %}
+            <img src="{{ section.settings.qr_code | img_url: '900x900' }}" alt="QR Code" class="vusion-flip-card-image">
+          {% endif %}
+        </div>
+        <div class="vusion-flip-card-back">
+          {% if section.settings.qr_code_back != blank %}
+            <img
+              src="{{ section.settings.qr_code_back | img_url: '900x900' }}"
+              alt="QR Code Back"
+              class="vusion-flip-card-image"
+            >
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="vusion-marquee-2" style="--char-count: {{ section.settings.text_1 | size }}">
+    <div class="vusion-marquee-2--inner">
+      <p>{{ section.settings.text_1 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_1 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_1 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_1 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_1 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_1 }}</p>
+    </div>
+  </section>
+
+  <div class="vusion-marquee-2" style="--char-count: {{ section.settings.text_2 | size }}">
+    <div class="vusion-marquee-2--inner">
+      <p>{{ section.settings.text_2 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_2 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_2 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_2 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_2 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_2 }}</p>
+    </div>
+  </div>
+
+  <section class="vusion-marquee-2" style="--char-count: {{ section.settings.text_3 | size }}">
+    <div class="vusion-marquee-2--inner">
+      <p>{{ section.settings.text_3 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_3 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_3 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_3 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_3 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_3 }}</p>
+    </div>
+  </section>
+
+  <section class="vusion-marquee-2" style="--char-count: {{ section.settings.text_4 | size }}">
+    <div class="vusion-marquee-2--inner">
+      <p>{{ section.settings.text_4 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_4 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_4 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_4 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_4 }}</p>
+      <p aria-hidden="true">{{ section.settings.text_4 }}</p>
+    </div>
+  </section>
+</div>

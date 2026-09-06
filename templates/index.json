@@ -1,0 +1,632 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "vusion_video_hero_GGxKHt": {
+      "type": "vusion-video-hero",
+      "blocks": {
+        "heading_KWGwBC": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image banner",
+            "heading_size": "hxxl"
+          }
+        }
+      },
+      "block_order": [
+        "heading_KWGwBC"
+      ],
+      "settings": {
+        "video": "shopify://files/videos/vusion-audio-hero-video .mp4",
+        "image_overlay_opacity": 50,
+        "image_height": "large",
+        "use_cycling_animation": true,
+        "static_text": "YOUR",
+        "cycling_text_1": "SOUND",
+        "cycling_text_2": "STORY",
+        "cycling_text_3": "VUSION",
+        "desktop_content_position": "middle-center",
+        "text_animation": "letter-animation",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    },
+    "vusion_collage_HNt7i4": {
+      "type": "vusion-collage",
+      "settings": {
+        "heading": "We believe that sound is more than just an experience",
+        "heading_size": "h0",
+        "button_link": "shopify://pages/about",
+        "button_label": "Our Story",
+        "button_color": "#f32929",
+        "text": "<p><strong>Vusion Audio</strong> fuses cutting-edge tech with the passion of musicians, DJs, and audio pros. Our high-precision, customizable IEMs deliver pure sound and all-day comfort, so artists can feel every note. More than a brand, Vusion is a movement pushing the boundaries of sound.</p>",
+        "color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "vusion_scrolling_marquee_text_gnBUMt": {
+      "type": "vusion-scrolling-marquee-text",
+      "settings": {
+        "text_one": "Pure Sound.",
+        "text_two": "No Distraction.",
+        "color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4"
+      }
+    },
+    "image_with_text_PbcnVw": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_mxzC7P": {
+          "type": "heading",
+          "settings": {
+            "heading": "Beyond Precision",
+            "heading_size": "h1"
+          }
+        },
+        "text_XwYPHH": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Vusion Audio</strong> delivers pure, high-fidelity sound with cutting-edge in-ear monitors. Designed for artists and audiophiles, we redefine clarity, comfort, and performance, so you hear every detail, exactly as it was meant to be. </p>",
+            "text_style": "subtitle"
+          }
+        }
+      },
+      "block_order": [
+        "heading_mxzC7P",
+        "text_XwYPHH"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/vusion-audio-dj-mink.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "zoom-in",
+        "content_layout": "overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "color_scheme": "scheme-be880999-e5d7-48d8-8a58-cb50a25578e4",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "multicolumn_iMngxJ": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_NtX3Ht": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/dj-iem-ambient-in-piano.jpg",
+            "title": "Innovate Your Sound",
+            "text": "<p>Dual magnetic drivers, bi-directional pressure relief, and customizable filters let you control every detail of your mix with crystal-clear sound and deep, natural bass.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_WnFJ4j": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/dj-excited-on-wearing-vusion.jpg",
+            "title": "Designed for Artists",
+            "text": "<p>With an ergonomic fit and premium materials, our IEMs ensure all-day wearability, superior isolation, and a fatigue-free listening experience.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_fpYWC8": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/dj-board-volume-slider.jpg",
+            "title": "Pure Audio",
+            "text": "<p>For those who demand high-fidelity, wired IEMs offer pure, uninterrupted audio; no batteries, no pairing, just plug in and play.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_NtX3Ht",
+        "column_WnFJ4j",
+        "column_fpYWC8"
+      ],
+      "settings": {
+        "title": "Elevating Artistry",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "Check FAQs",
+        "button_link": "shopify://pages/faqs",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "featured_product_Wtcn9g": {
+      "type": "featured-product",
+      "blocks": {
+        "title_4Mb3KD": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_WNWbNX": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_xQTxkY": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_gFEzdt": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_x6HBkY": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share_kjYawj": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "title_4Mb3KD",
+        "price_WNWbNX",
+        "variant_picker_xQTxkY",
+        "quantity_selector_gFEzdt",
+        "buy_buttons_x6HBkY",
+        "share_kjYawj"
+      ],
+      "settings": {
+        "product": "dj-iem-ambient",
+        "color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "media_position": "left",
+        "image_zoom": "hover",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 72,
+        "padding_bottom": 0
+      }
+    },
+    "vusion_scrolling_marquee_text_2_J7igCb": {
+      "type": "vusion-scrolling-marquee-text-2",
+      "settings": {
+        "color_scheme": "scheme-7c0082d0-d240-4b53-9d2c-cfcfb777e0ef",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "marquee_background_color": "#f32929",
+        "text_1": "Sound is more than an experience",
+        "text_2": "Bridging technology and passion",
+        "text_3": "Innovation, precision, and authenticity",
+        "text_4": "Redefining audio precision for artists"
+      }
+    },
+    "rich_text_hqmBFj": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_7hVJMc": {
+          "type": "heading",
+          "settings": {
+            "heading": "Why Vusion?",
+            "heading_size": "h1"
+          }
+        },
+        "text_fLFjKB": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Vusion is built for artists who live and breathe sound. We craft cutting-edge in-ear monitors designed to deliver unmatched clarity, comfort, and precision—so musicians and DJs can experience their music exactly as it was meant to be heard.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_7hVJMc",
+        "text_fLFjKB"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "full_width": true,
+        "padding_top": 36,
+        "padding_bottom": 72
+      }
+    },
+    "multicolumn_ejKWcE": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_Rc6XiY": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/mink-dj.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_QPfCFV": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/job-jacob.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_Rc6XiY",
+        "column_QPfCFV"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 72
+      }
+    },
+    "vusion_testimonials_VcVJfm": {
+      "type": "vusion-testimonials",
+      "blocks": {
+        "testimonial_h9zphy": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/testimonials-profile-wade.jpg",
+            "author": "WADE",
+            "title": "DJ & Producer | @wademusik",
+            "title_link": "https://www.instagram.com/wademusik/",
+            "content": "<p>For comfortable in-ears to play with, I would choose Vusion audio for sure! Their perfect fit and superior sound quality make them my top pick for any performance.</p>"
+          }
+        },
+        "testimonial_7t7z3e": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/testimonials-profile-johnny-kelvin.jpg",
+            "author": "Johnny Kelvin",
+            "title": "Vocalist DJ | Voted Billboard Best Producer #8 in 2022 | @johnnykelvin",
+            "title_link": "https://www.instagram.com/johnnykelvin/",
+            "content": "<p>With the Z22 In-Ear Monitors, it's like stepping right into the heart of the music. The clarity and depth are unmatched, giving you a full-range sound experience that keeps every detail intact.<br/><br/></p>"
+          }
+        },
+        "testimonial_PMtqV3": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/testimonials-profile-mink.jpg",
+            "author": "Mink",
+            "title": "DJ & Producer | @minkfp",
+            "title_link": "https://www.instagram.com/minkfp/",
+            "content": "<p>This is something fresh that many DJs will love. I can finally hear both my mix and the room. It helps me stay tight in the mix while feeding off the crowd’s energy</p>"
+          }
+        },
+        "testimonial_RP3ejz": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/rayzir-testimonials.png",
+            "author": "Rayzir",
+            "title": "DJ & Producer | @rayzir",
+            "title_link": "https://www.instagram.com/rayzir/",
+            "content": "<p>These in-ear monitors from Vusion are a lifesaver. I hear my mixes better while still hearing the energy of the crowd. This, while my ears are protected from the loud noise of the monitors.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_h9zphy",
+        "testimonial_7t7z3e",
+        "testimonial_PMtqV3",
+        "testimonial_RP3ejz"
+      ],
+      "settings": {
+        "color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "heading": "What are DJ's saying",
+        "heading_size": "h1",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "featured_blog_LThHe8": {
+      "type": "featured-blog",
+      "settings": {
+        "blog": "news",
+        "post_limit": 3,
+        "heading": "VUSION Blogs",
+        "heading_size": "h1",
+        "columns_desktop": 3,
+        "show_view_all": false,
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "image_with_text_w633UG": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_dhRRqP": {
+          "type": "heading",
+          "settings": {
+            "heading": "Calling Audiophiles",
+            "heading_size": "h1"
+          }
+        },
+        "text_U6qthH": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Attention audiophiles! Step into the Vusion community, where passion for pristine sound meets innovation. Connect with fellow music lovers, artists, and creators who live for every beat, every nuance, and every sonic detail. Join us and experience sound like never before!</p>",
+            "text_style": "subtitle"
+          }
+        }
+      },
+      "block_order": [
+        "heading_dhRRqP",
+        "text_U6qthH"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/djs-wearing-vusion.png",
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "rich_text_9ew8LX": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_dYbxaE": {
+          "type": "heading",
+          "settings": {
+            "heading": "Earasers earplugs",
+            "heading_size": "h1"
+          }
+        },
+        "text_PhfU6n": {
+          "type": "text",
+          "settings": {
+            "text": "<p>With over 50 years of expertise in the hearing care industry, Earasers have redefined what musicians and music lovers expect from earplugs. Designed to preserve sound clarity while protecting your hearing, Earasers have won <em>Best Music Earplug</em> five years in a row. Whether you're on stage or at a festival, Earasers eliminate the common excuses for not wearing protection—so you can enjoy the moment without compromising your ears.</p>"
+          }
+        },
+        "button_UpQdQW": {
+          "type": "button",
+          "settings": {
+            "button_label": "Earasers products",
+            "button_link": "shopify://collections/earplugs-collection",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_dYbxaE",
+        "text_PhfU6n",
+        "button_UpQdQW"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "image_with_text_daFjmP": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_9Ke49i": {
+          "type": "heading",
+          "settings": {
+            "heading": "Earasers VS Custom mold",
+            "heading_size": "h2"
+          }
+        },
+        "text_bqcaUH": {
+          "type": "text",
+          "settings": {
+            "text": "<ul><li>We created an open canal - making it easy for sound to travel through</li><li>We placed the filter at the tip of your eardrum - creating the most clear sound reduction</li><li>Made from Medical Grade Silicone so it shapes to the form of your ear - Custom Fit for 1/3 of the price</li></ul>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_9Ke49i",
+        "text_bqcaUH"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/1_bba16510-ba0f-4357-b430-42084e192290.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_pEW9Hh": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_CTigXx": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Difference",
+            "heading_size": "h1"
+          }
+        },
+        "text_rUgKWU": {
+          "type": "text",
+          "settings": {
+            "text": "<ul><li>We use a <strong>V-filter technology</strong> - offering sound reduction in certain frequencies. Keeping sound clear and not 'muffled'</li><li>We use <strong>Medical Silicone</strong> - making the earplug shape to the form of your ear canal</li><li><strong>Virtually invisible</strong> - no one will know they're in</li></ul>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_CTigXx",
+        "text_rUgKWU"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/EARASERS_attenuation_tables.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "174799050914ec4669": {
+      "type": "apps",
+      "blocks": {
+        "instafeed_app_block_3wqcAG": {
+          "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "title": "Follow us on Instagram",
+            "title_color": "#f32929",
+            "title_size_v2": 36,
+            "alignment": "center",
+            "instafeed_margin_top": 0,
+            "instafeed_margin_bottom": 0,
+            "instafeed_margin_sides": 0,
+            "show_instagram_link": true,
+            "link_alignment": "left",
+            "link_color": "#000000",
+            "background_color": "#0a0a0a",
+            "feed_id": "",
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "instafeed_app_block_3wqcAG"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "vusion_email_signup_banner_r7dBaq": {
+      "type": "vusion-email-signup-banner",
+      "blocks": {
+        "heading_netK9X": {
+          "type": "heading",
+          "settings": {
+            "heading": "Experience the Sound Revolution",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph_RfEbVR": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Stay Tuned with Vusion — Get Exclusive Discounts, Track Your Orders Effortlessly, Be the First to Know About Upcoming Products, and Experience Sound Without Limits.</p>",
+            "text_style": "body"
+          }
+        },
+        "email_form_LgjwL6": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_netK9X",
+        "paragraph_RfEbVR",
+        "email_form_LgjwL6"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/man-walking-away-in-shadows.jpg",
+        "image_overlay_opacity": 50,
+        "show_background_image": true,
+        "image_height": "large",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-3131dd14-872d-46eb-a27a-7cfb4fbb0c66",
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    }
+  },
+  "order": [
+    "vusion_video_hero_GGxKHt",
+    "vusion_collage_HNt7i4",
+    "vusion_scrolling_marquee_text_gnBUMt",
+    "image_with_text_PbcnVw",
+    "multicolumn_iMngxJ",
+    "featured_product_Wtcn9g",
+    "vusion_scrolling_marquee_text_2_J7igCb",
+    "rich_text_hqmBFj",
+    "multicolumn_ejKWcE",
+    "vusion_testimonials_VcVJfm",
+    "featured_blog_LThHe8",
+    "image_with_text_w633UG",
+    "rich_text_9ew8LX",
+    "image_with_text_daFjmP",
+    "image_with_text_pEW9Hh",
+    "174799050914ec4669",
+    "vusion_email_signup_banner_r7dBaq"
+  ]
+}

@@ -1,0 +1,22 @@
+/* Change background color */
+.shopify-policy__container {
+  padding-bottom: 5rem;
+  max-width: 1200px !important; /* Or your preferred width */
+  width: 100%;
+}
+
+/*
+.shopify-policy__body {
+
+}
+
+.shopify-policy__title {
+  color: #2a2a2a;
+  margin-bottom: 1.5rem;
+}
+
+.shopify-policy__body h2 {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+*/

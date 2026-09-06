@@ -1,0 +1,307 @@
+{{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
+
+<style>
+  /* Main Container */
+  .vusion-video-v2 {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  /* Portrait Video Container */
+  .vusion-video-v2-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px; /* Constrain width for portrait */
+    margin: 0 auto;
+    overflow: hidden;
+    background: #000;
+    aspect-ratio: 9/16; /* Portrait aspect ratio */
+  }
+
+  /* Video Elements - Fill container while maintaining aspect ratio */
+  .vusion-video-v2-iframe,
+  .vusion-video-v2-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Show full video without cropping */
+  }
+
+  /* Background Autoplay Styles */
+  .vusion-video-v2-autoplay {
+    display: block !important;
+    z-index: 1;
+  }
+
+  /* Play Button */
+  .vusion-video-v2-poster {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  /* Mobile Optimization */
+  @media screen and (max-width: 749px) {
+    .vusion-video-v2-container {
+      max-width: 100%; /* Full width on mobile */
+    }
+    .vusion-video-v2 {
+      padding-top: {{ section.settings.padding_top_mobile }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+  }
+</style>
+
+{%- liquid
+  # Initialize variables
+  assign video_id = section.settings.video.id | default: section.settings.video_url.id
+  assign video_alt = section.settings.video.alt | default: section.settings.description
+  assign alt = 'sections.video.load_video' | t: description: video_alt | escape
+  assign poster = section.settings.video.preview_image | default: section.settings.cover_image
+  assign autoplay_background = section.settings.autoplay_background
+
+  # Set video parameters
+  if autoplay_background
+    assign show_controls = false
+    assign muted = true
+  else
+    assign show_controls = true
+    assign muted = false
+  endif
+-%}
+
+<div class="vusion-video-v2 color-{{ section.settings.color_scheme }} gradient">
+  <div class="vusion-video-v2-container">
+    {%- if autoplay_background -%}
+      {%- if section.settings.video -%}
+        {{
+          section.settings.video
+          | video_tag:
+            image_size: '1100x',
+            autoplay: true,
+            loop: true,
+            muted: muted,
+            controls: show_controls,
+            class: 'vusion-video-v2-video vusion-video-v2-autoplay'
+        }}
+      {%- elsif section.settings.video_url != null -%}
+        {%- if section.settings.video_url.type == 'youtube' -%}
+          <iframe
+            src="https://www.youtube.com/embed/{{ video_id }}?autoplay=1&mute=1&loop=1&playlist={{ video_id }}&controls=0"
+            class="vusion-video-v2-iframe vusion-video-v2-autoplay js-youtube"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+            title="{{ section.settings.description | escape }}"
+          ></iframe>
+        {%- else -%}
+          <iframe
+            src="https://player.vimeo.com/video/{{ video_id }}?autoplay=1&background=1&muted=1&loop=1"
+            class="vusion-video-v2-iframe vusion-video-v2-autoplay js-vimeo"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+            title="{{ section.settings.description | escape }}"
+          ></iframe>
+        {%- endif -%}
+      {%- endif -%}
+    {%- endif -%}
+
+    <deferred-media
+      class="vusion-video-v2-deferred deferred-media no-js-hidden"
+      data-media-id="{{ video_id }}"
+      {% if autoplay_background %}
+        style="display: none;"
+      {% endif %}
+    >
+      <button
+        id="Deferred-Poster-Modal-{{ video_id }}"
+        class="vusion-video-v2-poster media deferred-media__poster"
+        type="button"
+        aria-label="{{ alt }}"
+      >
+        {%- if poster != null -%}
+          {{
+            poster
+            | image_url: width: 1500
+            | image_tag:
+              loading: 'lazy',
+              sizes: '100vw',
+              widths: '375, 750, 1100, 1500',
+              alt: alt,
+              class: 'vusion-video-v2-poster-img'
+          }}
+        {%- else -%}
+          {{ 'hero-apparel-3' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
+        {%- endif -%}
+        <span class="deferred-media__poster-button motion-reduce">
+          {{- 'icon-play.svg' | inline_asset_content -}}
+        </span>
+      </button>
+
+      <template>
+        {%- if section.settings.video == null and section.settings.video_url != null -%}
+          {%- liquid
+            assign loop = ''
+            if section.settings.enable_video_looping
+              assign loop = '&loop=1&playlist=' | append: video_id
+            endif
+          -%}
+          {%- if section.settings.video_url.type == 'youtube' -%}
+            <iframe
+              src="https://www.youtube.com/embed/{{ video_id }}?enablejsapi=1&autoplay=1{{ loop }}"
+              class="vusion-video-v2-iframe js-youtube"
+              allow="autoplay; encrypted-media"
+              allowfullscreen
+              title="{{ section.settings.description | escape }}"
+            ></iframe>
+          {%- else -%}
+            <iframe
+              src="https://player.vimeo.com/video/{{ video_id }}?autoplay=1{{ loop }}"
+              class="vusion-video-v2-iframe js-vimeo"
+              allow="autoplay; encrypted-media"
+              allowfullscreen
+              title="{{ section.settings.description | escape }}"
+            ></iframe>
+          {%- endif -%}
+        {%- else -%}
+          {{
+            section.settings.video
+            | video_tag:
+              image_size: '1100x',
+              autoplay: true,
+              loop: section.settings.enable_video_looping,
+              controls: show_controls,
+              muted: muted,
+              controlsList: 'nodownload noplaybackrate',
+              disablepictureinpicture: true,
+              class: 'vusion-video-v2-video'
+          }}
+        {%- endif -%}
+      </template>
+    </deferred-media>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Vusion Video v2",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Video Settings"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Shopify-hosted video"
+    },
+    {
+      "type": "video_url",
+      "id": "video_url",
+      "accept": ["youtube", "vimeo"],
+      "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+      "label": "External video URL",
+      "info": "Supports YouTube and Vimeo"
+    },
+    {
+      "type": "image_picker",
+      "id": "cover_image",
+      "label": "Cover image"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description",
+      "info": "For accessibility and SEO"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_video_looping",
+      "label": "Enable looping",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay_background",
+      "label": "Autoplay in background",
+      "default": true,
+      "info": "Video will autoplay muted in background"
+    },
+    {
+      "type": "header",
+      "content": "Design"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top Padding (Desktop)",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom Padding (Desktop)",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Top Padding (Mobile)",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Bottom Padding (Mobile)",
+      "default": 24
+    }
+  ],
+  "presets": [
+    {
+      "name": "Vusion Video v2",
+      "settings": {
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "autoplay_background": true,
+        "enable_video_looping": true,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 24
+      }
+    }
+  ]
+}
+{% endschema %}

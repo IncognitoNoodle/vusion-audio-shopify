@@ -1,0 +1,233 @@
+{{ 'video-section.css' | asset_url | stylesheet_tag }}
+{{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .vusion-video.section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  .vusion-video__media-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+  }
+
+  .vusion-video__media-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: {{ section.settings.video_opacity | divided_by: 100.0 }};
+  }
+
+  .vusion-video__placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(var(--color-foreground), 0.04);
+  }
+
+  .vusion-video__placeholder-svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .vusion-video__content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: {{ section.settings.heading_alignment }};
+    text-align: {{ section.settings.heading_alignment }};
+    z-index: 2;
+    padding: 2rem;
+  }
+
+  .vusion-video__heading {
+    margin-bottom: 1rem;
+    color: rgb(var(--color-foreground));
+  }
+
+  .vusion-video__subheading {
+    max-width: 600px;
+    color: rgb(var(--color-foreground));
+  }
+
+  @media screen and (min-width: 750px) {
+    .vusion-video.section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="vusion-video color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div class="vusion-video__container isolate{% unless section.settings.full_width %} page-width{% endunless %}">
+    <div class="vusion-video__media-wrapper">
+      {%- if section.settings.video != null -%}
+        {{
+          section.settings.video
+          | video_tag:
+            image_size: '1100x',
+            autoplay: true,
+            loop: true,
+            controls: false,
+            muted: true,
+            class: 'vusion-video__video'
+        }}
+      {%- else -%}
+        <div class="vusion-video__placeholder">
+          {{ 'hero-apparel-1' | placeholder_svg_tag: 'vusion-video__placeholder-svg' }}
+        </div>
+      {%- endif -%}
+
+      <div class="vusion-video__content{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        {%- unless section.settings.heading == blank -%}
+          <h2 class="vusion-video__heading {{ section.settings.heading_size }}">{{ section.settings.heading }}</h2>
+        {%- endunless -%}
+        {%- unless section.settings.subheading == blank -%}
+          <div class="vusion-video__subheading rte">{{ section.settings.subheading }}</div>
+        {%- endunless -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Vusion Video Background",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "default": "Video Heading",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "<p>Add your subheading text here</p>"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "Small"
+        },
+        {
+          "value": "h1",
+          "label": "Medium"
+        },
+        {
+          "value": "h0",
+          "label": "Large"
+        },
+        {
+          "value": "hxl",
+          "label": "Extra Large"
+        },
+        {
+          "value": "hxxl",
+          "label": "Extra Extra Large"
+        }
+      ],
+      "default": "h1",
+      "label": "Heading Size"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Text Alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Shopify Video"
+    },
+    {
+      "type": "range",
+      "id": "video_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Video Opacity",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full Width",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top Padding",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom Padding",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Vusion Video Background",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

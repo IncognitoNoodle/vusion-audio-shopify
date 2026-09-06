@@ -1,0 +1,388 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": false,
+        "show_collection_image": false,
+        "color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "quick_add": "none",
+        "enable_filtering": true,
+        "filter_type": "horizontal",
+        "enable_sorting": true,
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "175381191733d150ac": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_all_reviews_text_VYbz8T": {
+          "type": "shopify://apps/judge-me-reviews/blocks/all_reviews_text/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_all_reviews_text_VYbz8T"
+      ],
+      "disabled": true,
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "image_with_text_4NQtqK": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_tMRck7": {
+          "type": "heading",
+          "settings": {
+            "heading": "Trusted by Professionals",
+            "heading_size": "h2"
+          }
+        },
+        "text_rKfQUL": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Renowned artists such as <strong>Franky Rizardo, Marco Carola, Paco Osuna, Danny Avila, ANOTR, Stephan Bodzin, Luuk van Dijk, Mason Collective, Toman, Wade, Joey Daniel and many more </strong>have enthusiastically embraced these innovative earplugs and are reaping the benefits.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_tMRck7",
+        "text_rKfQUL"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/DJ_Influencer_post.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "video_KRDtFh": {
+      "type": "video",
+      "name": "t:sections.video.presets.name",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "enable_video_looping": false,
+        "video": "shopify://files/videos/Earasers - with logo.mp4",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_rNUKdm": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_xqehtq": {
+          "type": "heading",
+          "settings": {
+            "heading": "Testimonials",
+            "heading_size": "h2"
+          }
+        },
+        "text_AnhY6K": {
+          "type": "text",
+          "settings": {
+            "text": "<p>\"I’ve found Earasers to be the most comfortable and clear-sounding ear protection I’ve used, and throughout my tours, I keep coming back to them.\" <em><strong>(Franky Rizardo)</strong></em></p><p>\"For comfortable earplugs to play with, I would choose Earasers for sure! Their perfect fit and superior noise reduction make them my top pick for any performance.” <em><strong>(WADE)</strong></em></p><p>“As a DJ, clarity is everything. Earasers deliver crystal clear sound while keeping my ears safe - I wouldn’t use anything else.” <em><strong>(Joey Daniel)</strong></em></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_xqehtq",
+        "text_AnhY6K"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-4ccda63f-e0ed-4536-a627-c2875d7d8ca4",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "image_with_text_x8NqdB": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_CfYcpE": {
+          "type": "heading",
+          "settings": {
+            "heading": "What makes Earasers Unique?",
+            "heading_size": "h2"
+          }
+        },
+        "text_n8h7Nc": {
+          "type": "text",
+          "settings": {
+            "text": "<h4>4 USP's that make you want to choose for Earasers</h4>",
+            "text_style": "body"
+          }
+        },
+        "button_Rfybzc": {
+          "type": "button",
+          "settings": {
+            "button_label": "Earasers Music earplugs",
+            "button_link": "shopify://products/earasers-earplugs",
+            "button_style_secondary": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_CfYcpE",
+        "text_n8h7Nc",
+        "button_Rfybzc"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/1_bba16510-ba0f-4357-b430-42084e192290.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-3131dd14-872d-46eb-a27a-7cfb4fbb0c66",
+        "color_scheme": "scheme-3131dd14-872d-46eb-a27a-7cfb4fbb0c66",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_zXMj8R": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_TG9W9n": {
+          "type": "heading",
+          "settings": {
+            "heading": "Big Price Difference!",
+            "heading_size": "h2"
+          }
+        },
+        "text_kq9z4U": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Spend less, hear more</p>",
+            "text_style": "body"
+          }
+        },
+        "button_rCeDEi": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_TG9W9n",
+        "text_kq9z4U",
+        "button_rCeDEi"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/2_33557e0f-2f44-4e6f-915d-3ee82501f748.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-7c0082d0-d240-4b53-9d2c-cfcfb777e0ef",
+        "color_scheme": "scheme-3131dd14-872d-46eb-a27a-7cfb4fbb0c66",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_ENRCYA": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_PCxYQL": {
+          "type": "heading",
+          "settings": {
+            "heading": "Next Day Delivery",
+            "heading_size": "h1"
+          }
+        },
+        "text_tmPdbY": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Why wait if you can enjoy your Earasers tomorrow!</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_PCxYQL",
+        "text_tmPdbY"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/3.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-7c0082d0-d240-4b53-9d2c-cfcfb777e0ef",
+        "color_scheme": "scheme-3131dd14-872d-46eb-a27a-7cfb4fbb0c66",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_xHUrUp": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_MQbafa": {
+          "type": "heading",
+          "settings": {
+            "heading": "Comfort is King!",
+            "heading_size": "h1"
+          }
+        },
+        "text_DM7CBw": {
+          "type": "text",
+          "settings": {
+            "text": "<p>You'll even forget you're wearing them..</p>",
+            "text_style": "body"
+          }
+        },
+        "button_JPkLAY": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_MQbafa",
+        "text_DM7CBw",
+        "button_JPkLAY"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/4.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-3131dd14-872d-46eb-a27a-7cfb4fbb0c66",
+        "color_scheme": "scheme-3131dd14-872d-46eb-a27a-7cfb4fbb0c66",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_nUQedk": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_wpGieV": {
+          "type": "heading",
+          "settings": {
+            "heading": "Let the quality speak",
+            "heading_size": "h1"
+          }
+        },
+        "text_d9Cxmz": {
+          "type": "text",
+          "settings": {
+            "text": "<p>This is 50+ Years of experience in the hearing care industry, all in one earplug. </p>",
+            "text_style": "body"
+          }
+        },
+        "button_pj387z": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_wpGieV",
+        "text_d9Cxmz",
+        "button_pj387z"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/5_b32242f9-2146-4e31-8aac-8a0c3764faf9.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-3131dd14-872d-46eb-a27a-7cfb4fbb0c66",
+        "color_scheme": "scheme-3131dd14-872d-46eb-a27a-7cfb4fbb0c66",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid",
+    "175381191733d150ac",
+    "image_with_text_4NQtqK",
+    "video_KRDtFh",
+    "rich_text_rNUKdm",
+    "image_with_text_x8NqdB",
+    "image_with_text_zXMj8R",
+    "image_with_text_ENRCYA",
+    "image_with_text_xHUrUp",
+    "image_with_text_nUQedk"
+  ]
+}

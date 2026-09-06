@@ -1,0 +1,393 @@
+{%- style -%}
+  .vusion-testimonials {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    background-color: rgb(var(--color-background));
+    color: rgb(var(--color-foreground));
+  }
+
+  .vusion-testimonials__container {
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    overflow: hidden;
+    max-width: var(--page-width);
+  }
+
+  .vusion-testimonials__heading {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: rgb(var(--color-foreground));
+  }
+
+  .vusion-testimonials__slider {
+    padding-bottom: 0; /* Remove padding since pagination will be below */
+    margin-bottom: 2rem; /* Space between cards and dots */
+  }
+
+  /* Equal height cards */
+  .swiper-wrapper {
+    display: flex !important;
+    align-items: stretch !important;
+  }
+
+  .swiper-slide {
+    height: auto !important;
+    display: flex !important;
+  }
+
+  .vusion-testimonials__card {
+    border-radius: 0.8rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    background: rgb(var(--color-background));
+    border: 2px solid #f32929;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .vusion-testimonials__content {
+    flex: 1 0 auto;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    color: rgb(var(--color-foreground));
+  }
+
+  .vusion-testimonials__author {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .vusion-testimonials__author-image {
+    width: 5.5rem;
+    height: 5.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .vusion-testimonials__author-info {
+    flex-direction: column;
+  }
+
+  .vusion-testimonials__author-name {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: rgb(var(--color-foreground));
+  }
+
+  .vusion-testimonials__author-title {
+    font-size: 1.3rem;
+    opacity: 0.8;
+    color: rgb(var(--color-foreground));
+  }
+
+  .vusion-testimonials__author-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .vusion-testimonials__author-title a:hover {
+    opacity: 1;
+    text-decoration: underline;
+  }
+
+  /* Position pagination below testimonials */
+  .vusion-testimonials__pagination {
+    position: static !important; /* Remove Swiper's absolute positioning */
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  /* White swiper dots */
+  .swiper-pagination-bullet {
+    background: rgba(255, 255, 255, 0.5) !important;
+    opacity: 1 !important;
+    width: 10px !important;
+    height: 10px !important;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: #ffffff !important;
+    transform: scale(1.2) !important;
+  }
+
+  @media screen and (max-width: 989px) {
+    .vusion-testimonials__card {
+      padding: 1.8rem;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .vusion-testimonials {
+      padding: {{ section.settings.padding_top | times: 0.5 | round: 0 }}px 0 {{ section.settings.padding_bottom | times: 0.5 | round: 0 }}px;
+    }
+    .vusion-testimonials__container {
+      padding: 0 1.5rem;
+    }
+    .vusion-testimonials__content {
+      font-size: 1.5rem;
+    }
+  }
+{%- endstyle -%}
+
+<!-- Add Swiper JS CDN with defer -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+
+<div class="vusion-testimonials color-{{ section.settings.color_scheme }}">
+  <div class="vusion-testimonials__container">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="vusion-testimonials__heading {{ section.settings.heading_size }}">
+        {{ section.settings.heading | escape }}
+      </h2>
+    {%- endif -%}
+
+    <div class="swiper vusion-testimonials__slider" id="VusionTestimonialsSlider-{{ section.id }}">
+      <div class="swiper-wrapper">
+        {%- for block in section.blocks -%}
+          <div class="swiper-slide">
+            <div class="vusion-testimonials__card" {{ block.shopify_attributes }}>
+              <div class="vusion-testimonials__content">
+                {{ block.settings.content }}
+              </div>
+              <div class="vusion-testimonials__author">
+                {%- if block.settings.image != blank -%}
+                  <img
+                    src="{{ block.settings.image | img_url: '150x150', crop: 'center' }}"
+                    alt="{{ block.settings.author | escape }}"
+                    class="vusion-testimonials__author-image"
+                    loading="lazy"
+                    width="150"
+                    height="150"
+                  >
+                {%- else -%}
+                  <div class="vusion-testimonials__author-image placeholder-background">
+                    {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                  </div>
+                {%- endif -%}
+                <div class="vusion-testimonials__author-info">
+                  <p class="vusion-testimonials__author-name">{{ block.settings.author }}</p>
+                  {%- if block.settings.title != blank -%}
+                    {%- if block.settings.title_link != blank -%}
+                      <p class="vusion-testimonials__author-title">
+                        <a href="{{ block.settings.title_link }}" target="_blank" rel="noopener noreferrer">
+                          {{ block.settings.title }}
+                        </a>
+                      </p>
+                      <script type="application/ld+json">
+                        {
+                          "@context": "https://schema.org",
+                          "@type": "Person",
+                          "name": "{{ block.settings.author | escape }}",
+                          "jobTitle": "{{ block.settings.title | escape }}",
+                          "url": "{{ block.settings.title_link }}",
+                          "image": "{% if block.settings.image != blank %}{{ block.settings.image | img_url: '300x300', crop: 'center' }}{% endif %}"
+                        }
+                      </script>
+                    {%- else -%}
+                      <p class="vusion-testimonials__author-title">{{ block.settings.title }}</p>
+                    {%- endif -%}
+                  {%- endif -%}
+                </div>
+              </div>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+
+    <!-- Pagination placed outside swiper container but inside main container -->
+    <div class="vusion-testimonials__pagination swiper-pagination"></div>
+  </div>
+</div>
+
+<script
+  defer
+>
+  document.addEventListener('DOMContentLoaded', function() {
+    const sliderEl = document.getElementById('VusionTestimonialsSlider-{{ section.id }}');
+    const paginationEl = document.querySelector('.vusion-testimonials__pagination');
+    
+    if (!sliderEl || !paginationEl) return;
+
+    const swiper = new Swiper(sliderEl, {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      pagination: {
+        el: paginationEl,
+        clickable: true,
+      },
+      breakpoints: {
+        750: {
+          slidesPerView: 2,
+          spaceBetween: 20
+        },
+        990: {
+          slidesPerView: 3,
+          spaceBetween: 30
+        }
+      },
+      on: {
+        init: function() {
+          // Force equal heights
+          const maxHeight = Math.max(...Array.from(this.slides).map(slide => slide.offsetHeight));
+          this.slides.forEach(slide => {
+            slide.style.height = `${maxHeight}px`;
+          });
+        },
+        resize: function() {
+          // Recalculate heights on resize
+          this.slides.forEach(slide => {
+            slide.style.height = 'auto';
+          });
+          const maxHeight = Math.max(...Array.from(this.slides).map(slide => slide.offsetHeight));
+          this.slides.forEach(slide => {
+            slide.style.height = `${maxHeight}px`;
+          });
+        }
+      }
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Vusion Testimonials",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "What are DJ's saying?",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {"value": "h2", "label": "Small"},
+        {"value": "h1", "label": "Medium"},
+        {"value": "h0", "label": "Large"}
+      ],
+      "default": "h1",
+      "label": "Heading Size"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Author Image"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "default": "Author Name",
+          "label": "Author Name"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Author Title",
+          "label": "Author Title"
+        },
+        {
+          "type": "url",
+          "id": "title_link",
+          "label": "Author Title Link",
+          "info": "Optional link for the author title"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "default": "<p>Customer testimonial</p>",
+          "label": "Content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Vusion Testimonials",
+      "blocks": [
+        {
+          "type": "testimonial",
+          "settings": {
+            "author": "Johnny Kelvin",
+            "title": "Vocalist DJ | Voted Billboard Best producer #8 in 2022",
+            "title_link": "https://example.com/johnnykelvin",
+            "content": "<p>\"With the Z22 In-Ear Monitors, it's like stepping right into the heart of the music. The clarity and depth are unmatched, giving you a full-range sound experience that keeps every detail intact.\"</p>"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "author": "Wade",
+            "title": "DJ & Producer | @wademusik",
+            "title_link": "https://instagram.com/wademusik",
+            "content": "<p>\"For comfortable in-ears to play with, I would choose Vusion audio for sure! Their perfect fit and superior sound quality make them my top pick for any performance.\"</p>"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "author": "Sarah Johnson",
+            "title": "Music Producer | @sarahbeats",
+            "title_link": "https://instagram.com/sarahbeats",
+            "content": "<p>\"The sound isolation is incredible - I can focus on my mix without any external noise interference. Best investment I've made for my performances.\"</p>"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "author": "Mike Chen",
+            "title": "Live Sound Engineer | @mikechenaudio",
+            "title_link": "https://instagram.com/mikechenaudio",
+            "content": "<p>\"These in-ears provide the perfect balance between clarity and warmth. The custom fit makes them comfortable for hours of use during long sets.\"</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

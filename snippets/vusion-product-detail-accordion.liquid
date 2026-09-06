@@ -1,0 +1,93 @@
+{% comment %}
+  Snippet: Vusion Product Detail Accordion (Reusable)
+  Usage: {% render 'vusion-product-detail-accordion', product: product %}
+{% endcomment %}
+
+{% comment %}
+  First load CSS (only once per page)
+{% endcomment %}
+{{ 'vusion-product-detail-accordion.css' | asset_url | stylesheet_tag }}
+
+<div class="vusion-product-accordion">
+  <!-- Tab 1: Description (Always shows) -->
+  <div class="vusion-product-accordion__item">
+    <input type="checkbox" id="vusion-accordion-1" class="vusion-product-accordion__toggle">
+    <label for="vusion-accordion-1" class="vusion-product-accordion__label">Product Description</label>
+    <div class="vusion-product-accordion__content">
+      <div class="vusion-product-accordion__inner">
+        {{ product.description }}
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab 2: Specs (Only shows if metafield exists) -->
+  {% if product.metafields.custom.specification.value != blank %}
+    <div class="vusion-product-accordion__item">
+      <input type="checkbox" id="specification-{{ product.id }}" class="vusion-product-accordion__toggle">
+      <label for="specification-{{ product.id }}" class="vusion-product-accordion__label">Specifications</label>
+      <div class="vusion-product-accordion__content">
+        <div class="vusion-product-accordion__inner">
+          <table class="vusion-specification-table">
+            {% assign specification = product.metafields.custom.specification | newline_to_br | split: '<br />' %}
+            {% for spec in specification %}
+              {% assign key_value = spec | split: ':' %}
+              {% if key_value.size == 2 %}
+                <tr>
+                  <td>
+                    <strong>{{ key_value[0] | strip }}</strong>
+                  </td>
+                  <td>{{ key_value[1] | strip }}</td>
+                </tr>
+              {% endif %}
+            {% endfor %}
+          </table>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  <!-- Tab 3: Warranty (Conditional) -->
+  {% if product.metafields.custom.warranty.value != blank %}
+    <div class="vusion-product-accordion__item">
+      <input type="checkbox" id="warranty-{{ product.id }}" class="vusion-product-accordion__toggle">
+      <label for="warranty-{{ product.id }}" class="vusion-product-accordion__label">Warranty</label>
+      <div class="vusion-product-accordion__content">
+        <div class="vusion-product-accordion__inner">
+          <table class="vusion-warranty-table">
+            {% assign warranty_items = product.metafields.custom.warranty | newline_to_br | split: '<br />' %}
+            {% for item in warranty_items %}
+              <tr>
+                <td colspan="2">{{ item | strip }}</td>
+              </tr>
+            {% endfor %}
+          </table>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  <!-- Tab 4: What's Included (Conditional) -->
+  {% if product.metafields.custom.included_items.value != blank %}
+    <div class="vusion-product-accordion__item">
+      <input type="checkbox" id="includes-{{ product.id }}" class="vusion-product-accordion__toggle">
+      <label for="includes-{{ product.id }}" class="vusion-product-accordion__label">What's Included</label>
+      <div class="vusion-product-accordion__content">
+        <div class="vusion-product-accordion__inner">
+          <table class="vusion-includes-table">
+            {% assign items = product.metafields.custom.included_items | newline_to_br | split: '<br />' %}
+            {% for item in items %}
+              <tr>
+                <td colspan="2">{{ item | strip }}</td>
+              </tr>
+            {% endfor %}
+          </table>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+{% comment %}
+  Load JS (only once per page)
+{% endcomment %}
+<script src="{{ 'vusion-product-detail-accordion.js' | asset_url }}" defer></script>

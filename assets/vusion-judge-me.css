@@ -1,0 +1,9 @@
+#judgeme_product_reviews {
+  background-color: #0A0A0A; /* <-- your desired background color */
+  color: #ffffff !important; /* <-- your desired primary text color */
+  padding: 0 8rem;
+}
+
+.jdgm-rev-widg__title {
+  color: #ffffff !important;
+}

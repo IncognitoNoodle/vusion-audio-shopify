@@ -1,6 +1,9 @@
 # Shopify theme environments
 # https://shopify.dev/docs/storefronts/themes/tools/cli/environments
 
+[environments.development]
+store = "6fsbc4-uq.myshopify.com"
+
 [environments.production]
 store = "6fsbc4-uq.myshopify.com"
 theme = "187042595152"

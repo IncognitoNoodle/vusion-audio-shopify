@@ -1,26 +1,38 @@
 {{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
 <style>
+    .vusion-hero .banner__content.page-width {
+      max-width: none;
+      margin-inline: auto;
+    }
+
     .vusion-hero__heading {
+      display: flex;
+      flex-direction: column;
       flex-wrap: nowrap;
       align-items: center;
+      justify-content: center;
+      text-align: center;
       font-size: 10rem;
     }
 
     .vusion-hero__cycling-animation {
       height: 10rem;
       overflow: hidden;
-      display: inline-block;
-      vertical-align: middle;
+      display: block;
+      width: 100%;
+      text-align: center;
     }
 
-    .vusion-hero__cycling-animation>div>div {
+    .vusion-hero__cycling-animation > div > div {
       height: 10rem;
       margin-bottom: 10rem;
-      display: inline-block;
+      display: block;
+      width: 100%;
+      text-align: center;
       font-size: 10rem;
     }
 
-    .vusion-hero__cycling-animation div:first-child {
+    .vusion-hero__cycling-animation > div:first-child {
       animation: vusion-hero__text-animation 9s infinite;
     }
 
@@ -45,7 +57,7 @@
         height: 5rem;
       }
 
-      .vusion-hero__cycling-animation>div>div {
+      .vusion-hero__cycling-animation > div > div {
         height: 5rem;
         margin-bottom: 5rem;
         font-size: 5rem;

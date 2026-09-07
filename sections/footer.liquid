@@ -88,18 +88,145 @@
                     </div>
                   {%- when 'link_list' -%}
                     {%- if block.settings.menu != blank -%}
-                      <ul class="footer-block__details-content list-unstyled">
-                        {%- for link in block.settings.menu.links -%}
-                          <li>
-                            <a
-                              href="{{ link.url }}"
-                              class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %}"
-                            >
-                              {{ link.title | escape }}
-                            </a>
-                          </li>
-                        {%- endfor -%}
-                      </ul>
+                      {%- if block.settings.heading != blank -%}
+                        <ul class="footer-block__details-content list-unstyled">
+                          {%- for link in block.settings.menu.links -%}
+                            <li>
+                              <a
+                                href="{{ link.url }}"
+                                class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %}"
+                              >
+                                {{ link.title | escape }}
+                              </a>
+                            </li>
+                          {%- endfor -%}
+                        </ul>
+                      {%- else -%}
+                        {%- liquid
+                          if pages.helias == blank
+                            assign helias_path = '/pages/helias'
+                          else
+                            assign helias_path = pages.helias.url
+                          endif
+                          assign models_url = helias_path | append: '#models'
+                          assign experience_url = helias_path | append: '#experience'
+                          assign supper_url = helias_path | append: '#supper'
+                          assign faq_url = helias_path | append: '#faq'
+                          assign iem_collection = collections['iem-collection']
+                          assign earplugs_collection = collections['earplugs-collection']
+                          assign shop_skip = 'helyes-ambient-aware-iem,test,vusion-starter-package-deal' | split: ','
+                          assign shop_fallback = 'dj-iem-ambient,nb-mass,zen-2-iem-copy' | split: ','
+                          assign has_demo = false
+                          assign has_supper = false
+                          assign has_faq = false
+                          for link in block.settings.menu.links
+                            assign title_key = link.title | downcase
+                            if title_key contains 'demo' or title_key == 'experience'
+                              assign has_demo = true
+                            endif
+                            if title_key contains 'supper'
+                              assign has_supper = true
+                            endif
+                            if title_key == 'faq'
+                              assign has_faq = true
+                            endif
+                          endfor
+                          assign footer_cols = 'Shop,Experience,Our Company' | split: ','
+                        -%}
+                        <div class="footer-block__cols">
+                          {%- for col in footer_cols -%}
+                            <div class="footer-block__col">
+                              <h2 class="footer-block__heading">{{ col | escape }}</h2>
+                              <ul class="footer-block__details-content list-unstyled">
+                                {%- if col == 'Shop' -%}
+                                  <li>
+                                    <a href="{{ models_url }}" class="link link--text list-menu__item list-menu__item--link">
+                                      Helias P350
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="{{ models_url }}" class="link link--text list-menu__item list-menu__item--link">
+                                      Helias Euphoria
+                                    </a>
+                                  </li>
+                                  {%- if iem_collection != blank and iem_collection.products_count > 0 -%}
+                                    {%- for product in iem_collection.products -%}
+                                      {%- unless shop_skip contains product.handle -%}
+                                        <li>
+                                          <a href="{{ product.url }}" class="link link--text list-menu__item list-menu__item--link">
+                                            {{ product.title | escape }}
+                                          </a>
+                                        </li>
+                                      {%- endunless -%}
+                                    {%- endfor -%}
+                                  {%- else -%}
+                                    {%- for handle in shop_fallback -%}
+                                      {%- assign product = all_products[handle] -%}
+                                      {%- if product != blank -%}
+                                        <li>
+                                          <a href="{{ product.url }}" class="link link--text list-menu__item list-menu__item--link">
+                                            {{ product.title | escape }}
+                                          </a>
+                                        </li>
+                                      {%- endif -%}
+                                    {%- endfor -%}
+                                  {%- endif -%}
+                                  {%- if earplugs_collection != blank -%}
+                                    <li>
+                                      <a href="{{ earplugs_collection.url }}" class="link link--text list-menu__item list-menu__item--link">
+                                        Earasers
+                                      </a>
+                                    </li>
+                                  {%- endif -%}
+                                {%- endif -%}
+                                {%- if col == 'Experience' and has_demo == false -%}
+                                  <li>
+                                    <a href="{{ experience_url }}" class="link link--text list-menu__item list-menu__item--link">
+                                      Book a Demo
+                                    </a>
+                                  </li>
+                                {%- endif -%}
+                                {%- if col == 'Experience' and has_supper == false -%}
+                                  <li>
+                                    <a href="{{ supper_url }}" class="link link--text list-menu__item list-menu__item--link">
+                                      Supperclub Soundcheck
+                                    </a>
+                                  </li>
+                                {%- endif -%}
+                                {%- for link in block.settings.menu.links -%}
+                                  {%- liquid
+                                    assign title_key = link.title | downcase
+                                    if title_key contains 'experience' or title_key contains 'demo' or title_key == 'faq' or title_key contains 'supper'
+                                      assign link_col = 'Experience'
+                                    elsif title_key == 'shop'
+                                      assign link_col = ''
+                                    else
+                                      assign link_col = 'Our Company'
+                                    endif
+                                  -%}
+                                  {%- if link_col == col -%}
+                                    <li>
+                                      <a
+                                        href="{{ link.url }}"
+                                        class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %}"
+                                      >
+                                        {{ link.title | escape }}
+                                      </a>
+                                    </li>
+                                  {%- endif -%}
+                                {%- endfor -%}
+                                {%- if col == 'Experience' and has_faq == false -%}
+                                  <li>
+                                    <a href="{{ faq_url }}" class="link link--text list-menu__item list-menu__item--link">
+                                      FAQ
+                                    </a>
+                                  </li>
+                                {%- endif -%}
+                              </ul>
+                            </div>
+                          {%- endfor -%}
+                        </div>
+                      {%- endif -%}
                     {%- endif -%}
                   {%- when 'brand_information' -%}
                     <div class="footer-block__brand-info">

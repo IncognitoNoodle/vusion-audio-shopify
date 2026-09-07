@@ -1,0 +1,179 @@
+{{ 'vusion-helias.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'vusion-helias.js' | asset_url }}" defer="defer"></script>
+
+<div class="vusion-helias vusion-helias-specs vusion-helias-band">
+  <div class="vusion-helias-wrap">
+    <div class="vusion-helias-head vusion-helias-reveal">
+      {%- if section.settings.eyebrow != blank -%}
+        <div class="vusion-helias-eyebrow">{{ section.settings.eyebrow | escape }}</div>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="vusion-helias-disp">{{ section.settings.heading | escape }}</h2>
+      {%- endif -%}
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="vusion-helias-specs__grid vusion-helias-reveal">
+        {%- for block in section.blocks -%}
+          <div class="vusion-helias-specs__item" {{ block.shopify_attributes }}>
+            {%- if block.settings.key != blank -%}
+              <div class="vusion-helias-specs__key">{{ block.settings.key | escape }}</div>
+            {%- endif -%}
+            {%- if block.settings.value != blank -%}
+              <div class="vusion-helias-specs__value">{{ block.settings.value | escape }}</div>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% stylesheet %}
+  .vusion-helias-specs .vusion-helias-head h2 {
+    font-size: clamp(var(--vh-fs-h3), 3.2vw, var(--vh-fs-h2));
+  }
+
+  .vusion-helias-specs__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 50px;
+    border-top: 1px solid var(--vh-hairline);
+  }
+
+  .vusion-helias-specs__item {
+    padding: 22px 20px 22px 0;
+    border-bottom: 1px solid var(--vh-hairline);
+  }
+
+  .vusion-helias-specs__key {
+    font-family: var(--font-body-family);
+    font-size: var(--vh-fs-caption);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--vh-ink-faint);
+    margin-bottom: 8px;
+  }
+
+  .vusion-helias-specs__value {
+    font-size: var(--vh-fs-body);
+    color: var(--vh-ink);
+  }
+
+  @media (max-width: 760px) {
+    .vusion-helias-specs__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Vusion Helias Specs",
+  "tag": "section",
+  "class": "vusion-helias-section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Specifications"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Built to spec"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "spec",
+      "name": "Spec",
+      "settings": [
+        {
+          "type": "text",
+          "id": "key",
+          "label": "Label",
+          "default": "Drivers"
+        },
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Value",
+          "default": "Custom hybrid, [tbd]"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "Vusion Helias Specs",
+      "blocks": [
+        {
+          "type": "spec",
+          "settings": {
+            "key": "Drivers",
+            "value": "Custom hybrid, [tbd]"
+          }
+        },
+        {
+          "type": "spec",
+          "settings": {
+            "key": "Ambient latency",
+            "value": "[tbd] ms"
+          }
+        },
+        {
+          "type": "spec",
+          "settings": {
+            "key": "Battery",
+            "value": "[tbd] hrs ambient module"
+          }
+        },
+        {
+          "type": "spec",
+          "settings": {
+            "key": "Bluetooth",
+            "value": "[tbd]"
+          }
+        },
+        {
+          "type": "spec",
+          "settings": {
+            "key": "Cable",
+            "value": "Detachable, [tbd]"
+          }
+        },
+        {
+          "type": "spec",
+          "settings": {
+            "key": "Fit",
+            "value": "Custom ear impressions"
+          }
+        },
+        {
+          "type": "spec",
+          "settings": {
+            "key": "Shell",
+            "value": "Custom colour / artwork"
+          }
+        },
+        {
+          "type": "spec",
+          "settings": {
+            "key": "Water resistance",
+            "value": "[tbd]"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

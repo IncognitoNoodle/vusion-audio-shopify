@@ -1,0 +1,323 @@
+{{ 'vusion-helias.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'vusion-helias.js' | asset_url }}" defer="defer"></script>
+
+<div class="vusion-helias vusion-helias-models vusion-helias-band" id="models">
+  <div class="vusion-helias-wrap">
+    <div class="vusion-helias-head vusion-helias-reveal">
+      {%- if section.settings.eyebrow != blank -%}
+        <div class="vusion-helias-eyebrow">{{ section.settings.eyebrow | escape }}</div>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="vusion-helias-disp">{{ section.settings.heading | escape }}</h2>
+      {%- endif -%}
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="vusion-helias-models__grid vusion-helias-reveal">
+        {%- for block in section.blocks -%}
+          {%- liquid
+            case forloop.index
+              when 1
+                assign fallback = 'vusion-helias-models-p350.webp'
+              when 2
+                assign fallback = 'vusion-helias-models-euphoria.webp'
+              else
+                assign fallback = ''
+            endcase
+            assign card_alt = block.settings.image_alt | default: block.settings.title
+            if block.settings.image != blank and block.settings.image.alt != blank
+              assign card_alt = block.settings.image.alt
+            endif
+            if block.settings.button_link != blank
+              assign button_link = block.settings.button_link
+            else
+              assign button_link = '#'
+            endif
+            assign features = block.settings.features | newline_to_br | split: '<br />'
+          -%}
+          <div class="vusion-helias-models__card" {{ block.shopify_attributes }}>
+            <div class="vusion-helias-models__shell">
+              {%- if block.settings.image != blank -%}
+                {{
+                  block.settings.image
+                  | image_url: width: 1600
+                  | image_tag:
+                    loading: 'lazy',
+                    widths: '540, 800, 1080, 1600',
+                    sizes: '(min-width: 820px) 40vw, 100vw',
+                    alt: card_alt
+                }}
+              {%- elsif fallback != blank -%}
+                <img
+                  src="{{ fallback | asset_url }}"
+                  alt="{{ card_alt | escape }}"
+                  width="1080"
+                  height="1080"
+                  loading="lazy"
+                >
+              {%- endif -%}
+            </div>
+            {%- if block.settings.tag != blank -%}
+              <div class="vusion-helias-models__tag">{{ block.settings.tag | escape }}</div>
+            {%- endif -%}
+            {%- if block.settings.title != blank -%}
+              <h3 class="vusion-helias-disp">{{ block.settings.title | escape }}</h3>
+            {%- endif -%}
+            {%- if block.settings.price != blank -%}
+              <div class="vusion-helias-models__price">{{ block.settings.price | escape }}</div>
+            {%- endif -%}
+            {%- if block.settings.audience != blank -%}
+              <div class="vusion-helias-models__for">{{ block.settings.audience | escape }}</div>
+            {%- endif -%}
+            {%- if block.settings.features != blank -%}
+              <ul>
+                {%- for feature in features -%}
+                  {%- assign feature_text = feature | strip -%}
+                  {%- if feature_text != blank -%}
+                    <li>{{ feature_text | escape }}</li>
+                  {%- endif -%}
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
+            {%- if block.settings.button_label != blank -%}
+              <a class="vusion-helias-btn vusion-helias-btn--outline vusion-helias-models__btn" href="{{ button_link }}">
+                {{ block.settings.button_label | escape }}
+              </a>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% stylesheet %}
+  .vusion-helias.vusion-helias-models {
+    background: var(--vh-bg-panel);
+    border-top: 1px solid var(--vh-hairline);
+    border-bottom: 1px solid var(--vh-hairline);
+  }
+
+  .vusion-helias-models .vusion-helias-head h2 {
+    font-size: clamp(var(--vh-fs-h3), 3.2vw, var(--vh-fs-h2));
+  }
+
+  .vusion-helias-models__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-top: 60px;
+  }
+
+  .vusion-helias-models__card {
+    border: 1px solid var(--vh-hairline);
+    border-radius: 4px;
+    padding: 44px 38px;
+    position: relative;
+    background: linear-gradient(165deg, var(--vh-bg-panel), var(--vh-bg));
+    transition: border-color 0.25s ease;
+  }
+
+  .vusion-helias-models__card:hover {
+    border-color: rgba(225, 35, 26, 0.5);
+  }
+
+  .vusion-helias-models__shell {
+    width: 100%;
+    aspect-ratio: 16 / 8;
+    border-radius: 3px;
+    margin-bottom: 26px;
+    background: radial-gradient(circle at 65% 35%, rgba(225, 35, 26, 0.18), transparent 60%), #101010;
+    border: 1px solid var(--vh-hairline);
+    overflow: hidden;
+  }
+
+  .vusion-helias-models__shell img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 3px;
+  }
+
+  .vusion-helias-models__tag {
+    font-family: var(--font-body-family);
+    font-size: var(--vh-fs-caption);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--vh-ink-faint);
+    margin-bottom: 22px;
+  }
+
+  .vusion-helias-models__card h3 {
+    font-size: var(--vh-fs-h3);
+    margin: 0 0 6px;
+    color: var(--vh-ink);
+    letter-spacing: 0.01em;
+    line-height: 1.05;
+    word-break: normal;
+  }
+
+  .vusion-helias-models__price {
+    font-family: var(--font-body-family);
+    font-size: var(--vh-fs-lede);
+    color: var(--vh-gold);
+    margin-bottom: 22px;
+  }
+
+  .vusion-helias-models__for {
+    font-size: var(--vh-fs-body);
+    color: var(--vh-ink-dim);
+    margin-bottom: 26px;
+    line-height: 1.6;
+  }
+
+  .vusion-helias-models__card ul {
+    list-style: none;
+    margin: 0 0 32px;
+    padding: 0;
+  }
+
+  .vusion-helias-models__card li {
+    font-size: var(--vh-fs-body);
+    color: var(--vh-ink);
+    padding: 9px 0;
+    border-top: 1px solid var(--vh-hairline);
+    display: flex;
+    gap: 10px;
+  }
+
+  .vusion-helias-models__card li::before {
+    content: "—";
+    color: var(--vh-gold);
+  }
+
+  .vusion-helias-models__btn {
+    width: 100%;
+  }
+
+  @media (max-width: 820px) {
+    .vusion-helias-models__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Vusion Helias Models",
+  "tag": "section",
+  "class": "vusion-helias-section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Which Helias fits you"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Two builds. One technology."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "model",
+      "name": "Model",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Content > Files. Empty uses the theme WebP fallback for this card slot."
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Image alt",
+          "default": "Helias P350"
+        },
+        {
+          "type": "text",
+          "id": "tag",
+          "label": "Tag",
+          "default": "Model 01 — DJ"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "HELIAS P350"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price",
+          "default": "€ 2.000"
+        },
+        {
+          "type": "textarea",
+          "id": "audience",
+          "label": "Audience",
+          "default": "For DJs, electronic artists, club performers and festival DJs."
+        },
+        {
+          "type": "textarea",
+          "id": "features",
+          "label": "Features",
+          "info": "One per line.",
+          "default": "Active Ambient Technology\nPremium drivers\nWireless ambient control\nCustom fit"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "View Helias P350"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 2,
+  "presets": [
+    {
+      "name": "Vusion Helias Models",
+      "blocks": [
+        {
+          "type": "model",
+          "settings": {
+            "image_alt": "Helias P350",
+            "tag": "Model 01 — DJ",
+            "title": "HELIAS P350",
+            "price": "€ 2.000",
+            "audience": "For DJs, electronic artists, club performers and festival DJs.",
+            "features": "Active Ambient Technology\nPremium drivers\nWireless ambient control\nCustom fit",
+            "button_label": "View Helias P350"
+          }
+        },
+        {
+          "type": "model",
+          "settings": {
+            "image_alt": "Helias Euphoria",
+            "tag": "Model 02 — Artist",
+            "title": "HELIAS EUPHORIA",
+            "price": "€ 2.500",
+            "audience": "For singers, guitarists, drummers, bands and musical performers.",
+            "features": "Everything in Helias P350\nProfessional tuning\nExtended audio range\nCustom fit",
+            "button_label": "View Helias Euphoria"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

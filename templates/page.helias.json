@@ -1,0 +1,549 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ *
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "vusion_helias_hero": {
+      "type": "vusion-helias-hero",
+      "settings": {
+        "lead_tag": "For DJs who won't compromise",
+        "heading": "HEAR\nEVERYTHING.",
+        "heading_accent": "LOSE NOTHING.",
+        "lede": "Helias is a professional in-ear monitor with Active Ambient Technology \u2014 studio-quality monitoring, without losing the room. Designed for performers who refuse to compromise.",
+        "button_1_label": "Book Your Experience",
+        "button_1_link": "https://calendly.com/admin-vusionaudio/30min",
+        "button_2_label": "Buy Now",
+        "caption": "Helias \u2014 Active Ambient in-ear monitor"
+      }
+    },
+    "vusion_helias_why": {
+      "type": "vusion-helias-why",
+      "blocks": {
+        "item_01": {
+          "type": "item",
+          "settings": {
+            "number": "01",
+            "title": "The crowd.",
+            "text": "Feel the energy you're performing for."
+          }
+        },
+        "item_02": {
+          "type": "item",
+          "settings": {
+            "number": "02",
+            "title": "Your band.",
+            "text": "Real communication, no guessing."
+          }
+        },
+        "item_03": {
+          "type": "item",
+          "settings": {
+            "number": "03",
+            "title": "Stage comms.",
+            "text": "Hear technicians, bandmates and the MC."
+          }
+        },
+        "item_04": {
+          "type": "item",
+          "settings": {
+            "number": "04",
+            "title": "Your surroundings.",
+            "text": "All while keeping studio-quality monitoring."
+          }
+        }
+      },
+      "block_order": [
+        "item_01",
+        "item_02",
+        "item_03",
+        "item_04"
+      ],
+      "settings": {
+        "caption": "Helias \u2014 dual-driver custom shell",
+        "eyebrow": "Why Helias",
+        "heading": "Traditional IEMs isolate you.\nHelias doesn't."
+      }
+    },
+    "vusion_helias_film": {
+      "type": "vusion-helias-film",
+      "settings": {
+        "eyebrow": "Product film",
+        "embed_url": "https://drive.google.com/file/d/1Udd-pNB8k8ncm7z2DwJBHJwPQBcXT_lc/preview",
+        "caption": "Final Render \u2014 Vusion product film"
+      }
+    },
+    "vusion_helias_works": {
+      "type": "vusion-helias-works",
+      "blocks": {
+        "step_mic": {
+          "type": "step",
+          "settings": {
+            "icon": "mic",
+            "label": "Microphones",
+            "text": "Dual external mics capture the room in real time"
+          }
+        },
+        "step_dsp": {
+          "type": "step",
+          "settings": {
+            "icon": "bars",
+            "label": "DSP",
+            "text": "Onboard processing balances ambient and monitor mix"
+          }
+        },
+        "step_ambient": {
+          "type": "step",
+          "settings": {
+            "icon": "rings",
+            "label": "Realtime Ambient",
+            "text": "Blended instantly into your in-ear mix, zero lag"
+          }
+        },
+        "step_you": {
+          "type": "step",
+          "settings": {
+            "icon": "wave",
+            "label": "You",
+            "text": "One dial decides how much of the room you hear"
+          }
+        }
+      },
+      "block_order": [
+        "step_mic",
+        "step_dsp",
+        "step_ambient",
+        "step_you"
+      ],
+      "settings": {
+        "eyebrow": "The technology",
+        "heading": "How Active Ambient works",
+        "lede": "A standard IEM seals you off completely. Helias listens back \u2014 and lets you decide how much of the world you let in.",
+        "note": "You decide how much of the room you let in \u2014 <b>from fully sealed to fully open</b>, in one wireless control."
+      }
+    },
+    "vusion_helias_benefits": {
+      "type": "vusion-helias-benefits",
+      "blocks": {
+        "card_01": {
+          "type": "card",
+          "settings": {
+            "image_alt": "Festival crowd and DJ booth",
+            "number": "01",
+            "title": "Hear the audience",
+            "text": "Stay connected to the crowd instead of performing into a void."
+          }
+        },
+        "card_02": {
+          "type": "card",
+          "settings": {
+            "image_alt": "Live band drum kit on stage",
+            "number": "02",
+            "title": "Hear your band",
+            "text": "No more miscommunication mid-set \u2014 everyone stays in sync."
+          }
+        },
+        "card_03": {
+          "type": "card",
+          "settings": {
+            "image_alt": "Crowd with hands up at a festival",
+            "number": "03",
+            "title": "Hear the stage",
+            "text": "Technicians, bandmates, MC \u2014 all clearly in the mix when you need them."
+          }
+        },
+        "card_04": {
+          "type": "card",
+          "settings": {
+            "image_alt": "Helias in-ear monitor worn on stage",
+            "number": "04",
+            "title": "Protect your hearing",
+            "text": "No wedges, no shouting monitors \u2014 lower volumes, same clarity."
+          }
+        }
+      },
+      "block_order": [
+        "card_01",
+        "card_02",
+        "card_03",
+        "card_04"
+      ],
+      "settings": {
+        "eyebrow": "Why artists switch",
+        "heading": "Built for the stage, not the studio couch"
+      }
+    },
+    "vusion_helias_models": {
+      "type": "vusion-helias-models",
+      "blocks": {
+        "model_p350": {
+          "type": "model",
+          "settings": {
+            "image_alt": "Helias P350",
+            "tag": "Model 01 \u2014 DJ",
+            "title": "HELIAS P350",
+            "price": "\u20ac 2.000",
+            "audience": "For DJs, electronic artists, club performers and festival DJs.",
+            "features": "Active Ambient Technology\nPremium drivers\nWireless ambient control\nCustom fit",
+            "button_label": "View Helias P350"
+          }
+        },
+        "model_euphoria": {
+          "type": "model",
+          "settings": {
+            "image_alt": "Helias Euphoria",
+            "tag": "Model 02 \u2014 Artist",
+            "title": "HELIAS EUPHORIA",
+            "price": "\u20ac 2.500",
+            "audience": "For singers, guitarists, drummers, bands and musical performers.",
+            "features": "Everything in Helias P350\nProfessional tuning\nExtended audio range\nCustom fit",
+            "button_label": "View Helias Euphoria"
+          }
+        }
+      },
+      "block_order": [
+        "model_p350",
+        "model_euphoria"
+      ],
+      "settings": {
+        "eyebrow": "Which Helias fits you",
+        "heading": "Two builds. One technology."
+      }
+    },
+    "vusion_helias_experience": {
+      "type": "vusion-helias-experience",
+      "blocks": {
+        "item_01": {
+          "type": "item",
+          "settings": {
+            "text": "A full walkthrough of Helias"
+          }
+        },
+        "item_02": {
+          "type": "item",
+          "settings": {
+            "text": "Live demonstration"
+          }
+        },
+        "item_03": {
+          "type": "item",
+          "settings": {
+            "text": "Test different ambient levels"
+          }
+        },
+        "item_04": {
+          "type": "item",
+          "settings": {
+            "text": "Bring your own music"
+          }
+        },
+        "item_05": {
+          "type": "item",
+          "settings": {
+            "text": "Ask us anything"
+          }
+        },
+        "item_06": {
+          "type": "item",
+          "settings": {
+            "text": "Compare side-by-side with your current IEM"
+          }
+        },
+        "slot_01": {
+          "type": "slot",
+          "settings": {
+            "date": "Tue \u00b7 Aug 18",
+            "time": "14:00 \u2014 14:45"
+          }
+        },
+        "slot_02": {
+          "type": "slot",
+          "settings": {
+            "date": "Wed \u00b7 Aug 19",
+            "time": "11:00 \u2014 11:45"
+          }
+        },
+        "slot_03": {
+          "type": "slot",
+          "settings": {
+            "date": "Thu \u00b7 Aug 20",
+            "time": "16:30 \u2014 17:15"
+          }
+        }
+      },
+      "block_order": [
+        "item_01",
+        "item_02",
+        "item_03",
+        "item_04",
+        "item_05",
+        "item_06",
+        "slot_01",
+        "slot_02",
+        "slot_03"
+      ],
+      "settings": {
+        "eyebrow": "Experience it first",
+        "quote_before": "We don't believe you should buy a ",
+        "quote_accent": "\u20ac2,000\u2013\u20ac2,500",
+        "quote_after": " product without experiencing it first.",
+        "button_label": "Book Your Experience",
+        "button_link": "https://calendly.com/admin-vusionaudio/30min",
+        "cal_title": "Helias Experience",
+        "calendly_url": "https://calendly.com/admin-vusionaudio/30min",
+        "cal_note": ""
+      }
+    },
+    "vusion_helias_supper": {
+      "type": "vusion-helias-supper",
+      "blocks": {
+        "photo_01": {
+          "type": "photo",
+          "settings": {
+            "image_alt": "Supperclub Amsterdam venue",
+            "caption": "Supperclub Amsterdam"
+          }
+        },
+        "photo_02": {
+          "type": "photo",
+          "settings": {
+            "image_alt": "DJ booth at Supperclub",
+            "caption": "DJ Booth"
+          }
+        },
+        "photo_03": {
+          "type": "photo",
+          "settings": {
+            "image_alt": "Crowd and lightshow at Supperclub",
+            "caption": "Lightshow"
+          }
+        }
+      },
+      "block_order": [
+        "photo_01",
+        "photo_02",
+        "photo_03"
+      ],
+      "settings": {
+        "eyebrow": "Exclusive access",
+        "heading": "The Supperclub Soundcheck",
+        "lede": "Together with Vusion, get exclusive access to a professional soundcheck at the iconic Supperclub Amsterdam. Experience Helias the way it's meant to be heard \u2014 behind a DJ booth or on a live stage, on a professional sound system, without an audience. No showroom. A real practice run.",
+        "button_label": "Reserve Your Soundcheck"
+      }
+    },
+    "vusion_helias_testimonials": {
+      "type": "vusion-helias-testimonials",
+      "blocks": {
+        "quote_tiago": {
+          "type": "quote",
+          "settings": {
+            "quote": "\"There is a learning curve and getting used to the sound of the mics in the in-ears, but for the first time in my career I can use in-ears for two hours straight without feeling isolated, and with a great clear sound. For many years I\u2019ve been unable to use two in-ears at the same time, ending up with just one. I need to hear not only the crowd but the room, the energy of the room. I\u2019m very happy to have found this helyes sistem and Mink was very helpful with all the process of getting them done as soon as possible. The in-ears are well built, the sound is strong and defined, the idea is great and it\u2019s working for me. I can control my ambient volume with a simple gesture, and the advantage of being able to have different ambient volumes in each ear is that I can adapt depending on the noise of the stage. If the drums are too close on the right I can always decrease the ambient on that side. Congratulations and keep up the great work!\"",
+            "image_alt": "Tiago Bettencourt wearing Helias in-ears on stage",
+            "name": "Tiago Bettencourt",
+            "role": ""
+          }
+        },
+        "quote_wade": {
+          "type": "quote",
+          "settings": {
+            "quote": "\"For comfortable in-ears to play with, I would choose Vusion Audio for sure! Their perfect fit and superior sound quality make them my top pick for any performance.\"",
+            "image_alt": "Wade",
+            "name": "Wade",
+            "role": "DJ & Producer"
+          }
+        },
+        "quote_johnny": {
+          "type": "quote",
+          "settings": {
+            "quote": "\"With the Z22 In-Ear Monitors, it's like stepping right into the heart of the music. The clarity and depth are unmatched, giving you a full-range sound experience that keeps every detail intact.\"",
+            "image_alt": "Johnny Kelvin",
+            "name": "Johnny Kelvin",
+            "role": "Vocalist DJ"
+          }
+        }
+      },
+      "block_order": [
+        "quote_tiago",
+        "quote_wade",
+        "quote_johnny"
+      ],
+      "settings": {
+        "eyebrow": "Artists on Helias",
+        "heading": "Don't take our word for it"
+      }
+    },
+    "vusion_helias_specs": {
+      "type": "vusion-helias-specs",
+      "blocks": {
+        "spec_drivers": {
+          "type": "spec",
+          "settings": {
+            "key": "Drivers",
+            "value": "Custom hybrid, [tbd]"
+          }
+        },
+        "spec_latency": {
+          "type": "spec",
+          "settings": {
+            "key": "Ambient latency",
+            "value": "[tbd] ms"
+          }
+        },
+        "spec_battery": {
+          "type": "spec",
+          "settings": {
+            "key": "Battery",
+            "value": "[tbd] hrs ambient module"
+          }
+        },
+        "spec_bluetooth": {
+          "type": "spec",
+          "settings": {
+            "key": "Bluetooth",
+            "value": "[tbd]"
+          }
+        },
+        "spec_cable": {
+          "type": "spec",
+          "settings": {
+            "key": "Cable",
+            "value": "Detachable, [tbd]"
+          }
+        },
+        "spec_fit": {
+          "type": "spec",
+          "settings": {
+            "key": "Fit",
+            "value": "Custom ear impressions"
+          }
+        },
+        "spec_shell": {
+          "type": "spec",
+          "settings": {
+            "key": "Shell",
+            "value": "Custom colour / artwork"
+          }
+        },
+        "spec_water": {
+          "type": "spec",
+          "settings": {
+            "key": "Water resistance",
+            "value": "[tbd]"
+          }
+        }
+      },
+      "block_order": [
+        "spec_drivers",
+        "spec_latency",
+        "spec_battery",
+        "spec_bluetooth",
+        "spec_cable",
+        "spec_fit",
+        "spec_shell",
+        "spec_water"
+      ],
+      "settings": {
+        "eyebrow": "Specifications",
+        "heading": "Built to spec"
+      }
+    },
+    "vusion_helias_faq": {
+      "type": "vusion-helias-faq",
+      "blocks": {
+        "faq_ambient": {
+          "type": "item",
+          "settings": {
+            "question": "Can I turn the ambient level up?",
+            "answer": "Yes \u2014 ambient level is controlled wirelessly, from fully sealed to fully open, adjustable on the fly during your set."
+          }
+        },
+        "faq_battery": {
+          "type": "item",
+          "settings": {
+            "question": "How long does the battery last?",
+            "answer": "[Battery life detail to confirm with product team.]"
+          }
+        },
+        "faq_fallback": {
+          "type": "item",
+          "settings": {
+            "question": "What happens when the battery runs out?",
+            "answer": "Helias falls back to passive wired monitoring, so you're never left without sound mid-performance."
+          }
+        },
+        "faq_artwork": {
+          "type": "item",
+          "settings": {
+            "question": "Can I choose custom artwork?",
+            "answer": "Yes \u2014 every Helias is custom-shelled, with a range of colours and finishes to choose from at checkout."
+          }
+        },
+        "faq_impressions": {
+          "type": "item",
+          "settings": {
+            "question": "Can I use my own ear impressions?",
+            "answer": "Yes \u2014 send us existing impressions from an audiologist, or book a Helias Experience and we'll take them for you."
+          }
+        },
+        "faq_shipping": {
+          "type": "item",
+          "settings": {
+            "question": "Do you ship worldwide?",
+            "answer": "Yes, Vusion ships Helias internationally. Shipping costs and timelines are shown at checkout."
+          }
+        }
+      },
+      "block_order": [
+        "faq_ambient",
+        "faq_battery",
+        "faq_fallback",
+        "faq_artwork",
+        "faq_impressions",
+        "faq_shipping"
+      ],
+      "settings": {
+        "eyebrow": "FAQ",
+        "heading": "Good to know"
+      }
+    },
+    "vusion_helias_cta": {
+      "type": "vusion-helias-cta",
+      "settings": {
+        "eyebrow": "Ready when you are",
+        "heading": "Ready to experience Helias?",
+        "lede": "Test it on your own ears, in your own booth, before you decide.",
+        "button_1_label": "Book Demo",
+        "button_2_label": "Buy Now"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "vusion_helias_hero",
+    "vusion_helias_why",
+    "vusion_helias_film",
+    "vusion_helias_works",
+    "vusion_helias_benefits",
+    "vusion_helias_models",
+    "vusion_helias_experience",
+    "vusion_helias_supper",
+    "vusion_helias_testimonials",
+    "vusion_helias_specs",
+    "vusion_helias_faq",
+    "vusion_helias_cta"
+  ]
+}

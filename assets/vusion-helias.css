@@ -1,0 +1,217 @@
+.vusion-helias {
+  --vh-bg: #0a0a0a;
+  --vh-bg-panel: #141414;
+  --vh-bg-panel-2: #1a1a1a;
+  --vh-hairline: #2a2a2a;
+  --vh-ink: #f4f1ea;
+  --vh-ink-dim: #a8a397;
+  --vh-ink-faint: #6f6a5e;
+  --vh-gold: #e2231a;
+  --vh-gold-dim: #7a1410;
+  --vh-gold-soft: rgba(225, 35, 26, 0.12);
+  /* Golden-ratio type scale (φ = 1.618) from 16px body.
+     Hero caps at 60px: 16 × φ³ = 68, limited so Monument Extended fits the column. */
+  --vh-phi: 1.618;
+  --vh-fs-caption: 10px; /* 16 / φ */
+  --vh-fs-small: 13px; /* 16 / √φ */
+  --vh-fs-body: 16px;
+  --vh-fs-lede: 20px; /* 16 × √φ */
+  --vh-fs-h3: 26px; /* 16 × φ */
+  --vh-fs-h2: 42px; /* 16 × φ² */
+  --vh-fs-hero: 60px; /* 16 × φ³ = 68, capped */
+  background: var(--vh-bg);
+  color: var(--vh-ink);
+  font-family: var(--font-body-family);
+  font-style: var(--font-body-style);
+  font-weight: var(--font-body-weight);
+  font-size: var(--vh-fs-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+.vusion-helias-section {
+  margin: 0;
+  padding: 0;
+}
+
+.vusion-helias *,
+.vusion-helias *::before,
+.vusion-helias *::after {
+  box-sizing: border-box;
+}
+
+.vusion-helias a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.vusion-helias img,
+.vusion-helias svg,
+.vusion-helias video {
+  display: block;
+  max-width: 100%;
+}
+
+.vusion-helias-wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.vusion-helias h1,
+.vusion-helias h2,
+.vusion-helias-disp {
+  font-family: var(--font-heading-family);
+  font-style: var(--font-heading-style);
+  font-weight: var(--font-heading-weight);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  color: var(--vh-ink);
+  word-break: normal;
+}
+
+.vusion-helias-mono {
+  font-family: var(--font-body-family);
+}
+
+.vusion-helias-eyebrow {
+  font-family: var(--font-body-family);
+  font-size: var(--vh-fs-small);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--vh-gold);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.vusion-helias-eyebrow::before {
+  content: "";
+  width: 22px;
+  height: 1px;
+  background: var(--vh-gold-dim);
+}
+
+.vusion-helias-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 30px;
+  font-family: var(--font-body-family);
+  font-size: var(--vh-fs-small);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.25s ease;
+}
+
+.vusion-helias-btn--primary {
+  background: var(--vh-gold);
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.vusion-helias-btn--primary:hover {
+  background: #ff4b3e;
+  transform: translateY(-1px);
+}
+
+.vusion-helias-btn--outline {
+  border-color: rgba(244, 241, 234, 0.28);
+  color: var(--vh-ink);
+  background: transparent;
+}
+
+.vusion-helias-btn--outline:hover {
+  border-color: var(--vh-ink);
+  background: rgba(244, 241, 234, 0.06);
+}
+
+.vusion-helias-btn-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.vusion-helias-wave {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 34px;
+}
+
+.vusion-helias-wave span {
+  width: 3px;
+  background: var(--vh-gold);
+  border-radius: 1px;
+  animation: vusion-helias-bar 1.6s ease-in-out infinite;
+}
+
+@keyframes vusion-helias-bar {
+  0%,
+  100% {
+    transform: scaleY(0.25);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+.vusion-helias-note {
+  font-family: var(--font-body-family);
+  font-size: var(--vh-fs-caption);
+  color: var(--vh-ink-faint);
+  letter-spacing: 0.03em;
+}
+
+.vusion-helias-band {
+  padding: 120px 0;
+}
+
+.vusion-helias-head {
+  max-width: 640px;
+  margin-bottom: 64px;
+}
+
+.vusion-helias-head h2 {
+  font-size: clamp(var(--vh-fs-h3), 3.2vw, var(--vh-fs-h2));
+  line-height: 1.08;
+  margin: 0;
+}
+
+.vusion-helias-head p {
+  color: var(--vh-ink-dim);
+  font-size: var(--vh-fs-body);
+  margin: 16px 0 0;
+  line-height: 1.65;
+  max-width: 560px;
+}
+
+.vusion-helias-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.vusion-helias-reveal.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vusion-helias *,
+  .vusion-helias *::before,
+  .vusion-helias *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .vusion-helias-reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,0 +1,139 @@
+{{ 'vusion-helias.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign embed_url = section.settings.embed_url | default: 'https://drive.google.com/file/d/1Udd-pNB8k8ncm7z2DwJBHJwPQBcXT_lc/preview'
+  assign embed_ok = false
+  if embed_url contains 'https://' or embed_url contains 'http://'
+    assign embed_ok = true
+  endif
+-%}
+
+<script src="{{ 'vusion-helias.js' | asset_url }}" defer="defer"></script>
+
+<div class="vusion-helias vusion-helias-film vusion-helias-band">
+  <div class="vusion-helias-wrap vusion-helias-reveal">
+    {%- if section.settings.eyebrow != blank -%}
+      <div class="vusion-helias-eyebrow">{{ section.settings.eyebrow | escape }}</div>
+    {%- endif -%}
+
+    <div class="vusion-helias-film__frame{% if section.settings.video == blank %} vusion-helias-film__frame--embed{% endif %}">
+      {%- if section.settings.video != blank -%}
+        {{
+          section.settings.video
+          | video_tag: controls: true, class: 'vusion-helias-film__video'
+        }}
+      {%- elsif embed_ok -%}
+        <iframe
+          src="{{ embed_url | escape }}"
+          allow="autoplay"
+          allowfullscreen
+          loading="lazy"
+          title="{{ section.settings.caption | escape }}"
+        ></iframe>
+      {%- endif -%}
+    </div>
+
+    {%- if section.settings.caption != blank -%}
+      <div class="vusion-helias-film__caption">
+        <span>{{ section.settings.caption | escape }}</span>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% stylesheet %}
+  .vusion-helias-film {
+    position: relative;
+  }
+
+  .vusion-helias-film__frame {
+    aspect-ratio: 21 / 9;
+    border-radius: 4px;
+    border: 1px solid var(--vh-hairline);
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(120deg, #141414, #0a0a0a 60%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .vusion-helias-film__frame::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 40%, rgba(225, 35, 26, 0.12), transparent 55%);
+  }
+
+  .vusion-helias-film__frame--embed {
+    padding: 0;
+    background: #000;
+  }
+
+  .vusion-helias-film__frame iframe,
+  .vusion-helias-film__video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .vusion-helias-film__video {
+    object-fit: cover;
+  }
+
+  .vusion-helias-film__caption {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 18px;
+    font-family: var(--font-body-family);
+    font-size: var(--vh-fs-small);
+    color: var(--vh-ink-faint);
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Vusion Helias Film",
+  "tag": "section",
+  "class": "vusion-helias-section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Product film"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Shopify video",
+      "info": "Content > Files. If set, this replaces the embed URL."
+    },
+    {
+      "type": "text",
+      "id": "embed_url",
+      "label": "Embed URL",
+      "default": "https://drive.google.com/file/d/1Udd-pNB8k8ncm7z2DwJBHJwPQBcXT_lc/preview",
+      "info": "Used when Shopify video is empty. Default matches the HTML (Google Drive)."
+    },
+    {
+      "type": "text",
+      "id": "caption",
+      "label": "Caption",
+      "default": "Final Render — Vusion product film"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Vusion Helias Film"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,268 @@
+{{ 'vusion-helias.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'vusion-helias.js' | asset_url }}" defer="defer"></script>
+
+<div class="vusion-helias vusion-helias-benefits vusion-helias-band" id="benefits">
+  <div class="vusion-helias-wrap">
+    <div class="vusion-helias-head vusion-helias-reveal">
+      {%- if section.settings.eyebrow != blank -%}
+        <div class="vusion-helias-eyebrow">{{ section.settings.eyebrow | escape }}</div>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="vusion-helias-disp">{{ section.settings.heading | escape }}</h2>
+      {%- endif -%}
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="vusion-helias-benefits__grid vusion-helias-reveal">
+        {%- for block in section.blocks -%}
+          {%- liquid
+            case forloop.index
+              when 1
+                assign fallback = 'vusion-helias-benefits-01.webp'
+              when 2
+                assign fallback = 'vusion-helias-benefits-02.webp'
+              when 3
+                assign fallback = 'vusion-helias-benefits-03.webp'
+              when 4
+                assign fallback = 'vusion-helias-benefits-04.webp'
+              else
+                assign fallback = ''
+            endcase
+            assign card_alt = block.settings.image_alt | default: block.settings.title
+            if block.settings.image != blank and block.settings.image.alt != blank
+              assign card_alt = block.settings.image.alt
+            endif
+          -%}
+          <div class="vusion-helias-benefits__card" {{ block.shopify_attributes }}>
+            {%- if block.settings.image != blank -%}
+              {{
+                block.settings.image
+                | image_url: width: 1200
+                | image_tag:
+                  loading: 'lazy',
+                  widths: '400, 700, 900, 1200',
+                  sizes: '(min-width: 860px) 25vw, 50vw',
+                  alt: card_alt
+              }}
+            {%- elsif fallback != blank -%}
+              <img
+                src="{{ fallback | asset_url }}"
+                alt="{{ card_alt | escape }}"
+                width="900"
+                height="1600"
+                loading="lazy"
+              >
+            {%- endif -%}
+            {%- if block.settings.number != blank -%}
+              <span class="vusion-helias-benefits__num">{{ block.settings.number | escape }}</span>
+            {%- endif -%}
+            <div class="vusion-helias-benefits__body">
+              {%- if block.settings.title != blank -%}
+                <h3>{{ block.settings.title | escape }}</h3>
+              {%- endif -%}
+              {%- if block.settings.text != blank -%}
+                <p>{{ block.settings.text | escape }}</p>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% stylesheet %}
+  .vusion-helias-benefits .vusion-helias-head h2 {
+    font-size: clamp(var(--vh-fs-h3), 3.2vw, var(--vh-fs-h2));
+  }
+
+  .vusion-helias-benefits__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--vh-hairline);
+    border: 1px solid var(--vh-hairline);
+    margin-top: 60px;
+  }
+
+  .vusion-helias-benefits__card {
+    position: relative;
+    overflow: hidden;
+    padding: 26px 24px;
+    min-height: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .vusion-helias-benefits__card img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  .vusion-helias-benefits__card:hover img {
+    transform: scale(1.06);
+  }
+
+  .vusion-helias-benefits__card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(6, 6, 6, 0.94) 10%,
+      rgba(6, 6, 6, 0.45) 55%,
+      rgba(6, 6, 6, 0.15) 100%
+    );
+  }
+
+  .vusion-helias-benefits__num,
+  .vusion-helias-benefits__body {
+    position: relative;
+    z-index: 2;
+  }
+
+  .vusion-helias-benefits__num {
+    font-family: var(--font-body-family);
+    font-size: var(--vh-fs-small);
+    color: var(--vh-ink-faint);
+  }
+
+  .vusion-helias-benefits__card h3 {
+    font-family: var(--font-body-family);
+    font-size: var(--vh-fs-lede);
+    font-weight: 600;
+    font-style: normal;
+    margin: 26px 0 8px;
+    color: var(--vh-ink);
+    letter-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    word-break: normal;
+  }
+
+  .vusion-helias-benefits__card p {
+    font-size: var(--vh-fs-body);
+    color: var(--vh-ink-dim);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  @media (max-width: 860px) {
+    .vusion-helias-benefits__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Vusion Helias Benefits",
+  "tag": "section",
+  "class": "vusion-helias-section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Why artists switch"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Built for the stage, not the studio couch"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Content > Files. Empty uses the theme WebP fallback for this card slot."
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Image alt",
+          "default": "Festival crowd and DJ booth"
+        },
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Number",
+          "default": "01"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Hear the audience"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Stay connected to the crowd instead of performing into a void."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "Vusion Helias Benefits",
+      "blocks": [
+        {
+          "type": "card",
+          "settings": {
+            "image_alt": "Festival crowd and DJ booth",
+            "number": "01",
+            "title": "Hear the audience",
+            "text": "Stay connected to the crowd instead of performing into a void."
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "image_alt": "Live band drum kit on stage",
+            "number": "02",
+            "title": "Hear your band",
+            "text": "No more miscommunication mid-set — everyone stays in sync."
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "image_alt": "Crowd with hands up at a festival",
+            "number": "03",
+            "title": "Hear the stage",
+            "text": "Technicians, bandmates, MC — all clearly in the mix when you need them."
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "image_alt": "Helias in-ear monitor worn on stage",
+            "number": "04",
+            "title": "Protect your hearing",
+            "text": "No wedges, no shouting monitors — lower volumes, same clarity."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

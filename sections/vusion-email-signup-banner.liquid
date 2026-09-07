@@ -22,26 +22,25 @@
     z-index: 1;
   }
 
-  .banner__content {
+  #Banner-{{ section.id }} .banner__content.page-width {
     position: relative;
     z-index: 2;
+    max-width: none;
     width: 100%;
-    padding: 0 !important;
-    margin: 0 !important;
+    margin-inline: auto;
   }
 
-  .banner__content .page-width {
-    max-width: 100% !important;
-    padding-left: 1.5rem !important;
-    padding-right: 1.5rem !important;
-    margin: 0 auto !important;
-  }
-
-  .email-signup-banner__box {
+  #Banner-{{ section.id }} .email-signup-banner__box {
     width: 100%;
-    margin: 0 auto;
+    max-width: 72rem;
+    margin-inline: auto;
     padding: 2rem;
     box-sizing: border-box;
+    text-align: center;
+  }
+
+  #Banner-{{ section.id }} .email-signup-banner__heading {
+    text-align: center;
   }
 
   {%- if section.settings.image_height == 'adapt-image' and section.settings.image != blank -%}
@@ -50,30 +49,6 @@
       padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;
     }
   {%- endif -%}
-
-  /* Mobile adjustments - safer approach */
-  @media screen and (max-width: 749px) {
-    #Banner-{{ section.id }} {
-      width: 100%;
-      margin-left: 0;
-      margin-right: 0;
-    }
-
-    .banner__content .page-width {
-      padding-left: 1rem !important;
-      padding-right: 1rem !important;
-    }
-
-    {% unless section.settings.show_text_below %}
-      .banner__content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: calc(100% - 2rem);
-      }
-    {% endunless %}
-  }
 {%- endstyle -%}
 
 <div

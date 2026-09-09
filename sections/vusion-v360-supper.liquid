@@ -1,4 +1,4 @@
-{{ 'vusion-helias.css' | asset_url | stylesheet_tag }}
+{{ 'vusion-v360.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
   if section.settings.button_link != blank
@@ -8,40 +8,40 @@
   endif
 -%}
 
-<script src="{{ 'vusion-helias.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'vusion-v360.js' | asset_url }}" defer="defer"></script>
 
-<div class="vusion-helias vusion-helias-supper vusion-helias-band" id="supper">
-  <div class="vusion-helias-wrap vusion-helias-supper__grid">
-    <div class="vusion-helias-reveal">
+<div class="vusion-v360 vusion-v360-supper vusion-v360-band" id="supper">
+  <div class="vusion-v360-wrap vusion-v360-supper__grid">
+    <div class="vusion-v360-reveal">
       {%- if section.settings.eyebrow != blank -%}
-        <div class="vusion-helias-eyebrow">{{ section.settings.eyebrow | escape }}</div>
+        <div class="vusion-v360-eyebrow">{{ section.settings.eyebrow | escape }}</div>
       {%- endif -%}
       {%- if section.settings.heading != blank -%}
-        <h2 class="vusion-helias-disp vusion-helias-supper__heading">
+        <h2 class="vusion-v360-disp vusion-v360-supper__heading">
           {{ section.settings.heading | escape }}
         </h2>
       {%- endif -%}
       {%- if section.settings.lede != blank -%}
-        <p class="vusion-helias-supper__lede">{{ section.settings.lede | escape }}</p>
+        <p class="vusion-v360-supper__lede">{{ section.settings.lede | escape }}</p>
       {%- endif -%}
       {%- if section.settings.button_label != blank -%}
-        <a class="vusion-helias-btn vusion-helias-btn--outline" href="{{ button_link }}">
+        <a class="vusion-v360-btn vusion-v360-btn--outline" href="{{ button_link }}">
           {{ section.settings.button_label | escape }}
         </a>
       {%- endif -%}
     </div>
 
     {%- if section.blocks.size > 0 -%}
-      <div class="vusion-helias-supper__photos vusion-helias-reveal">
+      <div class="vusion-v360-supper__photos vusion-v360-reveal">
         {%- for block in section.blocks -%}
           {%- liquid
             case forloop.index
               when 1
-                assign fallback = 'vusion-helias-supper-01.webp'
+                assign fallback = 'vusion-v360-supper-01.webp'
               when 2
-                assign fallback = 'vusion-helias-supper-02.webp'
+                assign fallback = 'vusion-v360-supper-02.webp'
               when 3
-                assign fallback = 'vusion-helias-supper-03.webp'
+                assign fallback = 'vusion-v360-supper-03.webp'
               else
                 assign fallback = ''
             endcase
@@ -51,7 +51,7 @@
             endif
           -%}
           <div
-            class="vusion-helias-supper__ph"
+            class="vusion-v360-supper__ph"
             {% if block.settings.caption != blank %}
               data-cap="{{ block.settings.caption | escape }}"
             {% endif %}
@@ -84,37 +84,37 @@
 </div>
 
 {% stylesheet %}
-  .vusion-helias-supper {
+  .vusion-v360-supper {
     position: relative;
   }
 
-  .vusion-helias-supper__grid {
+  .vusion-v360-supper__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 70px;
     align-items: center;
   }
 
-  .vusion-helias-supper__heading {
+  .vusion-v360-supper__heading {
     font-size: clamp(var(--vh-fs-h3), 3.2vw, var(--vh-fs-h2));
     line-height: 1.06;
     margin: 0;
   }
 
-  .vusion-helias-supper__lede {
+  .vusion-v360-supper__lede {
     color: var(--vh-ink-dim);
     font-size: var(--vh-fs-body);
     line-height: 1.7;
     margin: 20px 0 30px;
   }
 
-  .vusion-helias-supper__photos {
+  .vusion-v360-supper__photos {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 14px;
   }
 
-  .vusion-helias-supper__ph {
+  .vusion-v360-supper__ph {
     border-radius: 3px;
     border: 1px solid var(--vh-hairline);
     background: linear-gradient(150deg, #171717, #08080 70%, #050505);
@@ -122,17 +122,17 @@
     overflow: hidden;
   }
 
-  .vusion-helias-supper__ph:nth-child(1) {
+  .vusion-v360-supper__ph:nth-child(1) {
     aspect-ratio: 3 / 4;
     grid-row: span 2;
   }
 
-  .vusion-helias-supper__ph:nth-child(2),
-  .vusion-helias-supper__ph:nth-child(3) {
+  .vusion-v360-supper__ph:nth-child(2),
+  .vusion-v360-supper__ph:nth-child(3) {
     aspect-ratio: 4 / 3;
   }
 
-  .vusion-helias-supper__ph img {
+  .vusion-v360-supper__ph img {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -140,7 +140,7 @@
     object-fit: cover;
   }
 
-  .vusion-helias-supper__ph::before {
+  .vusion-v360-supper__ph::before {
     content: attr(data-cap);
     position: absolute;
     bottom: 12px;
@@ -153,7 +153,7 @@
     z-index: 2;
   }
 
-  .vusion-helias-supper__ph::after {
+  .vusion-v360-supper__ph::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -162,7 +162,7 @@
   }
 
   @media (max-width: 900px) {
-    .vusion-helias-supper__grid {
+    .vusion-v360-supper__grid {
       grid-template-columns: 1fr;
     }
   }
@@ -170,9 +170,9 @@
 
 {% schema %}
 {
-  "name": "Vusion Helias Supperclub",
+  "name": "Vusion V360 Supperclub",
   "tag": "section",
-  "class": "vusion-helias-section",
+  "class": "vusion-v360-section",
   "disabled_on": {
     "groups": ["header", "footer"]
   },
@@ -193,7 +193,7 @@
       "type": "textarea",
       "id": "lede",
       "label": "Lede",
-      "default": "Together with Vusion, get exclusive access to a professional soundcheck at the iconic Supperclub Amsterdam. Experience Helias the way it's meant to be heard — behind a DJ booth or on a live stage, on a professional sound system, without an audience. No showroom. A real practice run."
+      "default": "Together with Vusion, get exclusive access to a professional soundcheck at the iconic Supperclub Amsterdam. Experience V360 the way it's meant to be heard — behind a DJ booth or on a live stage, on a professional sound system, without an audience. No showroom. A real practice run."
     },
     {
       "type": "text",
@@ -237,7 +237,7 @@
   "max_blocks": 3,
   "presets": [
     {
-      "name": "Vusion Helias Supperclub",
+      "name": "Vusion V360 Supperclub",
       "blocks": [
         {
           "type": "photo",

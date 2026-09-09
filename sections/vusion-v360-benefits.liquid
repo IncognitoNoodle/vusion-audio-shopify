@@ -1,31 +1,31 @@
-{{ 'vusion-helias.css' | asset_url | stylesheet_tag }}
+{{ 'vusion-v360.css' | asset_url | stylesheet_tag }}
 
-<script src="{{ 'vusion-helias.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'vusion-v360.js' | asset_url }}" defer="defer"></script>
 
-<div class="vusion-helias vusion-helias-benefits vusion-helias-band" id="benefits">
-  <div class="vusion-helias-wrap">
-    <div class="vusion-helias-head vusion-helias-reveal">
+<div class="vusion-v360 vusion-v360-benefits vusion-v360-band" id="benefits">
+  <div class="vusion-v360-wrap">
+    <div class="vusion-v360-head vusion-v360-reveal">
       {%- if section.settings.eyebrow != blank -%}
-        <div class="vusion-helias-eyebrow">{{ section.settings.eyebrow | escape }}</div>
+        <div class="vusion-v360-eyebrow">{{ section.settings.eyebrow | escape }}</div>
       {%- endif -%}
       {%- if section.settings.heading != blank -%}
-        <h2 class="vusion-helias-disp">{{ section.settings.heading | escape }}</h2>
+        <h2 class="vusion-v360-disp">{{ section.settings.heading | escape }}</h2>
       {%- endif -%}
     </div>
 
     {%- if section.blocks.size > 0 -%}
-      <div class="vusion-helias-benefits__grid vusion-helias-reveal">
+      <div class="vusion-v360-benefits__grid vusion-v360-reveal">
         {%- for block in section.blocks -%}
           {%- liquid
             case forloop.index
               when 1
-                assign fallback = 'vusion-helias-benefits-01.webp'
+                assign fallback = 'vusion-v360-benefits-01.webp'
               when 2
-                assign fallback = 'vusion-helias-benefits-02.webp'
+                assign fallback = 'vusion-v360-benefits-02.webp'
               when 3
-                assign fallback = 'vusion-helias-benefits-03.webp'
+                assign fallback = 'vusion-v360-benefits-03.webp'
               when 4
-                assign fallback = 'vusion-helias-benefits-04.webp'
+                assign fallback = 'vusion-v360-benefits-04.webp'
               else
                 assign fallback = ''
             endcase
@@ -34,7 +34,7 @@
               assign card_alt = block.settings.image.alt
             endif
           -%}
-          <div class="vusion-helias-benefits__card" {{ block.shopify_attributes }}>
+          <div class="vusion-v360-benefits__card" {{ block.shopify_attributes }}>
             {%- if block.settings.image != blank -%}
               {{
                 block.settings.image
@@ -55,9 +55,9 @@
               >
             {%- endif -%}
             {%- if block.settings.number != blank -%}
-              <span class="vusion-helias-benefits__num">{{ block.settings.number | escape }}</span>
+              <span class="vusion-v360-benefits__num">{{ block.settings.number | escape }}</span>
             {%- endif -%}
-            <div class="vusion-helias-benefits__body">
+            <div class="vusion-v360-benefits__body">
               {%- if block.settings.title != blank -%}
                 <h3>{{ block.settings.title | escape }}</h3>
               {%- endif -%}
@@ -73,11 +73,11 @@
 </div>
 
 {% stylesheet %}
-  .vusion-helias-benefits .vusion-helias-head h2 {
+  .vusion-v360-benefits .vusion-v360-head h2 {
     font-size: clamp(var(--vh-fs-h3), 3.2vw, var(--vh-fs-h2));
   }
 
-  .vusion-helias-benefits__grid {
+  .vusion-v360-benefits__grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1px;
@@ -86,7 +86,7 @@
     margin-top: 60px;
   }
 
-  .vusion-helias-benefits__card {
+  .vusion-v360-benefits__card {
     position: relative;
     overflow: hidden;
     padding: 26px 24px;
@@ -96,7 +96,7 @@
     justify-content: space-between;
   }
 
-  .vusion-helias-benefits__card img {
+  .vusion-v360-benefits__card img {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -105,11 +105,11 @@
     transition: transform 0.6s ease;
   }
 
-  .vusion-helias-benefits__card:hover img {
+  .vusion-v360-benefits__card:hover img {
     transform: scale(1.06);
   }
 
-  .vusion-helias-benefits__card::after {
+  .vusion-v360-benefits__card::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -121,19 +121,19 @@
     );
   }
 
-  .vusion-helias-benefits__num,
-  .vusion-helias-benefits__body {
+  .vusion-v360-benefits__num,
+  .vusion-v360-benefits__body {
     position: relative;
     z-index: 2;
   }
 
-  .vusion-helias-benefits__num {
+  .vusion-v360-benefits__num {
     font-family: var(--font-body-family);
     font-size: var(--vh-fs-small);
     color: var(--vh-ink-faint);
   }
 
-  .vusion-helias-benefits__card h3 {
+  .vusion-v360-benefits__card h3 {
     font-family: var(--font-body-family);
     font-size: var(--vh-fs-lede);
     font-weight: 600;
@@ -146,7 +146,7 @@
     word-break: normal;
   }
 
-  .vusion-helias-benefits__card p {
+  .vusion-v360-benefits__card p {
     font-size: var(--vh-fs-body);
     color: var(--vh-ink-dim);
     line-height: 1.55;
@@ -154,7 +154,7 @@
   }
 
   @media (max-width: 860px) {
-    .vusion-helias-benefits__grid {
+    .vusion-v360-benefits__grid {
       grid-template-columns: repeat(2, 1fr);
     }
   }
@@ -162,9 +162,9 @@
 
 {% schema %}
 {
-  "name": "Vusion Helias Benefits",
+  "name": "Vusion V360 Benefits",
   "tag": "section",
-  "class": "vusion-helias-section",
+  "class": "vusion-v360-section",
   "disabled_on": {
     "groups": ["header", "footer"]
   },
@@ -223,7 +223,7 @@
   "max_blocks": 4,
   "presets": [
     {
-      "name": "Vusion Helias Benefits",
+      "name": "Vusion V360 Benefits",
       "blocks": [
         {
           "type": "card",
@@ -255,7 +255,7 @@
         {
           "type": "card",
           "settings": {
-            "image_alt": "Helias in-ear monitor worn on stage",
+            "image_alt": "V360 in-ear monitor worn on stage",
             "number": "04",
             "title": "Protect your hearing",
             "text": "No wedges, no shouting monitors — lower volumes, same clarity."

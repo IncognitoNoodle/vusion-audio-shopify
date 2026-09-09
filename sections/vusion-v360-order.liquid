@@ -1,0 +1,1395 @@
+{{ 'vusion-v360.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'vusion-v360-order.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  assign product_v360 = section.settings.product_v360
+  assign product_v360_pro = section.settings.product_v360_pro
+  assign product_warranty = section.settings.product_warranty
+  if product_v360 == blank
+    assign product_v360 = all_products['vusion-v360-dj-iem-3-drivers']
+  endif
+  if product_v360 == blank
+    assign product_v360 = all_products['vusion-v360-pro-copy']
+  endif
+  if product_v360_pro == blank
+    assign product_v360_pro = all_products['vusion-v360-pro-6-drivers']
+  endif
+  if product_v360_pro == blank
+    assign product_v360_pro = all_products['helyes-ambient-aware-iem']
+  endif
+  assign variant_v360 = product_v360.selected_or_first_available_variant
+  assign variant_v360_pro = product_v360_pro.selected_or_first_available_variant
+  assign variant_warranty = product_warranty.selected_or_first_available_variant
+
+  if pages.v360 != blank
+    assign experience_fallback = pages.v360.url | append: '#experience'
+  else
+    assign experience_fallback = '/pages/v360#experience'
+  endif
+  if section.settings.experience_link != blank
+    assign experience_link = section.settings.experience_link
+  else
+    assign experience_link = experience_fallback
+  endif
+  assign guide_link = section.settings.guide_link
+-%}
+
+<div class="vusion-v360 vusion-v360-order" data-v360-order>
+  <div class="vusion-v360-order__top">
+    <div class="vusion-v360-wrap vusion-v360-order__top-inner">
+      {%- if section.settings.kicker != blank -%}
+        <p class="vusion-v360-order__kicker">{{ section.settings.kicker | escape }}</p>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <nav class="vusion-v360-order__track" aria-label="{{ section.settings.kicker | escape }}">
+    <button type="button" class="vusion-v360-order__tab is-active" data-order-tab="1" aria-current="step">
+      <span class="vusion-v360-order__tab-n">01</span>
+      <span class="vusion-v360-order__tab-t">{{ section.settings.step_1_label | escape }}</span>
+    </button>
+    <button type="button" class="vusion-v360-order__tab" data-order-tab="2">
+      <span class="vusion-v360-order__tab-n">02</span>
+      <span class="vusion-v360-order__tab-t">{{ section.settings.step_2_label | escape }}</span>
+    </button>
+    <button type="button" class="vusion-v360-order__tab" data-order-tab="3">
+      <span class="vusion-v360-order__tab-n">03</span>
+      <span class="vusion-v360-order__tab-t">{{ section.settings.step_3_label | escape }}</span>
+    </button>
+    <button type="button" class="vusion-v360-order__tab" data-order-tab="4">
+      <span class="vusion-v360-order__tab-n">04</span>
+      <span class="vusion-v360-order__tab-t">{{ section.settings.step_4_label | escape }}</span>
+    </button>
+  </nav>
+
+  <div class="vusion-v360-order__shell vusion-v360-wrap">
+    <div class="vusion-v360-order__main">
+      <div class="vusion-v360-order__panel is-active" data-order-panel="1">
+        <h1 class="vusion-v360-disp vusion-v360-order__heading">{{ section.settings.step_1_heading | escape }}</h1>
+        {%- if section.settings.step_1_hint != blank -%}
+          <p class="vusion-v360-order__hint">{{ section.settings.step_1_hint | escape }}</p>
+        {%- endif -%}
+
+        <div class="vusion-v360-order__field">
+          <p class="vusion-v360-order__label">
+            {{ section.settings.left_label | escape }}
+            <span class="vusion-v360-order__req" aria-hidden="true">*</span>
+          </p>
+          <div class="vusion-v360-order__swatches" data-swatch-group="leftFaceplate" role="radiogroup" aria-label="{{ section.settings.left_label | escape }}">
+            {%- assign color_index = 0 -%}
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'color' -%}
+                {%- assign color_index = color_index | plus: 1 -%}
+                <div {{ block.shopify_attributes }}>
+                  <button
+                    type="button"
+                    class="vusion-v360-order__swatch{% if color_index == 1 %} is-selected{% endif %}"
+                    style="--swatch: {{ block.settings.swatch }}"
+                    data-value="{{ block.settings.label | escape }}"
+                    role="radio"
+                    aria-checked="{% if color_index == 1 %}true{% else %}false{% endif %}"
+                    aria-label="{{ block.settings.label | escape }}"
+                  ></button>
+                  <span class="vusion-v360-order__swatch-name">{{ block.settings.label | escape }}</span>
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        </div>
+
+        <div class="vusion-v360-order__field">
+          <p class="vusion-v360-order__label">
+            {{ section.settings.right_label | escape }}
+            <span class="vusion-v360-order__req" aria-hidden="true">*</span>
+          </p>
+          <div class="vusion-v360-order__swatches" data-swatch-group="rightFaceplate" role="radiogroup" aria-label="{{ section.settings.right_label | escape }}">
+            {%- assign color_index = 0 -%}
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'color' -%}
+                {%- assign color_index = color_index | plus: 1 -%}
+                <div>
+                  <button
+                    type="button"
+                    class="vusion-v360-order__swatch{% if color_index == 1 %} is-selected{% endif %}"
+                    style="--swatch: {{ block.settings.swatch }}"
+                    data-value="{{ block.settings.label | escape }}"
+                    role="radio"
+                    aria-checked="{% if color_index == 1 %}true{% else %}false{% endif %}"
+                    aria-label="{{ block.settings.label | escape }}"
+                  ></button>
+                  <span class="vusion-v360-order__swatch-name">{{ block.settings.label | escape }}</span>
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        </div>
+
+        <div class="vusion-v360-order__nav">
+          <span></span>
+          <button type="button" class="vusion-v360-btn vusion-v360-btn--primary" data-go-step="2">
+            {{ section.settings.continue_cable | escape }}
+          </button>
+        </div>
+      </div>
+
+      <div class="vusion-v360-order__panel" data-order-panel="2">
+        <h2 class="vusion-v360-disp vusion-v360-order__heading">{{ section.settings.step_2_heading | escape }}</h2>
+        {%- if section.settings.step_2_hint != blank -%}
+          <p class="vusion-v360-order__hint">{{ section.settings.step_2_hint | escape }}</p>
+        {%- endif -%}
+
+        <div class="vusion-v360-order__field">
+          <label class="vusion-v360-order__label" for="V360Order-cable-{{ section.id }}">
+            {{ section.settings.cable_label | escape }}
+            <span class="vusion-v360-order__req" aria-hidden="true">*</span>
+          </label>
+          <select class="vusion-v360-order__input" id="V360Order-cable-{{ section.id }}" data-field-cable required>
+            <option value="">{{ section.settings.cable_placeholder | escape }}</option>
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'cable' -%}
+                <option value="{{ block.settings.value | escape }}">{{ block.settings.label | escape }}</option>
+              {%- endif -%}
+            {%- endfor -%}
+          </select>
+          {%- if section.settings.cable_hint != blank -%}
+            <p class="vusion-v360-order__help">{{ section.settings.cable_hint | escape }}</p>
+          {%- endif -%}
+        </div>
+
+        <div class="vusion-v360-order__field">
+          <label class="vusion-v360-order__label" for="V360Order-initials-{{ section.id }}">
+            {{ section.settings.initials_label | escape }}
+            <span class="vusion-v360-order__req" aria-hidden="true">*</span>
+          </label>
+          <input
+            class="vusion-v360-order__input"
+            id="V360Order-initials-{{ section.id }}"
+            data-field-initials
+            maxlength="4"
+            autocomplete="off"
+            placeholder="{{ section.settings.initials_placeholder | escape }}"
+          >
+          {%- if section.settings.initials_hint != blank -%}
+            <p class="vusion-v360-order__help">{{ section.settings.initials_hint | escape }}</p>
+          {%- endif -%}
+        </div>
+
+        <div class="vusion-v360-order__field">
+          <label class="vusion-v360-order__label" for="V360Order-case-{{ section.id }}">
+            {{ section.settings.case_label | escape }}
+            <span class="vusion-v360-order__req" aria-hidden="true">*</span>
+          </label>
+          <input
+            class="vusion-v360-order__input"
+            id="V360Order-case-{{ section.id }}"
+            data-field-case-name
+            autocomplete="name"
+            placeholder="{{ section.settings.case_placeholder | escape }}"
+          >
+        </div>
+
+        <div class="vusion-v360-order__field">
+          <label class="vusion-v360-order__label" for="V360Order-band-{{ section.id }}">
+            {{ section.settings.band_label | escape }}
+          </label>
+          <input
+            class="vusion-v360-order__input"
+            id="V360Order-band-{{ section.id }}"
+            data-field-band
+            placeholder="{{ section.settings.band_placeholder | escape }}"
+          >
+        </div>
+
+        <div class="vusion-v360-order__nav">
+          <button type="button" class="vusion-v360-btn vusion-v360-btn--outline" data-go-step="1">
+            {{ section.settings.back_label | escape }}
+          </button>
+          <button type="button" class="vusion-v360-btn vusion-v360-btn--primary" data-go-step="3">
+            {{ section.settings.continue_impressions | escape }}
+          </button>
+        </div>
+      </div>
+
+      <div class="vusion-v360-order__panel" data-order-panel="3">
+        <h2 class="vusion-v360-disp vusion-v360-order__heading">{{ section.settings.step_3_heading | escape }}</h2>
+        {%- if section.settings.step_3_hint != blank -%}
+          <p class="vusion-v360-order__hint">{{ section.settings.step_3_hint | escape }}</p>
+        {%- endif -%}
+
+        <div class="vusion-v360-order__field">
+          <p class="vusion-v360-order__label">
+            {{ section.settings.impressions_label | escape }}
+            <span class="vusion-v360-order__req" aria-hidden="true">*</span>
+          </p>
+          <div class="vusion-v360-order__pills" role="radiogroup" aria-label="{{ section.settings.impressions_label | escape }}">
+            <button
+              type="button"
+              class="vusion-v360-order__pill is-selected"
+              data-impression="Sending new"
+              role="radio"
+              aria-checked="true"
+            >
+              {{ section.settings.impressions_new | escape }}
+            </button>
+            <button
+              type="button"
+              class="vusion-v360-order__pill"
+              data-impression="Already on file"
+              role="radio"
+              aria-checked="false"
+            >
+              {{ section.settings.impressions_file | escape }}
+            </button>
+          </div>
+        </div>
+
+        <div class="vusion-v360-order__field" data-imp-new>
+          {%- if section.settings.impressions_new_body != blank -%}
+            <p class="vusion-v360-order__help">{{ section.settings.impressions_new_body | escape }}</p>
+          {%- endif -%}
+          {%- if section.settings.impressions_email != blank -%}
+            <ul class="vusion-v360-order__checklist">
+              <li>After payment, Shopify emails you this order’s number. Send a <strong>new</strong> message (don’t reply to Shopify) to
+                <a href="mailto:{{ section.settings.impressions_email | escape }}?subject={{ 'V360 impressions' | url_encode }}">{{ section.settings.impressions_email | escape }}</a>.
+              </li>
+              <li>Subject line exactly: <code>V360 impressions</code> + your order number, e.g. <code>V360 impressions #1042</code>.</li>
+              <li>Photos of both boxes (all sides, labels visible), or a WeTransfer / Dropbox / Drive link. Use a link for STL/PLY — large Gmail attachments bounce.</li>
+              <li>Production starts when that email arrives. Or book a V360 Experience and we take them on the spot.</li>
+            </ul>
+          {%- endif -%}
+          <p class="vusion-v360-order__help">
+            {%- if experience_link != blank -%}
+              <a href="{{ experience_link }}">{{ section.settings.experience_label | escape }}</a>
+            {%- endif -%}
+            {%- if guide_link != blank -%}
+              {%- if experience_link != blank %} · {% endif -%}
+              <a href="{{ guide_link }}">{{ section.settings.guide_label | escape }}</a>
+            {%- endif -%}
+          </p>
+        </div>
+
+        <div class="vusion-v360-order__field" data-imp-file hidden>
+          <label class="vusion-v360-order__label" for="V360Order-ref-{{ section.id }}">
+            {{ section.settings.ref_label | escape }}
+          </label>
+          <input
+            class="vusion-v360-order__input"
+            id="V360Order-ref-{{ section.id }}"
+            data-field-impression-ref
+            placeholder="{{ section.settings.ref_placeholder | escape }}"
+          >
+          {%- if section.settings.ref_hint != blank -%}
+            <p class="vusion-v360-order__help">{{ section.settings.ref_hint | escape }}</p>
+          {%- endif -%}
+        </div>
+
+        <div class="vusion-v360-order__nav">
+          <button type="button" class="vusion-v360-btn vusion-v360-btn--outline" data-go-step="2">
+            {{ section.settings.back_label | escape }}
+          </button>
+          <button type="button" class="vusion-v360-btn vusion-v360-btn--primary" data-go-step="4">
+            {{ section.settings.continue_review | escape }}
+          </button>
+        </div>
+      </div>
+
+      <div class="vusion-v360-order__panel" data-order-panel="4">
+        <h2 class="vusion-v360-disp vusion-v360-order__heading">{{ section.settings.step_4_heading | escape }}</h2>
+        {%- if section.settings.step_4_hint != blank -%}
+          <p class="vusion-v360-order__hint">{{ section.settings.step_4_hint | escape }}</p>
+        {%- endif -%}
+
+        <div class="vusion-v360-order__review">
+          <h3>{{ section.settings.review_shell | escape }}</h3>
+          <div class="vusion-v360-order__review-grid">
+            <div>
+              <div class="vusion-v360-order__rk">{{ section.settings.left_label | escape }}</div>
+              <div class="vusion-v360-order__rv" data-review-left>—</div>
+            </div>
+            <div>
+              <div class="vusion-v360-order__rk">{{ section.settings.right_label | escape }}</div>
+              <div class="vusion-v360-order__rv" data-review-right>—</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="vusion-v360-order__review">
+          <h3>{{ section.settings.review_cable | escape }}</h3>
+          <div class="vusion-v360-order__review-grid">
+            <div>
+              <div class="vusion-v360-order__rk">{{ section.settings.cable_label | escape }}</div>
+              <div class="vusion-v360-order__rv" data-review-cable>—</div>
+            </div>
+            <div>
+              <div class="vusion-v360-order__rk">{{ section.settings.initials_label | escape }}</div>
+              <div class="vusion-v360-order__rv" data-review-initials>—</div>
+            </div>
+            <div>
+              <div class="vusion-v360-order__rk">{{ section.settings.case_label | escape }}</div>
+              <div class="vusion-v360-order__rv" data-review-case-name>—</div>
+            </div>
+            <div>
+              <div class="vusion-v360-order__rk">{{ section.settings.band_label | escape }}</div>
+              <div class="vusion-v360-order__rv" data-review-band>—</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="vusion-v360-order__review">
+          <h3>{{ section.settings.review_impressions | escape }}</h3>
+          <div class="vusion-v360-order__review-grid">
+            <div>
+              <div class="vusion-v360-order__rk">{{ section.settings.impressions_label | escape }}</div>
+              <div class="vusion-v360-order__rv" data-review-imp-status>Sending new</div>
+            </div>
+            <div>
+              <div class="vusion-v360-order__rk">{{ section.settings.ref_label | escape }}</div>
+              <div class="vusion-v360-order__rv" data-review-imp-ref>We’ll email the exact subject after you pay</div>
+            </div>
+            <div>
+              <div class="vusion-v360-order__rk">{{ section.settings.warranty_label | escape }}</div>
+              <div class="vusion-v360-order__rv" data-review-warranty>Not added</div>
+            </div>
+          </div>
+        </div>
+
+        <label class="vusion-v360-order__check">
+          <input type="checkbox" data-terms-input>
+          <span>{{ section.settings.terms_html }}</span>
+        </label>
+
+        <p class="vusion-v360-order__error" data-order-error hidden></p>
+
+        <div class="vusion-v360-order__nav">
+          <button type="button" class="vusion-v360-btn vusion-v360-btn--outline" data-go-step="3">
+            {{ section.settings.back_label | escape }}
+          </button>
+          <button type="button" class="vusion-v360-btn vusion-v360-btn--primary" data-order-checkout disabled>
+            {{ section.settings.checkout_label | escape }}
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <aside class="vusion-v360-order__summary" aria-label="{{ section.settings.summary_heading | escape }}">
+      <div class="vusion-v360-order__sc-head">
+        <img
+          data-summary-image
+          src="{{ 'vusion-v360-models-pro.webp' | asset_url }}"
+          alt=""
+          width="64"
+          height="64"
+        >
+        <div>
+          <div class="vusion-v360-order__sc-name vusion-v360-disp" data-summary-name>
+            {{ section.settings.v360_pro_title | escape }}
+          </div>
+          <div class="vusion-v360-order__sc-sub" data-summary-sub>
+            {{ section.settings.v360_pro_subtitle | escape }}
+          </div>
+        </div>
+      </div>
+      <div class="vusion-v360-order__line">
+        <span>{{ section.settings.summary_base | escape }}</span>
+        <span data-summary-base>—</span>
+      </div>
+      <div class="vusion-v360-order__line">
+        <span>{{ section.settings.left_label | escape }}</span>
+        <span data-summary-left>—</span>
+      </div>
+      <div class="vusion-v360-order__line">
+        <span>{{ section.settings.right_label | escape }}</span>
+        <span data-summary-right>—</span>
+      </div>
+      <div class="vusion-v360-order__line">
+        <span>{{ section.settings.cable_label | escape }}</span>
+        <span data-summary-cable>Not selected</span>
+      </div>
+      {%- if product_warranty != blank -%}
+        <label class="vusion-v360-order__check vusion-v360-order__check--summary">
+          <input type="checkbox" data-warranty-input>
+          <span>
+            <span class="vusion-v360-order__cr-title">
+              {{ section.settings.warranty_label | escape }}
+              {%- if variant_warranty -%}
+                — {{ variant_warranty.price | money }}
+              {%- endif -%}
+            </span>
+            {%- if section.settings.warranty_help != blank -%}
+              <span class="vusion-v360-order__cr-sub">{{ section.settings.warranty_help | escape }}</span>
+            {%- endif -%}
+          </span>
+        </label>
+        <div class="vusion-v360-order__line">
+          <span>{{ section.settings.warranty_label | escape }}</span>
+          <span data-summary-warranty>—</span>
+        </div>
+      {%- endif -%}
+      <div class="vusion-v360-order__total">
+        <span class="vusion-v360-order__total-lbl">{{ section.settings.summary_total | escape }}</span>
+        <span class="vusion-v360-order__total-amt" data-summary-total>—</span>
+      </div>
+      {%- if section.settings.assurance_1 != blank or section.settings.assurance_2 != blank or section.settings.assurance_3 != blank -%}
+        <div class="vusion-v360-order__assurance">
+          {%- if section.settings.assurance_1 != blank -%}
+            <p>{{ section.settings.assurance_1 }}</p>
+          {%- endif -%}
+          {%- if section.settings.assurance_2 != blank -%}
+            <p>{{ section.settings.assurance_2 }}</p>
+          {%- endif -%}
+          {%- if section.settings.assurance_3 != blank -%}
+            <p>{{ section.settings.assurance_3 }}</p>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    </aside>
+  </div>
+
+  <script type="application/json" data-v360-order-config>
+    {
+      "defaultModel": {{ section.settings.default_model | json }},
+      "cartAddUrl": {{ routes.cart_add_url | json }},
+      "checkoutUrl": "/checkout",
+      "impressionsEmail": {{ section.settings.impressions_email | default: 'info@vusionaudio.com' | json }},
+      "moneyFormat": {{ shop.money_format | json }},
+      "models": {
+        "v360": {
+          "key": "v360",
+          "variantId": {{ variant_v360.id | default: 0 }},
+          "available": {{ variant_v360.available | default: false | json }},
+          "title": {{ product_v360.title | default: section.settings.v360_title | json }},
+          "subtitle": {{ section.settings.v360_subtitle | json }},
+          "priceCents": {{ variant_v360.price | default: 0 }},
+          "price": {{ variant_v360.price | default: 0 | money | json }},
+          "image": {% if product_v360.featured_image %}{{ product_v360.featured_image | image_url: width: 200 | json }}{% else %}{{ 'vusion-v360-models-v360.webp' | asset_url | json }}{% endif %}
+        },
+        "v360-pro": {
+          "key": "v360-pro",
+          "variantId": {{ variant_v360_pro.id | default: 0 }},
+          "available": {{ variant_v360_pro.available | default: false | json }},
+          "title": {{ product_v360_pro.title | default: section.settings.v360_pro_title | json }},
+          "subtitle": {{ section.settings.v360_pro_subtitle | json }},
+          "priceCents": {{ variant_v360_pro.price | default: 0 }},
+          "price": {{ variant_v360_pro.price | default: 0 | money | json }},
+          "image": {% if product_v360_pro.featured_image %}{{ product_v360_pro.featured_image | image_url: width: 200 | json }}{% else %}{{ 'vusion-v360-models-pro.webp' | asset_url | json }}{% endif %}
+        }
+      },
+      "warranty": {
+        "variantId": {{ variant_warranty.id | default: 0 }},
+        "priceCents": {{ variant_warranty.price | default: 0 }},
+        "price": {{ variant_warranty.price | default: 0 | money | json }}
+      }
+    }
+  </script>
+</div>
+
+{% stylesheet %}
+  .vusion-v360.vusion-v360-order {
+    padding: 0 0 80px;
+    background: var(--vh-bg);
+  }
+
+  .vusion-v360-order .vusion-v360-btn {
+    appearance: none;
+  }
+
+  .vusion-v360-order .vusion-v360-btn:disabled,
+  .vusion-v360-order .vusion-v360-btn.is-loading {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .vusion-v360-order__top {
+    border-bottom: 1px solid var(--vh-hairline);
+    background: rgba(10, 10, 10, 0.96);
+  }
+
+  .vusion-v360-order__top-inner {
+    display: flex;
+    align-items: center;
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  .vusion-v360-order__kicker {
+    margin: 0;
+    font-family: var(--font-body-family);
+    font-size: var(--vh-fs-caption);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--vh-ink-faint);
+  }
+
+  .vusion-v360-order__track {
+    display: flex;
+    gap: 0;
+    max-width: 1180px;
+    margin: 34px auto 0;
+    padding: 0 32px;
+  }
+
+  .vusion-v360-order__tab {
+    flex: 1;
+    appearance: none;
+    background: none;
+    border: 0;
+    border-bottom: 2px solid var(--vh-hairline);
+    padding: 0 8px 18px;
+    text-align: center;
+    cursor: pointer;
+    color: inherit;
+  }
+
+  .vusion-v360-order__tab.is-active {
+    border-bottom-color: var(--vh-gold);
+  }
+
+  .vusion-v360-order__tab.is-done {
+    border-bottom-color: rgba(225, 35, 26, 0.45);
+  }
+
+  .vusion-v360-order__tab-n {
+    display: block;
+    font-size: var(--vh-fs-caption);
+    letter-spacing: 0.06em;
+    color: var(--vh-ink-faint);
+  }
+
+  .vusion-v360-order__tab.is-active .vusion-v360-order__tab-n {
+    color: var(--vh-gold);
+  }
+
+  .vusion-v360-order__tab-t {
+    display: block;
+    margin-top: 4px;
+    font-size: var(--vh-fs-small);
+    color: var(--vh-ink-dim);
+  }
+
+  .vusion-v360-order__tab.is-active .vusion-v360-order__tab-t {
+    color: var(--vh-ink);
+  }
+
+  .vusion-v360-wrap.vusion-v360-order__shell {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 60px;
+    align-items: start;
+    padding: 88px 32px 120px;
+  }
+
+  .vusion-v360-order__panel {
+    display: none;
+  }
+
+  .vusion-v360-order__panel.is-active {
+    display: block;
+    animation: vusion-v360-order-in 0.35s ease;
+  }
+
+  @keyframes vusion-v360-order-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .vusion-v360-order__heading {
+    font-size: clamp(var(--vh-fs-h3), 3vw, 32px);
+    margin: 0 0 10px;
+  }
+
+  .vusion-v360-order__hint {
+    color: var(--vh-ink-faint);
+    font-size: var(--vh-fs-small);
+    line-height: 1.6;
+    margin: 0 0 30px;
+  }
+
+  .vusion-v360-order__field {
+    margin-bottom: 38px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--vh-hairline);
+  }
+
+  .vusion-v360-order__label {
+    font-size: var(--vh-fs-caption);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--vh-ink);
+    margin: 0 0 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .vusion-v360-order__req {
+    color: var(--vh-gold);
+  }
+
+  .vusion-v360-order__help {
+    font-size: var(--vh-fs-small);
+    color: var(--vh-ink-faint);
+    margin: 10px 0 0;
+    line-height: 1.6;
+  }
+
+  .vusion-v360-order__help a,
+  .vusion-v360-order__checklist a {
+    color: var(--vh-gold);
+  }
+
+  .vusion-v360-order__checklist {
+    margin: 14px 0 0;
+    padding: 0 0 0 1.15em;
+    font-size: var(--vh-fs-small);
+    color: var(--vh-ink-faint);
+    line-height: 1.6;
+  }
+
+  .vusion-v360-order__checklist li + li {
+    margin-top: 8px;
+  }
+
+  .vusion-v360-order__checklist code {
+    font-family: var(--font-body-family);
+    font-size: 0.95em;
+    color: var(--vh-ink);
+  }
+
+  .vusion-v360-order__swatches {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .vusion-v360-order__swatch {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid var(--vh-hairline);
+    cursor: pointer;
+    position: relative;
+    background: transparent;
+    padding: 0;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .vusion-v360-order__swatch:hover {
+    transform: translateY(-2px);
+  }
+
+  .vusion-v360-order__swatch.is-selected {
+    border-color: var(--vh-gold);
+    box-shadow: 0 0 0 3px var(--vh-gold-soft);
+  }
+
+  .vusion-v360-order__swatch::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    border-radius: 50%;
+    background: var(--swatch);
+    border: 1px solid rgba(244, 241, 234, 0.12);
+  }
+
+  .vusion-v360-order__swatch-name {
+    font-size: 11px;
+    color: var(--vh-ink-faint);
+    text-align: center;
+    margin-top: 8px;
+    display: block;
+  }
+
+  .vusion-v360-order__input {
+    width: 100%;
+    background: var(--vh-bg-panel-2);
+    border: 1px solid var(--vh-hairline);
+    color: var(--vh-ink);
+    padding: 13px 16px;
+    border-radius: 3px;
+    font-family: var(--font-body-family);
+    font-size: 14px;
+  }
+
+  .vusion-v360-order__input:focus {
+    outline: none;
+    border-color: var(--vh-gold);
+  }
+
+  .vusion-v360-order__input.is-invalid {
+    border-color: var(--vh-gold);
+  }
+
+  .vusion-v360-order__pills {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .vusion-v360-order__pill {
+    appearance: none;
+    background: transparent;
+    border: 1px solid var(--vh-hairline);
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: var(--vh-fs-small);
+    color: var(--vh-ink-dim);
+    cursor: pointer;
+  }
+
+  .vusion-v360-order__pill.is-selected {
+    border-color: var(--vh-gold);
+    color: var(--vh-ink);
+    background: var(--vh-gold-soft);
+  }
+
+  .vusion-v360-order__nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 44px;
+  }
+
+  .vusion-v360-order__summary {
+    border: 1px solid var(--vh-hairline);
+    border-radius: 4px;
+    background: var(--vh-bg-panel);
+    padding: 30px;
+    position: sticky;
+    top: calc(var(--header-height, 8rem) + 1.2rem);
+  }
+
+  .vusion-v360-order__sc-head {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--vh-hairline);
+    margin-bottom: 22px;
+  }
+
+  .vusion-v360-order__sc-head img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid var(--vh-hairline);
+  }
+
+  .vusion-v360-order__sc-name {
+    font-size: 20px;
+    line-height: 1.1;
+  }
+
+  .vusion-v360-order__sc-sub {
+    font-size: var(--vh-fs-caption);
+    color: var(--vh-ink-faint);
+    margin-top: 2px;
+  }
+
+  .vusion-v360-order__line {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 13.5px;
+    color: var(--vh-ink-dim);
+    padding: 9px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  .vusion-v360-order__line span:last-child {
+    color: var(--vh-ink);
+    text-align: right;
+    max-width: 55%;
+  }
+
+  .vusion-v360-order__total {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--vh-hairline);
+  }
+
+  .vusion-v360-order__total-lbl {
+    font-size: var(--vh-fs-small);
+    color: var(--vh-ink-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .vusion-v360-order__total-amt {
+    font-family: var(--font-heading-family);
+    font-size: 30px;
+    color: var(--vh-gold);
+  }
+
+  .vusion-v360-order__assurance {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .vusion-v360-order__assurance p {
+    margin: 0;
+    font-size: 12.5px;
+    color: var(--vh-ink-faint);
+    line-height: 1.5;
+  }
+
+  .vusion-v360-order__check {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+    margin: 8px 0 22px;
+    font-size: 14px;
+    color: var(--vh-ink);
+  }
+
+  .vusion-v360-order__check input {
+    margin-top: 3px;
+    accent-color: var(--vh-gold);
+  }
+
+  .vusion-v360-order__check--summary {
+    margin: 16px 0 8px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  .vusion-v360-order__cr-title {
+    display: block;
+  }
+
+  .vusion-v360-order__cr-sub {
+    display: block;
+    font-size: 12.5px;
+    color: var(--vh-ink-faint);
+    margin-top: 3px;
+    line-height: 1.5;
+  }
+
+  .vusion-v360-order__review {
+    margin-bottom: 26px;
+  }
+
+  .vusion-v360-order__review h3 {
+    font-size: var(--vh-fs-small);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--vh-ink-faint);
+    margin: 0 0 12px;
+    font-weight: 500;
+  }
+
+  .vusion-v360-order__review-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 24px;
+  }
+
+  .vusion-v360-order__rk {
+    font-size: var(--vh-fs-caption);
+    color: var(--vh-ink-faint);
+  }
+
+  .vusion-v360-order__rv {
+    font-size: 14px;
+    color: var(--vh-ink);
+  }
+
+  .vusion-v360-order__error {
+    color: var(--vh-gold);
+    font-size: var(--vh-fs-small);
+    margin: 0 0 16px;
+  }
+
+  @media (max-width: 900px) {
+    .vusion-v360-wrap.vusion-v360-order__shell {
+      grid-template-columns: 1fr;
+    }
+
+    .vusion-v360-order__summary {
+      position: static;
+      order: -1;
+    }
+
+    .vusion-v360-order__tab-t {
+      font-size: 11px;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .vusion-v360-order__review-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .vusion-v360-order__panel.is-active {
+      animation: none;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Vusion V360 Order",
+  "tag": "section",
+  "class": "vusion-v360-section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Kicker",
+      "default": "Custom Order · V360"
+    },
+    {
+      "type": "header",
+      "content": "Products"
+    },
+    {
+      "type": "select",
+      "id": "default_model",
+      "label": "Default model",
+      "options": [
+        { "value": "v360-pro", "label": "V360 Pro" },
+        { "value": "v360", "label": "V360" }
+      ],
+      "default": "v360-pro"
+    },
+    {
+      "type": "product",
+      "id": "product_v360",
+      "label": "Vusion V360 product"
+    },
+    {
+      "type": "text",
+      "id": "v360_title",
+      "label": "V360 title fallback",
+      "default": "VUSION V360"
+    },
+    {
+      "type": "text",
+      "id": "v360_subtitle",
+      "label": "V360 subtitle",
+      "default": "Custom Active Ambient IEM for DJs"
+    },
+    {
+      "type": "product",
+      "id": "product_v360_pro",
+      "label": "Vusion V360 Pro product"
+    },
+    {
+      "type": "text",
+      "id": "v360_pro_title",
+      "label": "V360 Pro title fallback",
+      "default": "VUSION V360 PRO"
+    },
+    {
+      "type": "text",
+      "id": "v360_pro_subtitle",
+      "label": "V360 Pro subtitle",
+      "default": "Custom Active Ambient IEM for Performers"
+    },
+    {
+      "type": "product",
+      "id": "product_warranty",
+      "label": "Extended warranty product"
+    },
+    {
+      "type": "text",
+      "id": "warranty_label",
+      "label": "Warranty label",
+      "default": "Extended warranty (1-year)"
+    },
+    {
+      "type": "textarea",
+      "id": "warranty_help",
+      "label": "Warranty help",
+      "default": "Adds a second year of coverage on top of the included 1-year limited warranty and 1-year fit warranty."
+    },
+    {
+      "type": "header",
+      "content": "Steps"
+    },
+    {
+      "type": "text",
+      "id": "step_1_label",
+      "label": "Step 1 tab",
+      "default": "Shell & Colour"
+    },
+    {
+      "type": "text",
+      "id": "step_2_label",
+      "label": "Step 2 tab",
+      "default": "Cable & Engraving"
+    },
+    {
+      "type": "text",
+      "id": "step_3_label",
+      "label": "Step 3 tab",
+      "default": "Ear Impressions"
+    },
+    {
+      "type": "text",
+      "id": "step_4_label",
+      "label": "Step 4 tab",
+      "default": "Review & Checkout"
+    },
+    {
+      "type": "text",
+      "id": "step_1_heading",
+      "label": "Step 1 heading",
+      "default": "Shell & faceplate colour"
+    },
+    {
+      "type": "textarea",
+      "id": "step_1_hint",
+      "label": "Step 1 hint",
+      "default": "Left and right can be different. These colours go to production as typed in the review."
+    },
+    {
+      "type": "text",
+      "id": "left_label",
+      "label": "Left faceplate label",
+      "default": "Left faceplate"
+    },
+    {
+      "type": "text",
+      "id": "right_label",
+      "label": "Right faceplate label",
+      "default": "Right faceplate"
+    },
+    {
+      "type": "text",
+      "id": "step_2_heading",
+      "label": "Step 2 heading",
+      "default": "Cable & engraving"
+    },
+    {
+      "type": "textarea",
+      "id": "step_2_hint",
+      "label": "Step 2 hint",
+      "default": "Every order includes one cable at no extra cost. Engraving is printed exactly as typed — double-check spelling."
+    },
+    {
+      "type": "text",
+      "id": "cable_label",
+      "label": "Cable label",
+      "default": "Cable choice"
+    },
+    {
+      "type": "text",
+      "id": "cable_placeholder",
+      "label": "Cable placeholder",
+      "default": "-- Choose cable choice --"
+    },
+    {
+      "type": "textarea",
+      "id": "cable_hint",
+      "label": "Cable hint",
+      "default": "Not sure which connector your wireless pack uses? Check your beltpack — most systems use one or the other."
+    },
+    {
+      "type": "text",
+      "id": "initials_label",
+      "label": "Initials label",
+      "default": "Initials on shell"
+    },
+    {
+      "type": "text",
+      "id": "initials_placeholder",
+      "label": "Initials placeholder",
+      "default": "e.g. J.K."
+    },
+    {
+      "type": "text",
+      "id": "initials_hint",
+      "label": "Initials hint",
+      "default": "Up to 4 characters, engraved on the shell itself."
+    },
+    {
+      "type": "text",
+      "id": "case_label",
+      "label": "Case name label",
+      "default": "Name on case"
+    },
+    {
+      "type": "text",
+      "id": "case_placeholder",
+      "label": "Case name placeholder",
+      "default": "Full name for your carry case"
+    },
+    {
+      "type": "text",
+      "id": "band_label",
+      "label": "Band label",
+      "default": "Band / group / church name"
+    },
+    {
+      "type": "text",
+      "id": "band_placeholder",
+      "label": "Band placeholder",
+      "default": "Optional"
+    },
+    {
+      "type": "text",
+      "id": "step_3_heading",
+      "label": "Step 3 heading",
+      "default": "Ear impressions"
+    },
+    {
+      "type": "textarea",
+      "id": "step_3_hint",
+      "label": "Step 3 hint",
+      "default": "V360 is custom-molded to your ears — we cannot start production without a valid impression on file."
+    },
+    {
+      "type": "text",
+      "id": "impressions_label",
+      "label": "Impressions label",
+      "default": "Ear impressions"
+    },
+    {
+      "type": "text",
+      "id": "impressions_new",
+      "label": "Sending new label",
+      "default": "Sending new"
+    },
+    {
+      "type": "text",
+      "id": "impressions_file",
+      "label": "On file label",
+      "default": "Already on file"
+    },
+    {
+      "type": "textarea",
+      "id": "impressions_new_body",
+      "label": "Sending new body",
+      "default": "You cannot attach files at checkout. After you pay we email you the order number and the exact subject line to use."
+    },
+    {
+      "type": "text",
+      "id": "impressions_email",
+      "label": "Impression files email",
+      "default": "info@vusionaudio.com",
+      "info": "Shown as a mailto on the impressions step and stored on the order."
+    },
+    {
+      "type": "text",
+      "id": "experience_label",
+      "label": "Experience link label",
+      "default": "Book a V360 Experience"
+    },
+    {
+      "type": "url",
+      "id": "experience_link",
+      "label": "Experience link",
+      "info": "Empty uses the V360 page Experience section."
+    },
+    {
+      "type": "text",
+      "id": "guide_label",
+      "label": "Guide link label",
+      "default": "Impression guide"
+    },
+    {
+      "type": "url",
+      "id": "guide_link",
+      "label": "Impression guide link"
+    },
+    {
+      "type": "text",
+      "id": "ref_label",
+      "label": "Reference label",
+      "default": "Impression reference"
+    },
+    {
+      "type": "text",
+      "id": "ref_placeholder",
+      "label": "Reference placeholder",
+      "default": "Previous order number or audiologist reference"
+    },
+    {
+      "type": "textarea",
+      "id": "ref_hint",
+      "label": "Reference hint",
+      "default": "We match this to impressions already on file. If we cannot find a match, we email you before production starts."
+    },
+    {
+      "type": "text",
+      "id": "step_4_heading",
+      "label": "Step 4 heading",
+      "default": "Review your order"
+    },
+    {
+      "type": "textarea",
+      "id": "step_4_hint",
+      "label": "Step 4 hint",
+      "default": "Check colours, engraving and cable carefully — they go into production once you pay."
+    },
+    {
+      "type": "text",
+      "id": "review_shell",
+      "label": "Review shell heading",
+      "default": "Shell & colour"
+    },
+    {
+      "type": "text",
+      "id": "review_cable",
+      "label": "Review cable heading",
+      "default": "Cable & engraving"
+    },
+    {
+      "type": "text",
+      "id": "review_impressions",
+      "label": "Review impressions heading",
+      "default": "Impressions & warranty"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "terms_html",
+      "label": "Terms text",
+      "default": "I confirm these details are correct and agree to Vusion’s terms, custom-fit policy and 4–6 week production time."
+    },
+    {
+      "type": "text",
+      "id": "checkout_label",
+      "label": "Checkout button",
+      "default": "Proceed to Secure Checkout"
+    },
+    {
+      "type": "text",
+      "id": "continue_cable",
+      "label": "Continue to cable",
+      "default": "Continue → Cable & Engraving"
+    },
+    {
+      "type": "text",
+      "id": "continue_impressions",
+      "label": "Continue to impressions",
+      "default": "Continue → Ear Impressions"
+    },
+    {
+      "type": "text",
+      "id": "continue_review",
+      "label": "Continue to review",
+      "default": "Continue → Review"
+    },
+    {
+      "type": "text",
+      "id": "back_label",
+      "label": "Back label",
+      "default": "← Back"
+    },
+    {
+      "type": "header",
+      "content": "Summary"
+    },
+    {
+      "type": "text",
+      "id": "summary_heading",
+      "label": "Summary label",
+      "default": "Order summary"
+    },
+    {
+      "type": "text",
+      "id": "summary_base",
+      "label": "Base line",
+      "default": "Base unit"
+    },
+    {
+      "type": "text",
+      "id": "summary_total",
+      "label": "Total label",
+      "default": "Total"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "assurance_1",
+      "label": "Assurance 1",
+      "default": "<b>30-day</b> money-back guarantee"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "assurance_2",
+      "label": "Assurance 2",
+      "default": "<b>1-year</b> limited warranty + <b>1-year</b> fit warranty included"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "assurance_3",
+      "label": "Assurance 3",
+      "default": "<b>Handcrafted</b> to your own ear impressions — ships in ~4–6 weeks"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "color",
+      "name": "Faceplate colour",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Name",
+          "default": "Black"
+        },
+        {
+          "type": "color",
+          "id": "swatch",
+          "label": "Swatch",
+          "default": "#111111"
+        }
+      ]
+    },
+    {
+      "type": "cable",
+      "name": "Cable",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "T2™ Cable (Linum)"
+        },
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Value on order",
+          "default": "T2 Linum Cable"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "Vusion V360 Order",
+      "blocks": [
+        { "type": "color", "settings": { "label": "Black", "swatch": "#111111" } },
+        { "type": "color", "settings": { "label": "White", "swatch": "#f4f1ea" } },
+        { "type": "color", "settings": { "label": "Gold", "swatch": "#d9b98a" } },
+        { "type": "color", "settings": { "label": "Red", "swatch": "#c23b32" } },
+        { "type": "color", "settings": { "label": "Blue", "swatch": "#3a5fa8" } },
+        { "type": "cable", "settings": { "label": "T2™ Cable (Linum)", "value": "T2 Linum Cable" } },
+        { "type": "cable", "settings": { "label": "2-Pin Cable (Elite Series)", "value": "2-Pin Elite Cable" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

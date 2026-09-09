@@ -330,6 +330,20 @@
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
+    {%- if template.name == 'product' -%}
+      {%- capture v360_order_url -%}
+        {%- render 'vusion-v360-order-url', product: product -%}
+      {%- endcapture -%}
+      {%- assign v360_order_url = v360_order_url | strip -%}
+      {%- if v360_order_url != blank -%}
+        <script>
+          window.location.replace({{ v360_order_url | json }});
+        </script>
+        <noscript>
+          <meta http-equiv="refresh" content="0;url={{ v360_order_url }}">
+        </noscript>
+      {%- endif -%}
+    {%- endif -%}
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>

@@ -1,0 +1,148 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ *
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "vusion_v360_order": {
+      "type": "vusion-v360-order",
+      "blocks": {
+        "color_black": {
+          "type": "color",
+          "settings": {
+            "label": "Black",
+            "swatch": "#111111"
+          }
+        },
+        "color_white": {
+          "type": "color",
+          "settings": {
+            "label": "White",
+            "swatch": "#f4f1ea"
+          }
+        },
+        "color_gold": {
+          "type": "color",
+          "settings": {
+            "label": "Gold",
+            "swatch": "#d9b98a"
+          }
+        },
+        "color_red": {
+          "type": "color",
+          "settings": {
+            "label": "Red",
+            "swatch": "#c23b32"
+          }
+        },
+        "color_blue": {
+          "type": "color",
+          "settings": {
+            "label": "Blue",
+            "swatch": "#3a5fa8"
+          }
+        },
+        "cable_t2": {
+          "type": "cable",
+          "settings": {
+            "label": "T2\u2122 Cable (Linum)",
+            "value": "T2 Linum Cable"
+          }
+        },
+        "cable_2pin": {
+          "type": "cable",
+          "settings": {
+            "label": "2-Pin Cable (Elite Series)",
+            "value": "2-Pin Elite Cable"
+          }
+        }
+      },
+      "block_order": [
+        "color_black",
+        "color_white",
+        "color_gold",
+        "color_red",
+        "color_blue",
+        "cable_t2",
+        "cable_2pin"
+      ],
+      "settings": {
+        "kicker": "Custom Order \u00b7 V360",
+        "default_model": "v360-pro",
+        "v360_title": "VUSION V360",
+        "v360_subtitle": "Custom Active Ambient IEM for DJs",
+        "v360_pro_title": "VUSION V360 PRO",
+        "v360_pro_subtitle": "Custom Active Ambient IEM for Performers",
+        "warranty_label": "Extended warranty (1-year)",
+        "warranty_help": "Adds a second year of coverage on top of the included 1-year limited warranty and 1-year fit warranty.",
+        "step_1_label": "Shell & Colour",
+        "step_2_label": "Cable & Engraving",
+        "step_3_label": "Ear Impressions",
+        "step_4_label": "Review & Checkout",
+        "step_1_heading": "Shell & faceplate colour",
+        "step_1_hint": "Left and right can be different. These colours go to production as typed in the review.",
+        "left_label": "Left faceplate",
+        "right_label": "Right faceplate",
+        "step_2_heading": "Cable & engraving",
+        "step_2_hint": "Every order includes one cable at no extra cost. Engraving is printed exactly as typed \u2014 double-check spelling.",
+        "cable_label": "Cable choice",
+        "cable_placeholder": "-- Choose cable choice --",
+        "cable_hint": "Not sure which connector your wireless pack uses? Check your beltpack \u2014 most systems use one or the other.",
+        "initials_label": "Initials on shell",
+        "initials_placeholder": "e.g. J.K.",
+        "initials_hint": "Up to 4 characters, engraved on the shell itself.",
+        "case_label": "Name on case",
+        "case_placeholder": "Full name for your carry case",
+        "band_label": "Band / group / church name",
+        "band_placeholder": "Optional",
+        "step_3_heading": "Ear impressions",
+        "step_3_hint": "V360 is custom-molded to your ears \u2014 we cannot start production without a valid impression on file.",
+        "impressions_label": "Ear impressions",
+        "impressions_new": "Sending new",
+        "impressions_file": "Already on file",
+        "impressions_new_body": "You cannot attach files at checkout. After you pay we email you the order number and the exact subject line to use.",
+        "impressions_email": "info@vusionaudio.com",
+        "experience_label": "Book a V360 Experience",
+        "guide_label": "Impression guide",
+        "ref_label": "Impression reference",
+        "ref_placeholder": "Previous order number or audiologist reference",
+        "ref_hint": "We match this to impressions already on file. If we cannot find a match, we email you before production starts.",
+        "step_4_heading": "Review your order",
+        "step_4_hint": "Check colours, engraving and cable carefully \u2014 they go into production once you pay.",
+        "review_shell": "Shell & colour",
+        "review_cable": "Cable & engraving",
+        "review_impressions": "Impressions & warranty",
+        "terms_html": "I confirm these details are correct and agree to Vusion\u2019s terms, custom-fit policy and 4\u20136 week production time.",
+        "checkout_label": "Proceed to Secure Checkout",
+        "continue_cable": "Continue \u2192 Cable & Engraving",
+        "continue_impressions": "Continue \u2192 Ear Impressions",
+        "continue_review": "Continue \u2192 Review",
+        "back_label": "\u2190 Back",
+        "summary_heading": "Order summary",
+        "summary_base": "Base unit",
+        "summary_total": "Total",
+        "assurance_1": "<b>30-day</b> money-back guarantee",
+        "assurance_2": "<b>1-year</b> limited warranty + <b>1-year</b> fit warranty included",
+        "assurance_3": "<b>Handcrafted</b> to your own ear impressions \u2014 ships in ~4\u20136 weeks"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "vusion_v360_order"
+  ]
+}

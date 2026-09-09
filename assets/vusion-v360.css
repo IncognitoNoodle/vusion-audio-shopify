@@ -1,4 +1,4 @@
-.vusion-helias {
+.vusion-v360 {
   --vh-bg: #0a0a0a;
   --vh-bg-panel: #141414;
   --vh-bg-panel-2: #1a1a1a;
@@ -28,38 +28,38 @@
   -webkit-font-smoothing: antialiased;
 }
 
-.vusion-helias-section {
+.vusion-v360-section {
   margin: 0;
   padding: 0;
 }
 
-.vusion-helias *,
-.vusion-helias *::before,
-.vusion-helias *::after {
+.vusion-v360 *,
+.vusion-v360 *::before,
+.vusion-v360 *::after {
   box-sizing: border-box;
 }
 
-.vusion-helias a {
+.vusion-v360 a {
   color: inherit;
   text-decoration: none;
 }
 
-.vusion-helias img,
-.vusion-helias svg,
-.vusion-helias video {
+.vusion-v360 img,
+.vusion-v360 svg,
+.vusion-v360 video {
   display: block;
   max-width: 100%;
 }
 
-.vusion-helias-wrap {
+.vusion-v360-wrap {
   max-width: 1180px;
   margin: 0 auto;
   padding: 0 32px;
 }
 
-.vusion-helias h1,
-.vusion-helias h2,
-.vusion-helias-disp {
+.vusion-v360 h1,
+.vusion-v360 h2,
+.vusion-v360-disp {
   font-family: var(--font-heading-family);
   font-style: var(--font-heading-style);
   font-weight: var(--font-heading-weight);
@@ -69,11 +69,11 @@
   word-break: normal;
 }
 
-.vusion-helias-mono {
+.vusion-v360-mono {
   font-family: var(--font-body-family);
 }
 
-.vusion-helias-eyebrow {
+.vusion-v360-eyebrow {
   font-family: var(--font-body-family);
   font-size: var(--vh-fs-small);
   letter-spacing: 0.22em;
@@ -85,14 +85,14 @@
   margin-bottom: 18px;
 }
 
-.vusion-helias-eyebrow::before {
+.vusion-v360-eyebrow::before {
   content: "";
   width: 22px;
   height: 1px;
   background: var(--vh-gold-dim);
 }
 
-.vusion-helias-btn {
+.vusion-v360-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -108,49 +108,49 @@
   transition: all 0.25s ease;
 }
 
-.vusion-helias-btn--primary {
+.vusion-v360-btn--primary {
   background: var(--vh-gold);
   color: #ffffff;
   font-weight: 500;
 }
 
-.vusion-helias-btn--primary:hover {
+.vusion-v360-btn--primary:hover {
   background: #ff4b3e;
   transform: translateY(-1px);
 }
 
-.vusion-helias-btn--outline {
+.vusion-v360-btn--outline {
   border-color: rgba(244, 241, 234, 0.28);
   color: var(--vh-ink);
   background: transparent;
 }
 
-.vusion-helias-btn--outline:hover {
+.vusion-v360-btn--outline:hover {
   border-color: var(--vh-ink);
   background: rgba(244, 241, 234, 0.06);
 }
 
-.vusion-helias-btn-row {
+.vusion-v360-btn-row {
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
 }
 
-.vusion-helias-wave {
+.vusion-v360-wave {
   display: flex;
   align-items: flex-end;
   gap: 3px;
   height: 34px;
 }
 
-.vusion-helias-wave span {
+.vusion-v360-wave span {
   width: 3px;
   background: var(--vh-gold);
   border-radius: 1px;
-  animation: vusion-helias-bar 1.6s ease-in-out infinite;
+  animation: vusion-v360-bar 1.6s ease-in-out infinite;
 }
 
-@keyframes vusion-helias-bar {
+@keyframes vusion-v360-bar {
   0%,
   100% {
     transform: scaleY(0.25);
@@ -160,29 +160,29 @@
   }
 }
 
-.vusion-helias-note {
+.vusion-v360-note {
   font-family: var(--font-body-family);
   font-size: var(--vh-fs-caption);
   color: var(--vh-ink-faint);
   letter-spacing: 0.03em;
 }
 
-.vusion-helias-band {
+.vusion-v360-band {
   padding: 120px 0;
 }
 
-.vusion-helias-head {
+.vusion-v360-head {
   max-width: 640px;
   margin-bottom: 64px;
 }
 
-.vusion-helias-head h2 {
+.vusion-v360-head h2 {
   font-size: clamp(var(--vh-fs-h3), 3.2vw, var(--vh-fs-h2));
   line-height: 1.08;
   margin: 0;
 }
 
-.vusion-helias-head p {
+.vusion-v360-head p {
   color: var(--vh-ink-dim);
   font-size: var(--vh-fs-body);
   margin: 16px 0 0;
@@ -190,27 +190,27 @@
   max-width: 560px;
 }
 
-.vusion-helias-reveal {
+.vusion-v360-reveal {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
-.vusion-helias-reveal.is-in {
+.vusion-v360-reveal.is-in {
   opacity: 1;
   transform: translateY(0);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .vusion-helias *,
-  .vusion-helias *::before,
-  .vusion-helias *::after {
+  .vusion-v360 *,
+  .vusion-v360 *::before,
+  .vusion-v360 *::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
   }
 
-  .vusion-helias-reveal {
+  .vusion-v360-reveal {
     opacity: 1;
     transform: none;
   }

@@ -1,4 +1,4 @@
-{{ 'vusion-helias.css' | asset_url | stylesheet_tag }}
+{{ 'vusion-v360.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
   assign why_alt = section.settings.caption | default: section.settings.heading
@@ -7,12 +7,12 @@
   endif
 -%}
 
-<script src="{{ 'vusion-helias.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'vusion-v360.js' | asset_url }}" defer="defer"></script>
 
-<div class="vusion-helias vusion-helias-why vusion-helias-band" id="why">
-  <div class="vusion-helias-wrap vusion-helias-why__grid">
-    <div class="vusion-helias-reveal">
-      <div class="vusion-helias-why__visual">
+<div class="vusion-v360 vusion-v360-why vusion-v360-band" id="why">
+  <div class="vusion-v360-wrap vusion-v360-why__grid">
+    <div class="vusion-v360-reveal">
+      <div class="vusion-v360-why__visual">
         {%- if section.settings.image != blank -%}
           {{
             section.settings.image
@@ -21,13 +21,13 @@
               loading: 'lazy',
               widths: '400, 800, 1200, 1400',
               sizes: '(min-width: 900px) 42vw, 100vw',
-              class: 'vusion-helias-why__img',
+              class: 'vusion-v360-why__img',
               alt: why_alt
           }}
         {%- else -%}
           <img
-            class="vusion-helias-why__img"
-            src="{{ 'vusion-helias-why.webp' | asset_url }}"
+            class="vusion-v360-why__img"
+            src="{{ 'vusion-v360-why.webp' | asset_url }}"
             alt="{{ why_alt | escape }}"
             width="800"
             height="800"
@@ -36,23 +36,23 @@
         {%- endif -%}
       </div>
       {%- if section.settings.caption != blank -%}
-        <p class="vusion-helias-note vusion-helias-why__caption">{{ section.settings.caption | escape }}</p>
+        <p class="vusion-v360-note vusion-v360-why__caption">{{ section.settings.caption | escape }}</p>
       {%- endif -%}
     </div>
-    <div class="vusion-helias-reveal">
+    <div class="vusion-v360-reveal">
       {%- if section.settings.eyebrow != blank -%}
-        <div class="vusion-helias-eyebrow">{{ section.settings.eyebrow | escape }}</div>
+        <div class="vusion-v360-eyebrow">{{ section.settings.eyebrow | escape }}</div>
       {%- endif -%}
       {%- if section.settings.heading != blank -%}
-        <h2 class="vusion-helias-disp vusion-helias-why__heading">
+        <h2 class="vusion-v360-disp vusion-v360-why__heading">
           {{ section.settings.heading | escape | newline_to_br }}
         </h2>
       {%- endif -%}
       {%- if section.blocks.size > 0 -%}
-        <ul class="vusion-helias-why__list">
+        <ul class="vusion-v360-why__list">
           {%- for block in section.blocks -%}
             <li {{ block.shopify_attributes }}>
-              <span class="vusion-helias-why__mk">{{ block.settings.number | escape }}</span>
+              <span class="vusion-v360-why__mk">{{ block.settings.number | escape }}</span>
               <span>
                 {%- if block.settings.title != blank -%}
                   <b>{{ block.settings.title | escape }}</b>
@@ -70,20 +70,20 @@
 </div>
 
 {% stylesheet %}
-  .vusion-helias.vusion-helias-why {
+  .vusion-v360.vusion-v360-why {
     background: var(--vh-bg-panel);
     border-top: 1px solid var(--vh-hairline);
     border-bottom: 1px solid var(--vh-hairline);
   }
 
-  .vusion-helias-why__grid {
+  .vusion-v360-why__grid {
     display: grid;
     grid-template-columns: 0.9fr 1.1fr;
     gap: 70px;
     align-items: center;
   }
 
-  .vusion-helias-why__visual {
+  .vusion-v360-why__visual {
     aspect-ratio: 1 / 1;
     border-radius: 4px;
     background: linear-gradient(160deg, #181818, #0a0a0a);
@@ -92,30 +92,30 @@
     overflow: hidden;
   }
 
-  .vusion-helias-why__img {
+  .vusion-v360-why__img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
-  .vusion-helias-why__caption {
+  .vusion-v360-why__caption {
     margin-top: 10px;
   }
 
-  .vusion-helias-why__heading {
+  .vusion-v360-why__heading {
     font-size: clamp(var(--vh-fs-h3), 3.2vw, var(--vh-fs-h2));
     line-height: 1.08;
     margin: 0;
     color: var(--vh-ink);
   }
 
-  .vusion-helias-why__list {
+  .vusion-v360-why__list {
     list-style: none;
     margin: 30px 0 0;
     padding: 0;
   }
 
-  .vusion-helias-why__list li {
+  .vusion-v360-why__list li {
     display: flex;
     gap: 16px;
     padding: 20px 0;
@@ -124,12 +124,12 @@
     color: var(--vh-ink-dim);
   }
 
-  .vusion-helias-why__list b {
+  .vusion-v360-why__list b {
     color: var(--vh-ink);
     font-weight: 600;
   }
 
-  .vusion-helias-why__mk {
+  .vusion-v360-why__mk {
     color: var(--vh-gold);
     font-family: var(--font-body-family);
     font-size: var(--vh-fs-small);
@@ -138,7 +138,7 @@
   }
 
   @media (max-width: 900px) {
-    .vusion-helias-why__grid {
+    .vusion-v360-why__grid {
       grid-template-columns: 1fr;
     }
   }
@@ -146,9 +146,9 @@
 
 {% schema %}
 {
-  "name": "Vusion Helias Why",
+  "name": "Vusion V360 Why",
   "tag": "section",
-  "class": "vusion-helias-section",
+  "class": "vusion-v360-section",
   "disabled_on": {
     "groups": ["header", "footer"]
   },
@@ -163,19 +163,19 @@
       "type": "text",
       "id": "caption",
       "label": "Image caption",
-      "default": "Helias — dual-driver custom shell"
+      "default": "V360 — dual-driver custom shell"
     },
     {
       "type": "text",
       "id": "eyebrow",
       "label": "Eyebrow",
-      "default": "Why Helias"
+      "default": "Why V360"
     },
     {
       "type": "textarea",
       "id": "heading",
       "label": "Heading",
-      "default": "Traditional IEMs isolate you.\nHelias doesn't."
+      "default": "Traditional IEMs isolate you.\nV360 doesn't."
     }
   ],
   "blocks": [
@@ -206,7 +206,7 @@
   ],
   "presets": [
     {
-      "name": "Vusion Helias Why",
+      "name": "Vusion V360 Why",
       "blocks": [
         {
           "type": "item",

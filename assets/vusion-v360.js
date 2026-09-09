@@ -1,8 +1,8 @@
 (function () {
-  if (window.vusionHeliasReveal) return;
-  window.vusionHeliasReveal = true;
+  if (window.vusionV360Reveal) return;
+  window.vusionV360Reveal = true;
 
-  var els = document.querySelectorAll(".vusion-helias-reveal");
+  var els = document.querySelectorAll(".vusion-v360-reveal");
   if (!els.length) return;
 
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -29,23 +29,23 @@
 })();
 
 (function () {
-  if (window.vusionHeliasFaq) return;
-  window.vusionHeliasFaq = true;
+  if (window.vusionV360Faq) return;
+  window.vusionV360Faq = true;
 
   document.addEventListener("click", function (event) {
-    var q = event.target.closest(".vusion-helias-faq__q");
+    var q = event.target.closest(".vusion-v360-faq__q");
     if (!q) return;
 
-    var item = q.closest(".vusion-helias-faq__item");
-    var root = q.closest(".vusion-helias-faq");
+    var item = q.closest(".vusion-v360-faq__item");
+    var root = q.closest(".vusion-v360-faq");
     if (!item || !root) return;
 
-    var a = item.querySelector(".vusion-helias-faq__a");
+    var a = item.querySelector(".vusion-v360-faq__a");
     var isOpen = item.classList.contains("is-open");
 
-    root.querySelectorAll(".vusion-helias-faq__item.is-open").forEach(function (openItem) {
+    root.querySelectorAll(".vusion-v360-faq__item.is-open").forEach(function (openItem) {
       openItem.classList.remove("is-open");
-      var openAnswer = openItem.querySelector(".vusion-helias-faq__a");
+      var openAnswer = openItem.querySelector(".vusion-v360-faq__a");
       if (openAnswer) openAnswer.style.maxHeight = null;
     });
 

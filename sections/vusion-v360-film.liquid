@@ -1,4 +1,4 @@
-{{ 'vusion-helias.css' | asset_url | stylesheet_tag }}
+{{ 'vusion-v360.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
   assign embed_url = section.settings.embed_url | default: 'https://drive.google.com/file/d/1Udd-pNB8k8ncm7z2DwJBHJwPQBcXT_lc/preview'
@@ -8,19 +8,19 @@
   endif
 -%}
 
-<script src="{{ 'vusion-helias.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'vusion-v360.js' | asset_url }}" defer="defer"></script>
 
-<div class="vusion-helias vusion-helias-film vusion-helias-band">
-  <div class="vusion-helias-wrap vusion-helias-reveal">
+<div class="vusion-v360 vusion-v360-film vusion-v360-band">
+  <div class="vusion-v360-wrap vusion-v360-reveal">
     {%- if section.settings.eyebrow != blank -%}
-      <div class="vusion-helias-eyebrow">{{ section.settings.eyebrow | escape }}</div>
+      <div class="vusion-v360-eyebrow">{{ section.settings.eyebrow | escape }}</div>
     {%- endif -%}
 
-    <div class="vusion-helias-film__frame{% if section.settings.video == blank %} vusion-helias-film__frame--embed{% endif %}">
+    <div class="vusion-v360-film__frame{% if section.settings.video == blank %} vusion-v360-film__frame--embed{% endif %}">
       {%- if section.settings.video != blank -%}
         {{
           section.settings.video
-          | video_tag: controls: true, class: 'vusion-helias-film__video'
+          | video_tag: controls: true, class: 'vusion-v360-film__video'
         }}
       {%- elsif embed_ok -%}
         <iframe
@@ -34,7 +34,7 @@
     </div>
 
     {%- if section.settings.caption != blank -%}
-      <div class="vusion-helias-film__caption">
+      <div class="vusion-v360-film__caption">
         <span>{{ section.settings.caption | escape }}</span>
       </div>
     {%- endif -%}
@@ -42,11 +42,11 @@
 </div>
 
 {% stylesheet %}
-  .vusion-helias-film {
+  .vusion-v360-film {
     position: relative;
   }
 
-  .vusion-helias-film__frame {
+  .vusion-v360-film__frame {
     aspect-ratio: 21 / 9;
     border-radius: 4px;
     border: 1px solid var(--vh-hairline);
@@ -58,20 +58,20 @@
     justify-content: center;
   }
 
-  .vusion-helias-film__frame::before {
+  .vusion-v360-film__frame::before {
     content: "";
     position: absolute;
     inset: 0;
     background: radial-gradient(circle at 30% 40%, rgba(225, 35, 26, 0.12), transparent 55%);
   }
 
-  .vusion-helias-film__frame--embed {
+  .vusion-v360-film__frame--embed {
     padding: 0;
     background: #000;
   }
 
-  .vusion-helias-film__frame iframe,
-  .vusion-helias-film__video {
+  .vusion-v360-film__frame iframe,
+  .vusion-v360-film__video {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -79,11 +79,11 @@
     border: 0;
   }
 
-  .vusion-helias-film__video {
+  .vusion-v360-film__video {
     object-fit: cover;
   }
 
-  .vusion-helias-film__caption {
+  .vusion-v360-film__caption {
     display: flex;
     justify-content: space-between;
     margin-top: 18px;
@@ -97,9 +97,9 @@
 
 {% schema %}
 {
-  "name": "Vusion Helias Film",
+  "name": "Vusion V360 Film",
   "tag": "section",
-  "class": "vusion-helias-section",
+  "class": "vusion-v360-section",
   "disabled_on": {
     "groups": ["header", "footer"]
   },
@@ -132,7 +132,7 @@
   ],
   "presets": [
     {
-      "name": "Vusion Helias Film"
+      "name": "Vusion V360 Film"
     }
   ]
 }

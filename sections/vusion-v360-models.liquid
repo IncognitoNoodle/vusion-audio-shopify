@@ -1,27 +1,27 @@
-{{ 'vusion-helias.css' | asset_url | stylesheet_tag }}
+{{ 'vusion-v360.css' | asset_url | stylesheet_tag }}
 
-<script src="{{ 'vusion-helias.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'vusion-v360.js' | asset_url }}" defer="defer"></script>
 
-<div class="vusion-helias vusion-helias-models vusion-helias-band" id="models">
-  <div class="vusion-helias-wrap">
-    <div class="vusion-helias-head vusion-helias-reveal">
+<div class="vusion-v360 vusion-v360-models vusion-v360-band" id="models">
+  <div class="vusion-v360-wrap">
+    <div class="vusion-v360-head vusion-v360-reveal">
       {%- if section.settings.eyebrow != blank -%}
-        <div class="vusion-helias-eyebrow">{{ section.settings.eyebrow | escape }}</div>
+        <div class="vusion-v360-eyebrow">{{ section.settings.eyebrow | escape }}</div>
       {%- endif -%}
       {%- if section.settings.heading != blank -%}
-        <h2 class="vusion-helias-disp">{{ section.settings.heading | escape }}</h2>
+        <h2 class="vusion-v360-disp">{{ section.settings.heading | escape }}</h2>
       {%- endif -%}
     </div>
 
     {%- if section.blocks.size > 0 -%}
-      <div class="vusion-helias-models__grid vusion-helias-reveal">
+      <div class="vusion-v360-models__grid vusion-v360-reveal">
         {%- for block in section.blocks -%}
           {%- liquid
             case forloop.index
               when 1
-                assign fallback = 'vusion-helias-models-p350.webp'
+                assign fallback = 'vusion-v360-models-v360.webp'
               when 2
-                assign fallback = 'vusion-helias-models-euphoria.webp'
+                assign fallback = 'vusion-v360-models-pro.webp'
               else
                 assign fallback = ''
             endcase
@@ -31,13 +31,15 @@
             endif
             if block.settings.button_link != blank
               assign button_link = block.settings.button_link
+            elsif pages['v360-order'] != blank
+              assign button_link = pages['v360-order'].url | append: '?model=' | append: block.settings.model_key
             else
-              assign button_link = '#'
+              assign button_link = '/pages/v360-order?model=' | append: block.settings.model_key
             endif
             assign features = block.settings.features | newline_to_br | split: '<br />'
           -%}
-          <div class="vusion-helias-models__card" {{ block.shopify_attributes }}>
-            <div class="vusion-helias-models__shell">
+          <div class="vusion-v360-models__card" {{ block.shopify_attributes }}>
+            <div class="vusion-v360-models__shell">
               {%- if block.settings.image != blank -%}
                 {{
                   block.settings.image
@@ -59,16 +61,16 @@
               {%- endif -%}
             </div>
             {%- if block.settings.tag != blank -%}
-              <div class="vusion-helias-models__tag">{{ block.settings.tag | escape }}</div>
+              <div class="vusion-v360-models__tag">{{ block.settings.tag | escape }}</div>
             {%- endif -%}
             {%- if block.settings.title != blank -%}
-              <h3 class="vusion-helias-disp">{{ block.settings.title | escape }}</h3>
+              <h3 class="vusion-v360-disp">{{ block.settings.title | escape }}</h3>
             {%- endif -%}
             {%- if block.settings.price != blank -%}
-              <div class="vusion-helias-models__price">{{ block.settings.price | escape }}</div>
+              <div class="vusion-v360-models__price">{{ block.settings.price | escape }}</div>
             {%- endif -%}
             {%- if block.settings.audience != blank -%}
-              <div class="vusion-helias-models__for">{{ block.settings.audience | escape }}</div>
+              <div class="vusion-v360-models__for">{{ block.settings.audience | escape }}</div>
             {%- endif -%}
             {%- if block.settings.features != blank -%}
               <ul>
@@ -81,7 +83,7 @@
               </ul>
             {%- endif -%}
             {%- if block.settings.button_label != blank -%}
-              <a class="vusion-helias-btn vusion-helias-btn--outline vusion-helias-models__btn" href="{{ button_link }}">
+              <a class="vusion-v360-btn vusion-v360-btn--outline vusion-v360-models__btn" href="{{ button_link }}">
                 {{ block.settings.button_label | escape }}
               </a>
             {%- endif -%}
@@ -93,24 +95,24 @@
 </div>
 
 {% stylesheet %}
-  .vusion-helias.vusion-helias-models {
+  .vusion-v360.vusion-v360-models {
     background: var(--vh-bg-panel);
     border-top: 1px solid var(--vh-hairline);
     border-bottom: 1px solid var(--vh-hairline);
   }
 
-  .vusion-helias-models .vusion-helias-head h2 {
+  .vusion-v360-models .vusion-v360-head h2 {
     font-size: clamp(var(--vh-fs-h3), 3.2vw, var(--vh-fs-h2));
   }
 
-  .vusion-helias-models__grid {
+  .vusion-v360-models__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 28px;
     margin-top: 60px;
   }
 
-  .vusion-helias-models__card {
+  .vusion-v360-models__card {
     border: 1px solid var(--vh-hairline);
     border-radius: 4px;
     padding: 44px 38px;
@@ -119,11 +121,11 @@
     transition: border-color 0.25s ease;
   }
 
-  .vusion-helias-models__card:hover {
+  .vusion-v360-models__card:hover {
     border-color: rgba(225, 35, 26, 0.5);
   }
 
-  .vusion-helias-models__shell {
+  .vusion-v360-models__shell {
     width: 100%;
     aspect-ratio: 16 / 8;
     border-radius: 3px;
@@ -133,14 +135,14 @@
     overflow: hidden;
   }
 
-  .vusion-helias-models__shell img {
+  .vusion-v360-models__shell img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 3px;
   }
 
-  .vusion-helias-models__tag {
+  .vusion-v360-models__tag {
     font-family: var(--font-body-family);
     font-size: var(--vh-fs-caption);
     letter-spacing: 0.1em;
@@ -149,7 +151,7 @@
     margin-bottom: 22px;
   }
 
-  .vusion-helias-models__card h3 {
+  .vusion-v360-models__card h3 {
     font-size: var(--vh-fs-h3);
     margin: 0 0 6px;
     color: var(--vh-ink);
@@ -158,27 +160,27 @@
     word-break: normal;
   }
 
-  .vusion-helias-models__price {
+  .vusion-v360-models__price {
     font-family: var(--font-body-family);
     font-size: var(--vh-fs-lede);
     color: var(--vh-gold);
     margin-bottom: 22px;
   }
 
-  .vusion-helias-models__for {
+  .vusion-v360-models__for {
     font-size: var(--vh-fs-body);
     color: var(--vh-ink-dim);
     margin-bottom: 26px;
     line-height: 1.6;
   }
 
-  .vusion-helias-models__card ul {
+  .vusion-v360-models__card ul {
     list-style: none;
     margin: 0 0 32px;
     padding: 0;
   }
 
-  .vusion-helias-models__card li {
+  .vusion-v360-models__card li {
     font-size: var(--vh-fs-body);
     color: var(--vh-ink);
     padding: 9px 0;
@@ -187,17 +189,17 @@
     gap: 10px;
   }
 
-  .vusion-helias-models__card li::before {
+  .vusion-v360-models__card li::before {
     content: "—";
     color: var(--vh-gold);
   }
 
-  .vusion-helias-models__btn {
+  .vusion-v360-models__btn {
     width: 100%;
   }
 
   @media (max-width: 820px) {
-    .vusion-helias-models__grid {
+    .vusion-v360-models__grid {
       grid-template-columns: 1fr;
     }
   }
@@ -205,9 +207,9 @@
 
 {% schema %}
 {
-  "name": "Vusion Helias Models",
+  "name": "Vusion V360 Models",
   "tag": "section",
-  "class": "vusion-helias-section",
+  "class": "vusion-v360-section",
   "disabled_on": {
     "groups": ["header", "footer"]
   },
@@ -216,7 +218,7 @@
       "type": "text",
       "id": "eyebrow",
       "label": "Eyebrow",
-      "default": "Which Helias fits you"
+      "default": "Which V360 fits you"
     },
     {
       "type": "text",
@@ -240,7 +242,7 @@
           "type": "text",
           "id": "image_alt",
           "label": "Image alt",
-          "default": "Helias P350"
+          "default": "Vusion V360"
         },
         {
           "type": "text",
@@ -252,7 +254,7 @@
           "type": "text",
           "id": "title",
           "label": "Title",
-          "default": "HELIAS P350"
+          "default": "VUSION V360"
         },
         {
           "type": "text",
@@ -277,12 +279,20 @@
           "type": "text",
           "id": "button_label",
           "label": "Button label",
-          "default": "View Helias P350"
+          "default": "View Vusion V360"
         },
         {
           "type": "url",
           "id": "button_link",
-          "label": "Button link"
+          "label": "Button link",
+          "info": "Empty uses the V360 order page with this model key."
+        },
+        {
+          "type": "text",
+          "id": "model_key",
+          "label": "Order model key",
+          "info": "v360 or v360-pro — appended as ?model= on the order page.",
+          "default": "v360"
         }
       ]
     }
@@ -290,30 +300,32 @@
   "max_blocks": 2,
   "presets": [
     {
-      "name": "Vusion Helias Models",
+      "name": "Vusion V360 Models",
       "blocks": [
         {
           "type": "model",
           "settings": {
-            "image_alt": "Helias P350",
+            "image_alt": "Vusion V360",
             "tag": "Model 01 — DJ",
-            "title": "HELIAS P350",
+            "title": "VUSION V360",
             "price": "€ 2.000",
             "audience": "For DJs, electronic artists, club performers and festival DJs.",
             "features": "Active Ambient Technology\nPremium drivers\nWireless ambient control\nCustom fit",
-            "button_label": "View Helias P350"
+            "button_label": "Order Vusion V360",
+            "model_key": "v360"
           }
         },
         {
           "type": "model",
           "settings": {
-            "image_alt": "Helias Euphoria",
+            "image_alt": "Vusion V360 Pro",
             "tag": "Model 02 — Artist",
-            "title": "HELIAS EUPHORIA",
+            "title": "VUSION V360 PRO",
             "price": "€ 2.500",
             "audience": "For singers, guitarists, drummers, bands and musical performers.",
-            "features": "Everything in Helias P350\nProfessional tuning\nExtended audio range\nCustom fit",
-            "button_label": "View Helias Euphoria"
+            "features": "Everything in Vusion V360\nProfessional tuning\nExtended audio range\nCustom fit",
+            "button_label": "Order Vusion V360 Pro",
+            "model_key": "v360-pro"
           }
         }
       ]

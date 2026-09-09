@@ -1,15 +1,15 @@
-{{ 'vusion-helias.css' | asset_url | stylesheet_tag }}
+{{ 'vusion-v360.css' | asset_url | stylesheet_tag }}
 
-<script src="{{ 'vusion-helias.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'vusion-v360.js' | asset_url }}" defer="defer"></script>
 
-<div class="vusion-helias vusion-helias-works vusion-helias-band">
-  <div class="vusion-helias-wrap">
-    <div class="vusion-helias-head vusion-helias-reveal">
+<div class="vusion-v360 vusion-v360-works vusion-v360-band">
+  <div class="vusion-v360-wrap">
+    <div class="vusion-v360-head vusion-v360-reveal">
       {%- if section.settings.eyebrow != blank -%}
-        <div class="vusion-helias-eyebrow">{{ section.settings.eyebrow | escape }}</div>
+        <div class="vusion-v360-eyebrow">{{ section.settings.eyebrow | escape }}</div>
       {%- endif -%}
       {%- if section.settings.heading != blank -%}
-        <h2 class="vusion-helias-disp vusion-helias-works__heading">
+        <h2 class="vusion-v360-disp vusion-v360-works__heading">
           {{ section.settings.heading | escape }}
         </h2>
       {%- endif -%}
@@ -19,13 +19,13 @@
     </div>
 
     {%- if section.blocks.size > 0 -%}
-      <div class="vusion-helias-works__signal vusion-helias-reveal">
+      <div class="vusion-v360-works__signal vusion-v360-reveal">
         {%- for block in section.blocks -%}
           {%- unless forloop.first -%}
-            <div class="vusion-helias-works__arrow" aria-hidden="true">→</div>
+            <div class="vusion-v360-works__arrow" aria-hidden="true">→</div>
           {%- endunless -%}
-          <div class="vusion-helias-works__node" {{ block.shopify_attributes }}>
-            <div class="vusion-helias-works__icon">
+          <div class="vusion-v360-works__node" {{ block.shopify_attributes }}>
+            <div class="vusion-v360-works__icon">
               {%- case block.settings.icon -%}
                 {%- when 'bars' -%}
                   <svg viewBox="0 0 24 24" fill="none" stroke="#E2231A" stroke-width="1.6" aria-hidden="true">
@@ -50,10 +50,10 @@
               {%- endcase -%}
             </div>
             {%- if block.settings.label != blank -%}
-              <div class="vusion-helias-works__lbl">{{ block.settings.label | escape }}</div>
+              <div class="vusion-v360-works__lbl">{{ block.settings.label | escape }}</div>
             {%- endif -%}
             {%- if block.settings.text != blank -%}
-              <div class="vusion-helias-works__desc">{{ block.settings.text | escape }}</div>
+              <div class="vusion-v360-works__desc">{{ block.settings.text | escape }}</div>
             {%- endif -%}
           </div>
         {%- endfor -%}
@@ -61,21 +61,21 @@
     {%- endif -%}
 
     {%- if section.settings.note != blank -%}
-      <p class="vusion-helias-works__note vusion-helias-reveal">{{ section.settings.note }}</p>
+      <p class="vusion-v360-works__note vusion-v360-reveal">{{ section.settings.note }}</p>
     {%- endif -%}
   </div>
 </div>
 
 {% stylesheet %}
-  .vusion-helias.vusion-helias-works {
+  .vusion-v360.vusion-v360-works {
     background: var(--vh-bg-panel);
   }
 
-  .vusion-helias-works .vusion-helias-head h2 {
+  .vusion-v360-works .vusion-v360-head h2 {
     font-size: clamp(var(--vh-fs-h3), 3.2vw, var(--vh-fs-h2));
   }
 
-  .vusion-helias-works__signal {
+  .vusion-v360-works__signal {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -84,13 +84,13 @@
     flex-wrap: wrap;
   }
 
-  .vusion-helias-works__node {
+  .vusion-v360-works__node {
     flex: 1;
     min-width: 150px;
     text-align: center;
   }
 
-  .vusion-helias-works__icon {
+  .vusion-v360-works__icon {
     width: 64px;
     height: 64px;
     margin: 0 auto 16px;
@@ -102,12 +102,12 @@
     background: var(--vh-bg-panel-2);
   }
 
-  .vusion-helias-works__icon svg {
+  .vusion-v360-works__icon svg {
     width: 26px;
     height: 26px;
   }
 
-  .vusion-helias-works__lbl {
+  .vusion-v360-works__lbl {
     font-family: var(--font-body-family);
     font-size: var(--vh-fs-caption);
     letter-spacing: 0.08em;
@@ -116,19 +116,19 @@
     margin-bottom: 6px;
   }
 
-  .vusion-helias-works__desc {
+  .vusion-v360-works__desc {
     font-size: var(--vh-fs-small);
     color: var(--vh-ink-dim);
   }
 
-  .vusion-helias-works__arrow {
+  .vusion-v360-works__arrow {
     flex: none;
     color: var(--vh-ink-faint);
     font-size: var(--vh-fs-lede);
     padding-bottom: 40px;
   }
 
-  .vusion-helias-works__note {
+  .vusion-v360-works__note {
     margin: 50px auto 0;
     text-align: center;
     font-size: var(--vh-fs-lede);
@@ -136,18 +136,18 @@
     max-width: 560px;
   }
 
-  .vusion-helias-works__note b,
-  .vusion-helias-works__note strong {
+  .vusion-v360-works__note b,
+  .vusion-v360-works__note strong {
     color: var(--vh-gold);
   }
 
   @media (max-width: 760px) {
-    .vusion-helias-works__arrow {
+    .vusion-v360-works__arrow {
       transform: rotate(90deg);
       padding-bottom: 0;
     }
 
-    .vusion-helias-works__signal {
+    .vusion-v360-works__signal {
       flex-direction: column;
     }
   }
@@ -155,9 +155,9 @@
 
 {% schema %}
 {
-  "name": "Vusion Helias Works",
+  "name": "Vusion V360 Works",
   "tag": "section",
-  "class": "vusion-helias-section",
+  "class": "vusion-v360-section",
   "disabled_on": {
     "groups": ["header", "footer"]
   },
@@ -178,7 +178,7 @@
       "type": "textarea",
       "id": "lede",
       "label": "Lede",
-      "default": "A standard IEM seals you off completely. Helias listens back — and lets you decide how much of the world you let in."
+      "default": "A standard IEM seals you off completely. V360 listens back — and lets you decide how much of the world you let in."
     },
     {
       "type": "inline_richtext",
@@ -222,7 +222,7 @@
   "max_blocks": 4,
   "presets": [
     {
-      "name": "Vusion Helias Works",
+      "name": "Vusion V360 Works",
       "blocks": [
         {
           "type": "step",

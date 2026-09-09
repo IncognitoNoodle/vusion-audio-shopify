@@ -1,7 +1,7 @@
-{{ 'vusion-helias.css' | asset_url | stylesheet_tag }}
+{{ 'vusion-v360.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
-  assign calendly_url = 'https://calendly.com/admin-vusionaudio/30min'
+  assign calendly_url = 'https://calendly.com/vusionaudio/vusion-audio-consult-clone'
   if section.settings.button_1_link != blank
     assign button_1_link = section.settings.button_1_link
   else
@@ -14,26 +14,26 @@
   endif
 -%}
 
-<div class="vusion-helias vusion-helias-hero">
-  <div class="vusion-helias-wrap vusion-helias-hero__inner">
+<div class="vusion-v360 vusion-v360-hero">
+  <div class="vusion-v360-wrap vusion-v360-hero__inner">
     <div>
       {%- if section.settings.lead_tag != blank -%}
-        <div class="vusion-helias-hero__lead">{{ section.settings.lead_tag | escape }}</div>
+        <div class="vusion-v360-hero__lead">{{ section.settings.lead_tag | escape }}</div>
       {%- endif -%}
-      <h1 class="vusion-helias-disp vusion-helias-hero__heading">
+      <h1 class="vusion-v360-disp vusion-v360-hero__heading">
         {{ section.settings.heading | escape | newline_to_br }}
         {%- if section.settings.heading_accent != blank -%}
           <br>
-          <span class="vusion-helias-hero__heading-accent">{{ section.settings.heading_accent | escape }}</span>
+          <span class="vusion-v360-hero__heading-accent">{{ section.settings.heading_accent | escape }}</span>
         {%- endif -%}
       </h1>
       {%- if section.settings.lede != blank -%}
-        <p class="vusion-helias-hero__lede">{{ section.settings.lede | escape }}</p>
+        <p class="vusion-v360-hero__lede">{{ section.settings.lede | escape }}</p>
       {%- endif -%}
-      <div class="vusion-helias-btn-row">
+      <div class="vusion-v360-btn-row">
         {%- if section.settings.button_1_label != blank -%}
           <a
-            class="vusion-helias-btn vusion-helias-btn--primary"
+            class="vusion-v360-btn vusion-v360-btn--primary"
             href="{{ button_1_link }}"
             {% if button_1_link contains 'calendly.com' %}
               target="_blank"
@@ -44,22 +44,22 @@
           </a>
         {%- endif -%}
         {%- if section.settings.button_2_label != blank -%}
-          <a class="vusion-helias-btn vusion-helias-btn--outline" href="{{ button_2_link }}">
+          <a class="vusion-v360-btn vusion-v360-btn--outline" href="{{ button_2_link }}">
             {{ section.settings.button_2_label | escape }}
           </a>
         {%- endif -%}
       </div>
     </div>
 
-    <div class="vusion-helias-hero__visual">
+    <div class="vusion-v360-hero__visual">
       {%- if section.settings.video != blank -%}
         {{
           section.settings.video
-          | video_tag: autoplay: true, loop: true, muted: true, controls: false, class: 'vusion-helias-hero__photo'
+          | video_tag: autoplay: true, loop: true, muted: true, controls: false, class: 'vusion-v360-hero__photo'
         }}
       {%- else -%}
         <video
-          class="vusion-helias-hero__photo"
+          class="vusion-v360-hero__photo"
           autoplay
           muted
           loop
@@ -67,14 +67,14 @@
           preload="auto"
           aria-label="{{ section.settings.caption | escape }}"
         >
-          <source src="{{ 'vusion-helias-hero.mp4' | asset_url }}" type="video/mp4">
+          <source src="{{ 'vusion-v360-hero.mp4' | asset_url }}" type="video/mp4">
         </video>
       {%- endif -%}
-      <div class="vusion-helias-hero__cap">
+      <div class="vusion-v360-hero__cap">
         {%- if section.settings.caption != blank -%}
-          <span class="vusion-helias-note">{{ section.settings.caption | escape }}</span>
+          <span class="vusion-v360-note">{{ section.settings.caption | escape }}</span>
         {%- endif -%}
-        <div class="vusion-helias-wave" aria-hidden="true">
+        <div class="vusion-v360-wave" aria-hidden="true">
           <span></span><span></span><span></span><span></span><span></span>
         </div>
       </div>
@@ -83,7 +83,7 @@
 </div>
 
 {% stylesheet %}
-  .vusion-helias-hero {
+  .vusion-v360-hero {
     position: relative;
     min-height: 100vh;
     display: flex;
@@ -96,7 +96,7 @@
     overflow: hidden;
   }
 
-  .vusion-helias-hero::after {
+  .vusion-v360-hero::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -108,7 +108,7 @@
     mask-image: radial-gradient(ellipse 800px 500px at 70% 30%, black, transparent);
   }
 
-  .vusion-helias-hero__inner {
+  .vusion-v360-hero__inner {
     position: relative;
     z-index: 2;
     display: grid;
@@ -118,7 +118,7 @@
     width: 100%;
   }
 
-  .vusion-helias-hero__heading {
+  .vusion-v360-hero__heading {
     /* Monument Extended is ~1.53× wider than the HTML's Big Shoulders Display at the same px. */
     font-size: clamp(var(--vh-fs-h3), 4.55vw, var(--vh-fs-hero));
     line-height: 0.96;
@@ -127,11 +127,11 @@
     max-width: 100%;
   }
 
-  .vusion-helias-hero__heading-accent {
+  .vusion-v360-hero__heading-accent {
     color: var(--vh-gold);
   }
 
-  .vusion-helias-hero__lede {
+  .vusion-v360-hero__lede {
     font-size: var(--vh-fs-lede);
     color: var(--vh-ink-dim);
     max-width: 460px;
@@ -139,7 +139,7 @@
     line-height: 1.6;
   }
 
-  .vusion-helias-hero__lead {
+  .vusion-v360-hero__lead {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -155,12 +155,12 @@
     border-radius: 20px;
   }
 
-  .vusion-helias-hero__lead::before {
+  .vusion-v360-hero__lead::before {
     content: "●";
     font-size: 8px;
   }
 
-  .vusion-helias-hero__visual {
+  .vusion-v360-hero__visual {
     position: relative;
     aspect-ratio: 4 / 5;
     border-radius: 4px;
@@ -172,7 +172,7 @@
     justify-content: center;
   }
 
-  .vusion-helias-hero__visual::before {
+  .vusion-v360-hero__visual::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -181,7 +181,7 @@
     pointer-events: none;
   }
 
-  .vusion-helias-hero__photo {
+  .vusion-v360-hero__photo {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -189,7 +189,7 @@
     object-fit: cover;
   }
 
-  .vusion-helias-hero__cap {
+  .vusion-v360-hero__cap {
     position: absolute;
     bottom: 20px;
     left: 20px;
@@ -201,14 +201,14 @@
     gap: 12px;
   }
 
-  .vusion-helias-wave span:nth-child(1) { height: 14px; animation-delay: 0s; }
-  .vusion-helias-wave span:nth-child(2) { height: 26px; animation-delay: 0.15s; }
-  .vusion-helias-wave span:nth-child(3) { height: 18px; animation-delay: 0.3s; }
-  .vusion-helias-wave span:nth-child(4) { height: 30px; animation-delay: 0.45s; }
-  .vusion-helias-wave span:nth-child(5) { height: 12px; animation-delay: 0.6s; }
+  .vusion-v360-wave span:nth-child(1) { height: 14px; animation-delay: 0s; }
+  .vusion-v360-wave span:nth-child(2) { height: 26px; animation-delay: 0.15s; }
+  .vusion-v360-wave span:nth-child(3) { height: 18px; animation-delay: 0.3s; }
+  .vusion-v360-wave span:nth-child(4) { height: 30px; animation-delay: 0.45s; }
+  .vusion-v360-wave span:nth-child(5) { height: 12px; animation-delay: 0.6s; }
 
   @media (max-width: 960px) {
-    .vusion-helias-hero__inner {
+    .vusion-v360-hero__inner {
       grid-template-columns: 1fr;
     }
   }
@@ -216,9 +216,9 @@
 
 {% schema %}
 {
-  "name": "Vusion Helias Hero",
+  "name": "Vusion V360 Hero",
   "tag": "section",
-  "class": "vusion-helias-section",
+  "class": "vusion-v360-section",
   "disabled_on": {
     "groups": ["header", "footer"]
   },
@@ -245,7 +245,7 @@
       "type": "textarea",
       "id": "lede",
       "label": "Supporting text",
-      "default": "Helias is a professional in-ear monitor with Active Ambient Technology — studio-quality monitoring, without losing the room. Designed for performers who refuse to compromise."
+      "default": "V360 is a professional in-ear monitor with Active Ambient Technology — studio-quality monitoring, without losing the room. Designed for performers who refuse to compromise."
     },
     {
       "type": "text",
@@ -281,12 +281,12 @@
       "type": "text",
       "id": "caption",
       "label": "Video caption",
-      "default": "Helias — Active Ambient in-ear monitor"
+      "default": "V360 — Active Ambient in-ear monitor"
     }
   ],
   "presets": [
     {
-      "name": "Vusion Helias Hero"
+      "name": "Vusion V360 Hero"
     }
   ]
 }

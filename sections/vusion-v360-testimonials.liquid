@@ -1,20 +1,20 @@
-{{ 'vusion-helias.css' | asset_url | stylesheet_tag }}
+{{ 'vusion-v360.css' | asset_url | stylesheet_tag }}
 
-<script src="{{ 'vusion-helias.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'vusion-v360.js' | asset_url }}" defer="defer"></script>
 
-<div class="vusion-helias vusion-helias-testimonials vusion-helias-band">
-  <div class="vusion-helias-wrap">
-    <div class="vusion-helias-head vusion-helias-reveal">
+<div class="vusion-v360 vusion-v360-testimonials vusion-v360-band">
+  <div class="vusion-v360-wrap">
+    <div class="vusion-v360-head vusion-v360-reveal">
       {%- if section.settings.eyebrow != blank -%}
-        <div class="vusion-helias-eyebrow">{{ section.settings.eyebrow | escape }}</div>
+        <div class="vusion-v360-eyebrow">{{ section.settings.eyebrow | escape }}</div>
       {%- endif -%}
       {%- if section.settings.heading != blank -%}
-        <h2 class="vusion-helias-disp">{{ section.settings.heading | escape }}</h2>
+        <h2 class="vusion-v360-disp">{{ section.settings.heading | escape }}</h2>
       {%- endif -%}
     </div>
 
     {%- if section.blocks.size > 0 -%}
-      <div class="vusion-helias-testimonials__grid vusion-helias-reveal">
+      <div class="vusion-v360-testimonials__grid vusion-v360-reveal">
         {%- for block in section.blocks -%}
           {%- liquid
             assign featured = false
@@ -25,18 +25,18 @@
             if section.blocks.size > 2
               case forloop.index
                 when 1
-                  assign fallback = 'vusion-helias-testi-tiago.jpg'
+                  assign fallback = 'vusion-v360-testi-tiago.jpg'
                 when 2
-                  assign fallback = 'vusion-helias-testi-01.webp'
+                  assign fallback = 'vusion-v360-testi-01.webp'
                 when 3
-                  assign fallback = 'vusion-helias-testi-02.webp'
+                  assign fallback = 'vusion-v360-testi-02.webp'
               endcase
             else
               case forloop.index
                 when 1
-                  assign fallback = 'vusion-helias-testi-01.webp'
+                  assign fallback = 'vusion-v360-testi-01.webp'
                 when 2
-                  assign fallback = 'vusion-helias-testi-02.webp'
+                  assign fallback = 'vusion-v360-testi-02.webp'
               endcase
             endif
             assign avatar_alt = block.settings.image_alt | default: block.settings.name
@@ -44,12 +44,12 @@
               assign avatar_alt = block.settings.image.alt
             endif
           -%}
-          <div class="vusion-helias-testimonials__card{% if featured %} vusion-helias-testimonials__card--featured{% endif %}" {{ block.shopify_attributes }}>
+          <div class="vusion-v360-testimonials__card{% if featured %} vusion-v360-testimonials__card--featured{% endif %}" {{ block.shopify_attributes }}>
             {%- if block.settings.quote != blank -%}
               <p>{{ block.settings.quote | escape }}</p>
             {%- endif -%}
-            <div class="vusion-helias-testimonials__who">
-              <div class="vusion-helias-testimonials__avatar">
+            <div class="vusion-v360-testimonials__who">
+              <div class="vusion-v360-testimonials__avatar">
                 {%- if block.settings.image != blank -%}
                   {%- if featured -%}
                     {{
@@ -89,10 +89,10 @@
               </div>
               <div>
                 {%- if block.settings.name != blank -%}
-                  <div class="vusion-helias-testimonials__name">{{ block.settings.name | escape }}</div>
+                  <div class="vusion-v360-testimonials__name">{{ block.settings.name | escape }}</div>
                 {%- endif -%}
                 {%- if block.settings.role != blank -%}
-                  <div class="vusion-helias-testimonials__role">{{ block.settings.role | escape }}</div>
+                  <div class="vusion-v360-testimonials__role">{{ block.settings.role | escape }}</div>
                 {%- endif -%}
               </div>
             </div>
@@ -104,15 +104,15 @@
 </div>
 
 {% stylesheet %}
-  .vusion-helias.vusion-helias-testimonials {
+  .vusion-v360.vusion-v360-testimonials {
     background: var(--vh-bg-panel);
   }
 
-  .vusion-helias-testimonials .vusion-helias-head h2 {
+  .vusion-v360-testimonials .vusion-v360-head h2 {
     font-size: clamp(var(--vh-fs-h3), 3.2vw, var(--vh-fs-h2));
   }
 
-  .vusion-helias-testimonials__grid {
+  .vusion-v360-testimonials__grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1px;
@@ -121,26 +121,26 @@
     margin-top: 60px;
   }
 
-  .vusion-helias-testimonials__card {
+  .vusion-v360-testimonials__card {
     background: var(--vh-bg);
     padding: 36px;
   }
 
-  .vusion-helias-testimonials__card p {
+  .vusion-v360-testimonials__card p {
     font-size: var(--vh-fs-body);
     line-height: 1.6;
     color: var(--vh-ink);
     margin: 0 0 22px;
   }
 
-  .vusion-helias-testimonials__card--featured {
+  .vusion-v360-testimonials__card--featured {
     grid-column: 1 / -1;
     display: flex;
     gap: 32px;
     align-items: flex-start;
   }
 
-  .vusion-helias-testimonials__card--featured p {
+  .vusion-v360-testimonials__card--featured p {
     flex: 1;
     order: 2;
     margin: 0;
@@ -148,7 +148,7 @@
     line-height: 1.55;
   }
 
-  .vusion-helias-testimonials__card--featured .vusion-helias-testimonials__who {
+  .vusion-v360-testimonials__card--featured .vusion-v360-testimonials__who {
     order: 1;
     flex-direction: column;
     align-items: flex-start;
@@ -156,23 +156,23 @@
     flex: none;
   }
 
-  .vusion-helias-testimonials__card--featured .vusion-helias-testimonials__avatar {
+  .vusion-v360-testimonials__card--featured .vusion-v360-testimonials__avatar {
     width: 240px;
     height: 300px;
     border-radius: 3px;
   }
 
-  .vusion-helias-testimonials__card--featured .vusion-helias-testimonials__avatar img {
+  .vusion-v360-testimonials__card--featured .vusion-v360-testimonials__avatar img {
     object-position: 30% 20%;
   }
 
-  .vusion-helias-testimonials__who {
+  .vusion-v360-testimonials__who {
     display: flex;
     align-items: center;
     gap: 14px;
   }
 
-  .vusion-helias-testimonials__avatar {
+  .vusion-v360-testimonials__avatar {
     width: 52px;
     height: 52px;
     border-radius: 50%;
@@ -181,36 +181,36 @@
     overflow: hidden;
   }
 
-  .vusion-helias-testimonials__avatar img {
+  .vusion-v360-testimonials__avatar img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
-  .vusion-helias-testimonials__name {
+  .vusion-v360-testimonials__name {
     font-size: var(--vh-fs-body);
     font-weight: 600;
   }
 
-  .vusion-helias-testimonials__role {
+  .vusion-v360-testimonials__role {
     font-size: var(--vh-fs-small);
     color: var(--vh-ink-faint);
   }
 
   @media (max-width: 760px) {
-    .vusion-helias-testimonials__grid {
+    .vusion-v360-testimonials__grid {
       grid-template-columns: 1fr;
     }
 
-    .vusion-helias-testimonials__card--featured {
+    .vusion-v360-testimonials__card--featured {
       flex-direction: column;
     }
 
-    .vusion-helias-testimonials__card--featured .vusion-helias-testimonials__who {
+    .vusion-v360-testimonials__card--featured .vusion-v360-testimonials__who {
       max-width: none;
     }
 
-    .vusion-helias-testimonials__card--featured .vusion-helias-testimonials__avatar {
+    .vusion-v360-testimonials__card--featured .vusion-v360-testimonials__avatar {
       width: 100%;
       height: 240px;
     }
@@ -219,9 +219,9 @@
 
 {% schema %}
 {
-  "name": "Vusion Helias Quotes",
+  "name": "Vusion V360 Quotes",
   "tag": "section",
-  "class": "vusion-helias-section",
+  "class": "vusion-v360-section",
   "disabled_on": {
     "groups": ["header", "footer"]
   },
@@ -230,7 +230,7 @@
       "type": "text",
       "id": "eyebrow",
       "label": "Eyebrow",
-      "default": "Artists on Helias"
+      "default": "Artists on V360"
     },
     {
       "type": "text",
@@ -280,7 +280,7 @@
   "max_blocks": 3,
   "presets": [
     {
-      "name": "Vusion Helias Quotes",
+      "name": "Vusion V360 Quotes",
       "blocks": [
         {
           "type": "quote",

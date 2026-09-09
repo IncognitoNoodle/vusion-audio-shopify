@@ -103,18 +103,18 @@
                         </ul>
                       {%- else -%}
                         {%- liquid
-                          if pages.helias == blank
-                            assign helias_path = '/pages/helias'
+                          if pages.v360 == blank
+                            assign v360_path = '/pages/v360'
                           else
-                            assign helias_path = pages.helias.url
+                            assign v360_path = pages.v360.url
                           endif
-                          assign models_url = helias_path | append: '#models'
-                          assign experience_url = helias_path | append: '#experience'
-                          assign supper_url = helias_path | append: '#supper'
-                          assign faq_url = helias_path | append: '#faq'
+                          assign models_url = v360_path | append: '#models'
+                          assign experience_url = v360_path | append: '#experience'
+                          assign supper_url = v360_path | append: '#supper'
+                          assign faq_url = v360_path | append: '#faq'
                           assign iem_collection = collections['iem-collection']
                           assign earplugs_collection = collections['earplugs-collection']
-                          assign shop_skip = 'helyes-ambient-aware-iem,test,vusion-starter-package-deal' | split: ','
+                          assign shop_skip = '|helyes-ambient-aware-iem|vusion-v360-pro-copy|vusion-v360-dj-iem-3-drivers|vusion-v360-pro-6-drivers|test|vusion-starter-package-deal|'
                           assign shop_fallback = 'dj-iem-ambient,nb-mass,zen-2-iem-copy' | split: ','
                           assign has_demo = false
                           assign has_supper = false
@@ -141,17 +141,27 @@
                                 {%- if col == 'Shop' -%}
                                   <li>
                                     <a href="{{ models_url }}" class="link link--text list-menu__item list-menu__item--link">
-                                      Helias P350
+                                      Vusion V360
                                     </a>
                                   </li>
                                   <li>
                                     <a href="{{ models_url }}" class="link link--text list-menu__item list-menu__item--link">
-                                      Helias Euphoria
+                                      Vusion V360 Pro
                                     </a>
                                   </li>
                                   {%- if iem_collection != blank and iem_collection.products_count > 0 -%}
                                     {%- for product in iem_collection.products -%}
-                                      {%- unless shop_skip contains product.handle -%}
+                                      {%- liquid
+                                        assign product_title_down = product.title | downcase
+                                        assign skip_product = false
+                                        if shop_skip contains product.handle
+                                          assign skip_product = true
+                                        endif
+                                        if product_title_down contains 'v360'
+                                          assign skip_product = true
+                                        endif
+                                      -%}
+                                      {%- unless skip_product -%}
                                         <li>
                                           <a href="{{ product.url }}" class="link link--text list-menu__item list-menu__item--link">
                                             {{ product.title | escape }}

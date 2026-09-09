@@ -1,4 +1,4 @@
-{{ 'vusion-helias.css' | asset_url | stylesheet_tag }}
+{{ 'vusion-v360.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
   assign embed_url = section.settings.calendly_url | strip
@@ -11,23 +11,23 @@
   if section.settings.button_link != blank
     assign button_link = section.settings.button_link
   else
-    assign button_link = 'https://calendly.com/admin-vusionaudio/30min'
+    assign button_link = 'https://calendly.com/vusionaudio/vusion-audio-consult-clone'
   endif
 -%}
 
-<script src="{{ 'vusion-helias.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'vusion-v360.js' | asset_url }}" defer="defer"></script>
 
-<div class="vusion-helias vusion-helias-experience vusion-helias-band" id="experience">
-  <div class="vusion-helias-wrap vusion-helias-experience__grid">
-    <div class="vusion-helias-reveal">
+<div class="vusion-v360 vusion-v360-experience vusion-v360-band" id="experience">
+  <div class="vusion-v360-wrap vusion-v360-experience__grid">
+    <div class="vusion-v360-reveal">
       {%- if section.settings.eyebrow != blank -%}
-        <div class="vusion-helias-eyebrow">{{ section.settings.eyebrow | escape }}</div>
+        <div class="vusion-v360-eyebrow">{{ section.settings.eyebrow | escape }}</div>
       {%- endif -%}
       {%- if section.settings.quote_before != blank
         or section.settings.quote_accent != blank
         or section.settings.quote_after != blank
       -%}
-        <p class="vusion-helias-experience__quote">
+        <p class="vusion-v360-experience__quote">
           {{- section.settings.quote_before | escape -}}
           {%- if section.settings.quote_accent != blank -%}
             <span>{{ section.settings.quote_accent | escape }}</span>
@@ -43,7 +43,7 @@
         {%- endif -%}
       {%- endfor -%}
       {%- if has_items -%}
-        <ul class="vusion-helias-experience__list">
+        <ul class="vusion-v360-experience__list">
           {%- for block in section.blocks -%}
             {%- if block.type == 'item' and block.settings.text != blank -%}
               <li {{ block.shopify_attributes }}>{{ block.settings.text | escape }}</li>
@@ -53,7 +53,7 @@
       {%- endif -%}
       {%- if section.settings.button_label != blank -%}
         <a
-          class="vusion-helias-btn vusion-helias-btn--primary"
+          class="vusion-v360-btn vusion-v360-btn--primary"
           href="{{ button_link }}"
           {% if button_link contains 'calendly.com' %}
             target="_blank"
@@ -65,17 +65,17 @@
       {%- endif -%}
     </div>
 
-    <div class="vusion-helias-reveal">
-      <div class="vusion-helias-experience__cal">
-        <div class="vusion-helias-experience__cal-top">
+    <div class="vusion-v360-reveal">
+      <div class="vusion-v360-experience__cal">
+        <div class="vusion-v360-experience__cal-top">
           {%- if section.settings.cal_title != blank -%}
-            <span class="vusion-helias-experience__cal-title">{{ section.settings.cal_title | escape }}</span>
+            <span class="vusion-v360-experience__cal-title">{{ section.settings.cal_title | escape }}</span>
           {%- endif -%}
-          <span class="vusion-helias-experience__dot"></span>
+          <span class="vusion-v360-experience__dot"></span>
         </div>
         {%- if embed_ok -%}
           <div
-            class="calendly-inline-widget vusion-helias-experience__calendly"
+            class="calendly-inline-widget vusion-v360-experience__calendly"
             data-url="{{ embed_url | escape }}"
             style="min-width:320px;height:700px;"
             title="{{ section.settings.cal_title | escape }}"
@@ -84,14 +84,14 @@
         {%- else -%}
           {%- for block in section.blocks -%}
             {%- if block.type == 'slot' -%}
-              <div class="vusion-helias-experience__slot" {{ block.shopify_attributes }}>
+              <div class="vusion-v360-experience__slot" {{ block.shopify_attributes }}>
                 <span>{{ block.settings.date | escape }}</span>
                 <span>{{ block.settings.time | escape }}</span>
               </div>
             {%- endif -%}
           {%- endfor -%}
           {%- if section.settings.cal_note != blank -%}
-            <p class="vusion-helias-note vusion-helias-experience__cal-note">{{ section.settings.cal_note | escape }}</p>
+            <p class="vusion-v360-note vusion-v360-experience__cal-note">{{ section.settings.cal_note | escape }}</p>
           {%- endif -%}
         {%- endif -%}
       </div>
@@ -100,20 +100,20 @@
 </div>
 
 {% stylesheet %}
-  .vusion-helias.vusion-helias-experience {
+  .vusion-v360.vusion-v360-experience {
     background: var(--vh-bg-panel);
     border-top: 1px solid var(--vh-hairline);
     border-bottom: 1px solid var(--vh-hairline);
   }
 
-  .vusion-helias-experience__grid {
+  .vusion-v360-experience__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 70px;
     align-items: center;
   }
 
-  .vusion-helias-experience__quote {
+  .vusion-v360-experience__quote {
     font-size: var(--vh-fs-lede);
     line-height: 1.5;
     color: var(--vh-ink);
@@ -121,17 +121,17 @@
     font-weight: 500;
   }
 
-  .vusion-helias-experience__quote span {
+  .vusion-v360-experience__quote span {
     color: var(--vh-gold);
   }
 
-  .vusion-helias-experience__list {
+  .vusion-v360-experience__list {
     list-style: none;
     margin: 0 0 36px;
     padding: 0;
   }
 
-  .vusion-helias-experience__list li {
+  .vusion-v360-experience__list li {
     display: flex;
     gap: 12px;
     padding: 11px 0;
@@ -140,27 +140,27 @@
     border-bottom: 1px solid var(--vh-hairline);
   }
 
-  .vusion-helias-experience__list li::before {
+  .vusion-v360-experience__list li::before {
     content: "✓";
     color: var(--vh-gold);
     font-weight: 700;
   }
 
-  .vusion-helias-experience__cal {
+  .vusion-v360-experience__cal {
     border: 1px solid var(--vh-hairline);
     border-radius: 4px;
     padding: 34px;
     background: var(--vh-bg);
   }
 
-  .vusion-helias-experience__cal-top {
+  .vusion-v360-experience__cal-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 22px;
   }
 
-  .vusion-helias-experience__cal-title {
+  .vusion-v360-experience__cal-title {
     font-family: var(--font-body-family);
     font-size: var(--vh-fs-small);
     color: var(--vh-ink-faint);
@@ -168,14 +168,14 @@
     letter-spacing: 0.08em;
   }
 
-  .vusion-helias-experience__dot {
+  .vusion-v360-experience__dot {
     width: 8px;
     height: 8px;
     border-radius: 50%;
     background: var(--vh-gold);
   }
 
-  .vusion-helias-experience__slot {
+  .vusion-v360-experience__slot {
     display: flex;
     justify-content: space-between;
     padding: 13px 0;
@@ -184,21 +184,21 @@
     color: var(--vh-ink-dim);
   }
 
-  .vusion-helias-experience__slot:last-of-type {
+  .vusion-v360-experience__slot:last-of-type {
     border-bottom: 1px solid var(--vh-hairline);
   }
 
-  .vusion-helias-experience__slot span:last-child {
+  .vusion-v360-experience__slot span:last-child {
     color: var(--vh-ink);
     font-family: var(--font-body-family);
     font-size: var(--vh-fs-small);
   }
 
-  .vusion-helias-experience__cal-note {
+  .vusion-v360-experience__cal-note {
     margin-top: 16px;
   }
 
-  .vusion-helias-experience__calendly {
+  .vusion-v360-experience__calendly {
     display: block;
     width: 100%;
     min-width: 320px;
@@ -206,7 +206,7 @@
     overflow: hidden;
   }
 
-  .vusion-helias-experience__calendly iframe {
+  .vusion-v360-experience__calendly iframe {
     display: block;
     width: 100%;
     height: 700px;
@@ -214,7 +214,7 @@
   }
 
   @media (max-width: 900px) {
-    .vusion-helias-experience__grid {
+    .vusion-v360-experience__grid {
       grid-template-columns: 1fr;
     }
   }
@@ -222,9 +222,9 @@
 
 {% schema %}
 {
-  "name": "Vusion Helias Experience",
+  "name": "Vusion V360 Experience",
   "tag": "section",
-  "class": "vusion-helias-section",
+  "class": "vusion-v360-section",
   "disabled_on": {
     "groups": ["header", "footer"]
   },
@@ -269,13 +269,13 @@
       "type": "text",
       "id": "cal_title",
       "label": "Calendar title",
-      "default": "Helias Experience"
+      "default": "V360 Experience"
     },
     {
       "type": "text",
       "id": "calendly_url",
       "label": "Calendly embed URL",
-      "default": "https://calendly.com/admin-vusionaudio/30min",
+      "default": "https://calendly.com/vusionaudio/vusion-audio-consult-clone?background_color=1a1a1a&text_color=ffffff&primary_color=ff0000",
       "info": "https://calendly.com/… only. Empty keeps the HTML placeholder slots."
     },
     {
@@ -294,7 +294,7 @@
           "type": "text",
           "id": "text",
           "label": "Text",
-          "default": "A full walkthrough of Helias"
+          "default": "A full walkthrough of V360"
         }
       ]
     },
@@ -319,9 +319,9 @@
   ],
   "presets": [
     {
-      "name": "Vusion Helias Experience",
+      "name": "Vusion V360 Experience",
       "blocks": [
-        { "type": "item", "settings": { "text": "A full walkthrough of Helias" } },
+        { "type": "item", "settings": { "text": "A full walkthrough of V360" } },
         { "type": "item", "settings": { "text": "Live demonstration" } },
         { "type": "item", "settings": { "text": "Test different ambient levels" } },
         { "type": "item", "settings": { "text": "Bring your own music" } },

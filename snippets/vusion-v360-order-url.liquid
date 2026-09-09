@@ -1,0 +1,47 @@
+{%- doc -%}
+  Outputs the custom-order URL for a V360 product, or nothing.
+
+  @param {product} product - Product to map to /pages/v360-order
+{%- enddoc -%}
+{%- unless product == blank -%}
+  {%- liquid
+    assign handle_key = product.handle | downcase
+    assign title_key = product.title | downcase
+    assign is_v360_pro = false
+    assign is_v360 = false
+    if handle_key == 'vusion-v360-pro-6-drivers'
+      assign is_v360_pro = true
+    endif
+    if handle_key == 'helyes-ambient-aware-iem'
+      assign is_v360_pro = true
+    endif
+    if handle_key contains 'v360-pro'
+      assign is_v360_pro = true
+    endif
+    if title_key contains 'v360 pro'
+      assign is_v360_pro = true
+    endif
+    if handle_key == 'vusion-v360-dj-iem-3-drivers'
+      assign is_v360 = true
+    endif
+    if handle_key == 'vusion-v360-pro-copy'
+      assign is_v360 = true
+    endif
+    if handle_key contains 'v360'
+      assign is_v360 = true
+    endif
+    if title_key contains 'v360'
+      assign is_v360 = true
+    endif
+    if pages['v360-order'] != blank
+      assign order_base = pages['v360-order'].url
+    else
+      assign order_base = '/pages/v360-order'
+    endif
+  -%}
+  {%- if is_v360_pro -%}
+    {{- order_base | append: '?model=v360-pro' -}}
+  {%- elsif is_v360 -%}
+    {{- order_base | append: '?model=v360' -}}
+  {%- endif -%}
+{%- endunless -%}

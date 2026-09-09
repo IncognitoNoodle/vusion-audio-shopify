@@ -18,21 +18,21 @@
         "padding_bottom": 0
       }
     },
-    "vusion_helias_hero": {
-      "type": "vusion-helias-hero",
+    "vusion_v360_hero": {
+      "type": "vusion-v360-hero",
       "settings": {
         "lead_tag": "For DJs who won't compromise",
         "heading": "HEAR\nEVERYTHING.",
         "heading_accent": "LOSE NOTHING.",
-        "lede": "Helias is a professional in-ear monitor with Active Ambient Technology \u2014 studio-quality monitoring, without losing the room. Designed for performers who refuse to compromise.",
+        "lede": "V360 is a professional in-ear monitor with Active Ambient Technology \u2014 studio-quality monitoring, without losing the room. Designed for performers who refuse to compromise.",
         "button_1_label": "Book Your Experience",
-        "button_1_link": "https://calendly.com/admin-vusionaudio/30min",
+        "button_1_link": "https://calendly.com/vusionaudio/vusion-audio-consult-clone",
         "button_2_label": "Buy Now",
-        "caption": "Helias \u2014 Active Ambient in-ear monitor"
+        "caption": "V360 \u2014 Active Ambient in-ear monitor"
       }
     },
-    "vusion_helias_why": {
-      "type": "vusion-helias-why",
+    "vusion_v360_why": {
+      "type": "vusion-v360-why",
       "blocks": {
         "item_01": {
           "type": "item",
@@ -74,21 +74,21 @@
         "item_04"
       ],
       "settings": {
-        "caption": "Helias \u2014 dual-driver custom shell",
-        "eyebrow": "Why Helias",
-        "heading": "Traditional IEMs isolate you.\nHelias doesn't."
+        "caption": "V360 \u2014 dual-driver custom shell",
+        "eyebrow": "Why V360",
+        "heading": "Traditional IEMs isolate you.\nV360 doesn't."
       }
     },
-    "vusion_helias_film": {
-      "type": "vusion-helias-film",
+    "vusion_v360_film": {
+      "type": "vusion-v360-film",
       "settings": {
         "eyebrow": "Product film",
         "embed_url": "https://drive.google.com/file/d/1Udd-pNB8k8ncm7z2DwJBHJwPQBcXT_lc/preview",
         "caption": "Final Render \u2014 Vusion product film"
       }
     },
-    "vusion_helias_works": {
-      "type": "vusion-helias-works",
+    "vusion_v360_works": {
+      "type": "vusion-v360-works",
       "blocks": {
         "step_mic": {
           "type": "step",
@@ -132,12 +132,12 @@
       "settings": {
         "eyebrow": "The technology",
         "heading": "How Active Ambient works",
-        "lede": "A standard IEM seals you off completely. Helias listens back \u2014 and lets you decide how much of the world you let in.",
+        "lede": "A standard IEM seals you off completely. V360 listens back \u2014 and lets you decide how much of the world you let in.",
         "note": "You decide how much of the room you let in \u2014 <b>from fully sealed to fully open</b>, in one wireless control."
       }
     },
-    "vusion_helias_benefits": {
-      "type": "vusion-helias-benefits",
+    "vusion_v360_benefits": {
+      "type": "vusion-v360-benefits",
       "blocks": {
         "card_01": {
           "type": "card",
@@ -169,7 +169,7 @@
         "card_04": {
           "type": "card",
           "settings": {
-            "image_alt": "Helias in-ear monitor worn on stage",
+            "image_alt": "V360 in-ear monitor worn on stage",
             "number": "04",
             "title": "Protect your hearing",
             "text": "No wedges, no shouting monitors \u2014 lower volumes, same clarity."
@@ -187,50 +187,52 @@
         "heading": "Built for the stage, not the studio couch"
       }
     },
-    "vusion_helias_models": {
-      "type": "vusion-helias-models",
+    "vusion_v360_models": {
+      "type": "vusion-v360-models",
       "blocks": {
-        "model_p350": {
+        "model_v360": {
           "type": "model",
           "settings": {
-            "image_alt": "Helias P350",
+            "image_alt": "Vusion V360",
             "tag": "Model 01 \u2014 DJ",
-            "title": "HELIAS P350",
+            "title": "VUSION V360",
             "price": "\u20ac 2.000",
             "audience": "For DJs, electronic artists, club performers and festival DJs.",
             "features": "Active Ambient Technology\nPremium drivers\nWireless ambient control\nCustom fit",
-            "button_label": "View Helias P350"
+            "button_label": "Order Vusion V360",
+            "model_key": "v360"
           }
         },
-        "model_euphoria": {
+        "model_v360_pro": {
           "type": "model",
           "settings": {
-            "image_alt": "Helias Euphoria",
+            "image_alt": "Vusion V360 Pro",
             "tag": "Model 02 \u2014 Artist",
-            "title": "HELIAS EUPHORIA",
+            "title": "VUSION V360 PRO",
             "price": "\u20ac 2.500",
             "audience": "For singers, guitarists, drummers, bands and musical performers.",
-            "features": "Everything in Helias P350\nProfessional tuning\nExtended audio range\nCustom fit",
-            "button_label": "View Helias Euphoria"
+            "features": "Everything in Vusion V360\nProfessional tuning\nExtended audio range\nCustom fit",
+            "button_label": "Order Vusion V360 Pro",
+            "model_key": "v360-pro"
           }
         }
       },
       "block_order": [
-        "model_p350",
-        "model_euphoria"
+        "model_v360",
+        "model_v360_pro"
       ],
       "settings": {
-        "eyebrow": "Which Helias fits you",
+        "eyebrow": "Which V360 fits you",
         "heading": "Two builds. One technology."
       }
     },
-    "vusion_helias_experience": {
-      "type": "vusion-helias-experience",
+    "vusion_v360_experience": {
+      "type": "vusion-v360-experience",
       "blocks": {
         "item_01": {
           "type": "item",
           "settings": {
-            "text": "A full walkthrough of Helias"
+            "text": "A full walkthrough of V360"
           }
         },
         "item_02": {
@@ -302,14 +304,14 @@
         "quote_accent": "\u20ac2,000\u2013\u20ac2,500",
         "quote_after": " product without experiencing it first.",
         "button_label": "Book Your Experience",
-        "button_link": "https://calendly.com/admin-vusionaudio/30min",
-        "cal_title": "Helias Experience",
-        "calendly_url": "https://calendly.com/admin-vusionaudio/30min",
+        "button_link": "https://calendly.com/vusionaudio/vusion-audio-consult-clone",
+        "cal_title": "V360 Experience",
+        "calendly_url": "https://calendly.com/vusionaudio/vusion-audio-consult-clone?background_color=1a1a1a&text_color=ffffff&primary_color=ff0000",
         "cal_note": ""
       }
     },
-    "vusion_helias_supper": {
-      "type": "vusion-helias-supper",
+    "vusion_v360_supper": {
+      "type": "vusion-v360-supper",
       "blocks": {
         "photo_01": {
           "type": "photo",
@@ -341,18 +343,18 @@
       "settings": {
         "eyebrow": "Exclusive access",
         "heading": "The Supperclub Soundcheck",
-        "lede": "Together with Vusion, get exclusive access to a professional soundcheck at the iconic Supperclub Amsterdam. Experience Helias the way it's meant to be heard \u2014 behind a DJ booth or on a live stage, on a professional sound system, without an audience. No showroom. A real practice run.",
+        "lede": "Together with Vusion, get exclusive access to a professional soundcheck at the iconic Supperclub Amsterdam. Experience V360 the way it's meant to be heard \u2014 behind a DJ booth or on a live stage, on a professional sound system, without an audience. No showroom. A real practice run.",
         "button_label": "Reserve Your Soundcheck"
       }
     },
-    "vusion_helias_testimonials": {
-      "type": "vusion-helias-testimonials",
+    "vusion_v360_testimonials": {
+      "type": "vusion-v360-testimonials",
       "blocks": {
         "quote_tiago": {
           "type": "quote",
           "settings": {
             "quote": "\"There is a learning curve and getting used to the sound of the mics in the in-ears, but for the first time in my career I can use in-ears for two hours straight without feeling isolated, and with a great clear sound. For many years I\u2019ve been unable to use two in-ears at the same time, ending up with just one. I need to hear not only the crowd but the room, the energy of the room. I\u2019m very happy to have found this helyes sistem and Mink was very helpful with all the process of getting them done as soon as possible. The in-ears are well built, the sound is strong and defined, the idea is great and it\u2019s working for me. I can control my ambient volume with a simple gesture, and the advantage of being able to have different ambient volumes in each ear is that I can adapt depending on the noise of the stage. If the drums are too close on the right I can always decrease the ambient on that side. Congratulations and keep up the great work!\"",
-            "image_alt": "Tiago Bettencourt wearing Helias in-ears on stage",
+            "image_alt": "Tiago Bettencourt wearing V360 in-ears on stage",
             "name": "Tiago Bettencourt",
             "role": ""
           }
@@ -382,87 +384,164 @@
         "quote_johnny"
       ],
       "settings": {
-        "eyebrow": "Artists on Helias",
+        "eyebrow": "Artists on V360",
         "heading": "Don't take our word for it"
       }
     },
-    "vusion_helias_specs": {
-      "type": "vusion-helias-specs",
+    "vusion_v360_specs": {
+      "type": "vusion-v360-specs",
       "blocks": {
         "spec_drivers": {
           "type": "spec",
           "settings": {
             "key": "Drivers",
-            "value": "Custom hybrid, [tbd]"
+            "value": "Three balanced armature receivers"
           }
         },
-        "spec_latency": {
+        "spec_config": {
           "type": "spec",
           "settings": {
-            "key": "Ambient latency",
-            "value": "[tbd] ms"
+            "key": "Configuration",
+            "value": "1 High, 2 Mid/Low"
           }
         },
-        "spec_battery": {
+        "spec_freq": {
           "type": "spec",
           "settings": {
-            "key": "Battery",
-            "value": "[tbd] hrs ambient module"
+            "key": "Frequency response",
+            "value": "30 Hz \u2013 20 kHz"
           }
         },
-        "spec_bluetooth": {
+        "spec_impedance": {
           "type": "spec",
           "settings": {
-            "key": "Bluetooth",
-            "value": "[tbd]"
+            "key": "Impedance",
+            "value": "16 Ohm @ 1 kHz"
           }
         },
-        "spec_cable": {
+        "spec_crossover": {
           "type": "spec",
           "settings": {
-            "key": "Cable",
-            "value": "Detachable, [tbd]"
+            "key": "Crossover",
+            "value": "2-Way"
           }
         },
-        "spec_fit": {
+        "spec_isolation": {
           "type": "spec",
           "settings": {
-            "key": "Fit",
-            "value": "Custom ear impressions"
+            "key": "Isolation",
+            "value": "\u221226 dB (\u00b12 dB)"
           }
         },
-        "spec_shell": {
+        "spec_socket": {
           "type": "spec",
           "settings": {
-            "key": "Shell",
-            "value": "Custom colour / artwork"
+            "key": "Socket",
+            "value": "T2\u2122 or 2-Pin"
           }
         },
-        "spec_water": {
+        "spec_termination": {
           "type": "spec",
           "settings": {
-            "key": "Water resistance",
-            "value": "[tbd]"
+            "key": "Termination",
+            "value": "1/8\" (3.5 mm) stereo jack"
           }
         }
       },
       "block_order": [
         "spec_drivers",
-        "spec_latency",
-        "spec_battery",
-        "spec_bluetooth",
-        "spec_cable",
-        "spec_fit",
-        "spec_shell",
-        "spec_water"
+        "spec_config",
+        "spec_freq",
+        "spec_impedance",
+        "spec_crossover",
+        "spec_isolation",
+        "spec_socket",
+        "spec_termination"
       ],
       "settings": {
         "eyebrow": "Specifications",
-        "heading": "Built to spec"
+        "heading": "Vusion V360",
+        "anchor_id": "specs"
       }
     },
-    "vusion_helias_faq": {
-      "type": "vusion-helias-faq",
+    "vusion_v360_specs_pro": {
+      "type": "vusion-v360-specs",
+      "blocks": {
+        "spec_drivers": {
+          "type": "spec",
+          "settings": {
+            "key": "Drivers",
+            "value": "Six balanced armature receivers"
+          }
+        },
+        "spec_config": {
+          "type": "spec",
+          "settings": {
+            "key": "Configuration",
+            "value": "2 High, 2 Mid, 2 Low"
+          }
+        },
+        "spec_freq": {
+          "type": "spec",
+          "settings": {
+            "key": "Frequency response",
+            "value": "20 Hz \u2013 20 kHz"
+          }
+        },
+        "spec_impedance": {
+          "type": "spec",
+          "settings": {
+            "key": "Impedance",
+            "value": "12 Ohm @ 1 kHz"
+          }
+        },
+        "spec_crossover": {
+          "type": "spec",
+          "settings": {
+            "key": "Crossover",
+            "value": "3-Way"
+          }
+        },
+        "spec_isolation": {
+          "type": "spec",
+          "settings": {
+            "key": "Isolation",
+            "value": "\u221226 dB (\u00b12 dB)"
+          }
+        },
+        "spec_socket": {
+          "type": "spec",
+          "settings": {
+            "key": "Socket",
+            "value": "T2\u2122 or 2-Pin"
+          }
+        },
+        "spec_termination": {
+          "type": "spec",
+          "settings": {
+            "key": "Termination",
+            "value": "1/8\" (3.5 mm) stereo jack"
+          }
+        }
+      },
+      "block_order": [
+        "spec_drivers",
+        "spec_config",
+        "spec_freq",
+        "spec_impedance",
+        "spec_crossover",
+        "spec_isolation",
+        "spec_socket",
+        "spec_termination"
+      ],
+      "settings": {
+        "eyebrow": "Specifications",
+        "heading": "Vusion V360 Pro",
+        "anchor_id": "specs-pro"
+      }
+    },
+    "vusion_v360_faq": {
+      "type": "vusion-v360-faq",
       "blocks": {
         "faq_ambient": {
           "type": "item",
@@ -482,28 +561,28 @@
           "type": "item",
           "settings": {
             "question": "What happens when the battery runs out?",
-            "answer": "Helias falls back to passive wired monitoring, so you're never left without sound mid-performance."
+            "answer": "V360 falls back to passive wired monitoring, so you're never left without sound mid-performance."
           }
         },
         "faq_artwork": {
           "type": "item",
           "settings": {
             "question": "Can I choose custom artwork?",
-            "answer": "Yes \u2014 every Helias is custom-shelled, with a range of colours and finishes to choose from at checkout."
+            "answer": "Yes \u2014 every V360 is custom-shelled, with a range of colours and finishes to choose from at checkout."
           }
         },
         "faq_impressions": {
           "type": "item",
           "settings": {
             "question": "Can I use my own ear impressions?",
-            "answer": "Yes \u2014 send us existing impressions from an audiologist, or book a Helias Experience and we'll take them for you."
+            "answer": "Yes \u2014 after you pay, email photos or a WeTransfer/Dropbox link to info@vusionaudio.com. Use the subject V360 impressions plus your order number (you will get that number by email). Or book a V360 Experience and we will take them for you."
           }
         },
         "faq_shipping": {
           "type": "item",
           "settings": {
             "question": "Do you ship worldwide?",
-            "answer": "Yes, Vusion ships Helias internationally. Shipping costs and timelines are shown at checkout."
+            "answer": "Yes, Vusion ships V360 internationally. Shipping costs and timelines are shown at checkout."
           }
         }
       },
@@ -520,11 +599,11 @@
         "heading": "Good to know"
       }
     },
-    "vusion_helias_cta": {
-      "type": "vusion-helias-cta",
+    "vusion_v360_cta": {
+      "type": "vusion-v360-cta",
       "settings": {
         "eyebrow": "Ready when you are",
-        "heading": "Ready to experience Helias?",
+        "heading": "Ready to experience V360?",
         "lede": "Test it on your own ears, in your own booth, before you decide.",
         "button_1_label": "Book Demo",
         "button_2_label": "Buy Now"
@@ -533,17 +612,18 @@
   },
   "order": [
     "main",
-    "vusion_helias_hero",
-    "vusion_helias_why",
-    "vusion_helias_film",
-    "vusion_helias_works",
-    "vusion_helias_benefits",
-    "vusion_helias_models",
-    "vusion_helias_experience",
-    "vusion_helias_supper",
-    "vusion_helias_testimonials",
-    "vusion_helias_specs",
-    "vusion_helias_faq",
-    "vusion_helias_cta"
+    "vusion_v360_hero",
+    "vusion_v360_why",
+    "vusion_v360_film",
+    "vusion_v360_works",
+    "vusion_v360_benefits",
+    "vusion_v360_models",
+    "vusion_v360_experience",
+    "vusion_v360_supper",
+    "vusion_v360_testimonials",
+    "vusion_v360_specs",
+    "vusion_v360_specs_pro",
+    "vusion_v360_faq",
+    "vusion_v360_cta"
   ]
 }

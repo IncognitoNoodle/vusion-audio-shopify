@@ -130,6 +130,15 @@
               aria-labelledby="predictive-search-products"
             >
               {%- for product in predictive_search.resources.products -%}
+                {%- capture v360_order_url -%}
+                  {%- render 'vusion-v360-order-url', product: product -%}
+                {%- endcapture -%}
+                {%- assign v360_order_url = v360_order_url | strip -%}
+                {%- if v360_order_url != blank -%}
+                  {%- assign search_product_url = v360_order_url -%}
+                {%- else -%}
+                  {%- assign search_product_url = product.url -%}
+                {%- endif -%}
                 <li
                   id="predictive-search-option-product-{{ forloop.index }}"
                   class="predictive-search__list-item"
@@ -138,7 +147,7 @@
                 >
                   <product-component view-event-payload="{{ product | standard_event_data: 'view', context: 'search' | escape }}">
                     <a
-                      href="{{ product.url }}"
+                      href="{{ search_product_url }}"
                       class="predictive-search__item predictive-search__item--link-with-thumbnail link link--text"
                       tabindex="-1"
                     >

@@ -29,6 +29,15 @@
   {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
 {%- endunless -%}
 {%- if card_product and card_product != empty -%}
+  {%- capture v360_order_url -%}
+    {%- render 'vusion-v360-order-url', product: card_product -%}
+  {%- endcapture -%}
+  {%- assign v360_order_url = v360_order_url | strip -%}
+  {%- if v360_order_url != blank -%}
+    {%- assign card_url = v360_order_url -%}
+  {%- else -%}
+    {%- assign card_url = card_product.url -%}
+  {%- endif -%}
   {%- liquid
     assign ratio = 1
     if card_product.featured_media and media_aspect_ratio == 'portrait'
@@ -117,7 +126,7 @@
                 {% endif %}
               >
                 <a
-                  href="{{ card_product.url }}"
+                  href="{{ card_url }}"
                   id="StandardCardNoMediaLink-{{ section_id }}-{{ card_product.id }}"
                   class="full-unstyled-link"
                   aria-labelledby="StandardCardNoMediaLink-{{ section_id }}-{{ card_product.id }}{% if card_product.available == false or card_product.compare_at_price > card_product.price %} NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}{% endif %}"
@@ -154,7 +163,7 @@
               {% endif %}
             >
               <a
-                href="{{ card_product.url }}"
+                href="{{ card_url }}"
                 id="CardLink-{{ section_id }}-{{ card_product.id }}"
                 class="full-unstyled-link"
                 aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }}{% if card_product.available == false or card_product.compare_at_price > card_product.price %} Badge-{{ section_id }}-{{ card_product.id }}{% endif %}"
@@ -291,7 +300,7 @@
             </div>
           </div>
           {% assign product_form_id = 'quick-add-' | append: section_id | append: card_product.id %}
-          {% if quick_add == 'standard' %}
+          {% if quick_add == 'standard' and v360_order_url == blank %}
             <div class="quick-add no-js-hidden">
               {%- liquid
                 assign qty_rules = false
@@ -390,7 +399,7 @@
                 </product-form>
               {%- endif -%}
             </div>
-          {% elsif quick_add == 'bulk' %}
+          {% elsif quick_add == 'bulk' and v360_order_url == blank %}
             {% if card_product.variants_count == 1 %}
               <quick-add-bulk
                 data-min="{{ card_product.selected_or_first_available_variant.quantity_rule.min }}"
@@ -502,7 +511,7 @@
                             {% if card_product == blank %}
                               role="link" aria-disabled="true"
                             {% else %}
-                              href="{{ card_product.url }}"
+                              href="{{ card_url }}"
                             {% endif %}
                             class="link product__view-details animate-arrow small-hide medium-hide"
                           >
@@ -511,7 +520,7 @@
                           </a>
                         </div>
                         <div class="quick-add-modal__content-info--bulk-details large-up-hide">
-                          <a href="{{ card_product.url }}" class="full-unstyled-link">
+                          <a href="{{ card_url }}" class="full-unstyled-link">
                             <h3>{{ card_product.title | escape }}</h3>
                           </a>
                           {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
@@ -524,7 +533,7 @@
                       </div>
                       <div>
                         <div class="quick-add-modal__content-info--bulk-details small-hide medium-hide">
-                          <a href="{{ card_product.url }}" class="full-unstyled-link">
+                          <a href="{{ card_url }}" class="full-unstyled-link">
                             <h3 class="h2">
                               {{ card_product.title | escape }}
                             </h3>
